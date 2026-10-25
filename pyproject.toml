@@ -1,7 +1,7 @@
 [project]
 name = "kuramoto-template"
 version = "0.1.0"
-description = "Add your description here"
+description = "Trying to push the lower bound of the Kuramoto model via template search"
 readme = "README.md"
 authors = [
     { name = "Lucas", email = "lucasgrassoramos@gmail.com" }
