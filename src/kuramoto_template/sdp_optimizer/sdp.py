@@ -1,0 +1,318 @@
+import cvxpy as cp
+import numpy as np
+from scipy.linalg import null_space
+
+from .sdp_result import SDPResult
+
+
+def validate_input(x, phi, allowed=None):
+    x = np.asarray(x, dtype=float)
+    phi = np.asarray(phi, dtype=float)
+
+    if x.ndim != 1 or phi.shape != x.shape:
+        raise ValueError("x and phi must have the same 1D shape")
+
+    if len(x) < 2:
+        raise ValueError("At least two clusters are required")
+
+    if not np.all(np.isfinite(x)) or not np.all(np.isfinite(phi)):
+        raise ValueError("Inputs must be finite")
+
+    if np.any(x <= 0):
+        raise ValueError("All cluster sizes must be positive")
+
+    if not np.isclose(x.sum(), 1.0, atol=1e-10):
+        raise ValueError("Cluster sizes must sum to one")
+
+    # Differences modulo 2*pi.
+    phase_diff = np.angle(np.exp(1j * (phi - phi[0])))
+
+    if np.max(np.abs(phase_diff)) < 1e-8:
+        raise ValueError(
+            "All phases are synchronized. " "This cannot be a nonsynchronous witness."
+        )
+
+    if allowed is not None:
+        allowed = np.asarray(allowed, dtype=bool)
+
+        if allowed.shape != (len(x), len(x)):
+            raise ValueError("Invalid allowed matrix shape")
+
+        if not np.array_equal(allowed, allowed.T):
+            raise ValueError("allowed must be symmetric")
+
+    return x, phi, allowed
+
+
+def template_metrics(x, phi, P):
+    """Evaluate a template independently of CVXPY."""
+
+    m = len(x)
+
+    diff = phi[:, None] - phi[None, :]
+    sine = np.sin(diff)
+    cosine = np.cos(diff)
+
+    degrees = P @ x
+
+    forces = np.sum(P * sine * x[None, :], axis=1)
+
+    restoring = np.sum(P * cosine * x[None, :], axis=1)
+
+    # Weighted cluster Laplacian.
+    W = P * np.outer(x, x) * cosine
+    np.fill_diagonal(W, 0.0)
+
+    L = np.diag(W.sum(axis=1)) - W
+
+    # Orthonormal basis for vectors perpendicular to 1.
+    B = null_space(np.ones((1, m)))
+
+    restricted = B.T @ L @ B
+    restricted = 0.5 * (restricted + restricted.T)
+
+    eigenvalues = np.linalg.eigvalsh(restricted)
+
+    return {
+        "mu": float(degrees.min()),
+        "degrees": degrees,
+        "forces": forces,
+        "restoring": restoring,
+        "max_force_error": float(np.abs(forces).max()),
+        "min_restoring": float(restoring.min()),
+        "min_cluster_eigenvalue": float(eigenvalues.min()),
+    }
+
+
+def optimize_template(
+    x,
+    phi,
+    *,
+    allowed=None,
+    internal_margin=1e-7,
+    cluster_margin=1e-8,
+    force_cliques=True,
+    solver="CLARABEL",
+    solver_options=None,
+    residual_tolerance=1e-7,
+    initial_P=None,
+    verbose=False,
+):
+    """
+    Maximize the asymptotic minimum-degree density.
+
+    Parameters
+    ----------
+    x : array of shape (m,)
+        Cluster size fractions, summing to one.
+
+    phi : array of shape (m,)
+        Cluster phases in radians.
+
+    allowed : optional bool array (m, m)
+        If allowed[a, b] is False, force P[a, b] = 0.
+
+    internal_margin : float
+        Lower bound on each within-cluster restoring
+        coefficient c_a.
+
+    cluster_margin : float
+        Lower bound on the restricted cluster Hessian
+        eigenvalues.
+
+    force_cliques : bool
+        Force P[a, a] = 1 (complete internal wiring).
+
+    solver : str
+        CVXPY conic solver, default CLARABEL.
+
+    initial_P : optional array
+        Starting density matrix for solver warm start.
+
+    Returns
+    -------
+    TemplateSDPResult
+
+    Notes
+    -----
+    Only x and phi are fixed. P and mu are optimized.
+
+    Results are numerical candidates, not proofs.
+    """
+
+    x, phi, allowed = validate_input(x, phi, allowed)
+    m = len(x)
+
+    if internal_margin <= 0 or cluster_margin <= 0:
+        raise ValueError("Stability margins must be positive")
+
+    if force_cliques and allowed is not None:
+        if not np.all(np.diag(allowed)):
+            raise ValueError("force_cliques conflicts with forbidden diagonal")
+
+    diff = phi[:, None] - phi[None, :]
+    sine = np.sin(diff)
+    cosine = np.cos(diff)
+
+    # Decision variables
+    P = cp.Variable((m, m), symmetric=True)
+    mu = cp.Variable()
+
+    # Normalized degree of each cluster
+    degrees = P @ x
+
+    # Equilibrium: F_a = 0
+    forces = cp.sum(cp.multiply(P, sine * x[None, :]), axis=1)
+
+    # Stability against splitting individual clusters
+    restoring = cp.sum(cp.multiply(P, cosine * x[None, :]), axis=1)
+
+    # Weighted cluster Laplacian
+    coeff = np.outer(x, x) * cosine
+    np.fill_diagonal(coeff, 0.0)
+
+    W = cp.multiply(P, coeff)
+    L = cp.diag(cp.sum(W, axis=1)) - W
+
+    # Remove global phase-rotation zero mode
+    B = null_space(np.ones((1, m)))
+    restricted_L = B.T @ L @ B
+
+    constraints = [
+        P >= 0,
+        P <= 1,
+        # Max-min degree
+        degrees >= mu,
+        # Kuramoto equilibrium
+        forces == 0,
+        # Individual cluster stability
+        restoring >= internal_margin,
+        # Stability of cluster phase modes
+        restricted_L >> cluster_margin * np.eye(m - 1),
+    ]
+
+    # Optional structural restrictions
+    if allowed is not None:
+        forbidden = (~allowed).astype(float)
+        constraints.append(cp.multiply(P, forbidden) == 0)
+
+    if force_cliques:
+        constraints.append(cp.diag(P) == 1)
+
+    problem = cp.Problem(cp.Maximize(mu), constraints)
+
+    if initial_P is not None:
+        initial_P = np.asarray(initial_P, dtype=float)
+
+        if initial_P.shape != (m, m):
+            raise ValueError("Invalid initial_P shape")
+
+        P.value = np.clip(0.5 * (initial_P + initial_P.T), 0, 1)
+
+    options = solver_options or {}
+
+    try:
+        problem.solve(
+            solver=solver,
+            warm_start=True,
+            verbose=verbose,
+            **options,
+        )
+    except cp.SolverError as exc:
+        return SDPResult(
+            status="solver_error",
+            message=str(exc),
+        )
+
+    if problem.status not in (cp.OPTIMAL, cp.OPTIMAL_INACCURATE):
+        return SDPResult(
+            status=problem.status,
+            message="No feasible solution returned",
+        )
+
+    if P.value is None:
+        return SDPResult(
+            status=problem.status,
+            message="Solver returned no density matrix",
+        )
+
+    # Do not round/clip before checking feasibility.
+    P_result = np.asarray(P.value, dtype=float)
+
+    metrics = template_metrics(x, phi, P_result)
+
+    density_ok = (
+        P_result.min() >= -residual_tolerance
+        and P_result.max() <= 1 + residual_tolerance
+    )
+
+    symmetry_ok = np.max(np.abs(P_result - P_result.T)) <= residual_tolerance
+
+    pattern_ok = True
+    if allowed is not None:
+        pattern_ok = (
+            np.max(np.abs(P_result[~allowed]), initial=0.0) <= residual_tolerance
+        )
+
+    clique_ok = True
+    if force_cliques:
+        clique_ok = np.max(np.abs(np.diag(P_result) - 1)) <= residual_tolerance
+
+    # Strictly positive numerical eigenvalues.
+    # This does NOT constitute rigorous certification.
+    numerically_feasible = bool(
+        density_ok
+        and symmetry_ok
+        and pattern_ok
+        and clique_ok
+        and metrics["max_force_error"] <= residual_tolerance
+        and metrics["min_restoring"] > 0
+        and metrics["min_cluster_eigenvalue"] > 0
+    )
+
+    stats = problem.solver_stats
+
+    return SDPResult(
+        status=problem.status,
+        mu=metrics["mu"],
+        P=P_result,
+        degrees=metrics["degrees"],
+        forces=metrics["forces"],
+        restoring=metrics["restoring"],
+        max_force_error=metrics["max_force_error"],
+        min_restoring=metrics["min_restoring"],
+        min_cluster_eigenvalue=metrics["min_cluster_eigenvalue"],
+        numerically_feasible=numerically_feasible,
+        solve_time=stats.solve_time,
+    )
+
+
+if __name__ == "__main__":
+    # Five-cluster twisted state.
+    # Each cluster connects to itself and its neighbors.
+
+    m = 5
+    x = np.full(m, 1.0 / m)
+    phi = np.arange(m) * (2 * np.pi / m)
+
+    allowed = np.eye(m, dtype=bool)
+
+    for i in range(m):
+        j = (i + 1) % m
+        allowed[i, j] = True
+        allowed[j, i] = True
+
+    result = optimize_template(
+        x,
+        phi,
+        allowed=allowed,
+    )
+
+    print("Status:", result.status)
+    print("Mu:", result.mu)
+    print("Numerically feasible:", result.numerically_feasible)
+    print("Minimum cluster eigenvalue:", result.min_cluster_eigenvalue)
+
+    if result.P is not None:
+        print("P:")
+        print(np.round(result.P, 5))
