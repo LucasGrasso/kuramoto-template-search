@@ -25,6 +25,8 @@ def test_ring_analytic_optimum_and_diagnostics(ring, target):
     assert result.gamma == pytest.approx(expected, abs=1e-7)
     assert result.mu == pytest.approx(0.6, abs=1e-6)
     assert result.target_mu == target
+    assert result.P is not None
+    assert result.degrees is not None
     np.testing.assert_allclose(result.P, allowed, atol=1e-5)
     np.testing.assert_allclose(result.degrees, result.P @ x, atol=1e-12)
     assert max(result.residuals.values()) <= 1e-7
@@ -45,6 +47,7 @@ def test_negative_margin_is_valid_but_unstable():
 def test_quarter_turn_degeneracy_is_not_a_stable_witness():
     result = maximize_stability_margin(np.full(4, 0.25), np.arange(4) * np.pi / 2, 0.75)
     assert result.numerically_valid
+    assert result.gamma is not None
     assert abs(result.gamma) < 1e-7
     assert not result.numerically_feasible
 
@@ -77,6 +80,8 @@ def test_rotation_and_label_invariance(ring):
     )
     assert result.numerically_feasible
     assert result.gamma == pytest.approx(original.gamma, abs=1e-8)
+    assert result.P is not None
+    assert original.P is not None
     np.testing.assert_allclose(result.P, original.P[np.ix_(perm, perm)], atol=1e-6)
 
 
@@ -88,6 +93,7 @@ def test_optional_cliques_and_solver_options(ring):
         solver_options={"tol_gap_abs": 1e-10, "tol_feas": 1e-10},
     )
     assert result.numerically_valid and result.numerically_feasible
+    assert result.P is not None
     np.testing.assert_allclose(np.diag(result.P), 0, atol=1e-8)
 
 
@@ -101,15 +107,17 @@ def test_solver_error(ring):
 
 @pytest.mark.parametrize("target", [-0.1, 1.1, np.nan, np.inf])
 def test_invalid_target(ring, target):
+    x, phi, _ = ring
     with pytest.raises(ValueError, match="target_mu"):
-        maximize_stability_margin(*ring[:2], target)
+        maximize_stability_margin(x, phi, target)
 
 
 @pytest.mark.parametrize("name", ["residual_tolerance", "stability_tolerance"])
 @pytest.mark.parametrize("value", [-1, np.nan, np.inf])
 def test_invalid_tolerances(ring, name, value):
+    x, phi, _ = ring
     with pytest.raises(ValueError, match=name):
-        maximize_stability_margin(*ring[:2], 0.6, **{name: value})
+        maximize_stability_margin(x, phi, 0.6, **{name: value})
 
 
 @pytest.mark.parametrize("x,phi,allowed,match", [
@@ -153,8 +161,9 @@ def test_inaccurate_status_is_checked_independently(ring, monkeypatch):
     (np.eye(5), np.inf, "nonfinite"),
 ])
 def test_missing_or_nonfinite_solver_values(ring, monkeypatch, density, margin, match):
+    x, phi, _ = ring
     fake_solve(monkeypatch, density, margin)
-    result = maximize_stability_margin(*ring[:2], 0.6)
+    result = maximize_stability_margin(x, phi, 0.6)
     assert not result.numerically_valid
     assert match in result.message
 
