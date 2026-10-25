@@ -16,6 +16,7 @@ from dataclasses import asdict, dataclass
 import json
 from pathlib import Path
 from time import perf_counter
+from typing import Protocol
 
 import numpy as np
 
@@ -32,6 +33,36 @@ from .infrastructure import (
     SearchSession,
     evaluation_data as evaluation_data,
 )
+
+
+class MutationSamplingConfig(Protocol):
+    """Structural settings required by the shared mutation sampler.
+
+    RandomSearchConfig and NestedSearchConfig both provide these fields, so the
+    sampler can be reused without constructing a fake search configuration.
+    Read-only properties also accept frozen configuration dataclasses.
+    """
+
+    @property
+    def min_clusters(self) -> int: ...
+
+    @property
+    def max_clusters(self) -> int: ...
+
+    @property
+    def mutation_weights(self) -> tuple[float, float, float, float]: ...
+
+    @property
+    def separation_min(self) -> float: ...
+
+    @property
+    def separation_max(self) -> float: ...
+
+    @property
+    def phase_scale(self) -> float: ...
+
+    @property
+    def resize_fraction(self) -> float: ...
 
 
 @dataclass(frozen=True)
@@ -84,7 +115,9 @@ class RandomSearchConfig:
 
 
 
-def sample_mutation(template: PhaseTemplate, rng: np.random.Generator, config: RandomSearchConfig) -> MutationProposal:
+def sample_mutation(
+    template: PhaseTemplate, rng: np.random.Generator, config: MutationSamplingConfig,
+) -> MutationProposal:
     """Thin sampling adapter over existing pure mutation operations."""
     m = template.n_clusters
     names = ("split", "merge", "perturb", "resize")
@@ -130,7 +163,14 @@ def twisted_seed(n_clusters: int = 5) -> PhaseTemplate:
 
 
 
-def _restart(rng: np.random.Generator, config: RandomSearchConfig) -> MutationProposal:
+def restart_proposal(
+    rng: np.random.Generator, config: MutationSamplingConfig,
+) -> MutationProposal:
+    """Sample a fresh template, alternating twisted and unstructured seeds.
+
+    This is an exploration policy, not a mutation. Nested search reuses it so
+    both baselines draw restarts from the same distribution.
+    """
     m = int(rng.integers(config.min_clusters, config.max_clusters + 1))
     kind = int(rng.integers(2))
     template = twisted_seed(m) if kind == 0 else PhaseTemplate(rng.dirichlet(np.ones(m)), rng.uniform(0, 2 * np.pi, m))
@@ -162,7 +202,7 @@ def run_random_search(
                 stop_reason = reason
                 break
             if session.rng.random() < config.restart_probability:
-                session.record(_restart(session.rng, config), None, "restart")
+                session.record(restart_proposal(session.rng, config), None, "restart")
             else:
                 parent = session.archive.entries[int(session.rng.integers(len(session.archive.entries)))]
                 session.record(sample_mutation(parent.evaluation.template, session.rng, config),

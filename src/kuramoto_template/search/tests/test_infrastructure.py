@@ -129,6 +129,24 @@ def test_session_closes_trace_on_exception_without_overwriting(tmp_path: Path) -
     assert (destination / "trace.jsonl").read_bytes() == before
 
 
+def test_write_artifact_is_json_safe_exclusive_and_confined(tmp_path: Path) -> None:
+    destination = tmp_path / "run"
+    with SearchSession(
+        [seed_template()], CountingEvaluator(), seed=2, output=destination
+    ) as session:
+        session.evaluate_seeds()
+        path = session.write_artifact(
+            "extra.json", {"value": np.float64(1.5), "nonfinite": np.inf}
+        )
+        assert path == destination / "extra.json"
+        assert path is not None
+        assert json.loads(path.read_text()) == {"value": 1.5, "nonfinite": None}
+        with pytest.raises(FileExistsError):
+            session.write_artifact("extra.json", {"value": 2})
+        with pytest.raises(ValueError, match="plain filename"):
+            session.write_artifact("../escape.json", {"value": 2})
+
+
 def test_shared_persistence_accepts_algorithm_config(tmp_path: Path) -> None:
     settings = {"algorithm": "future_nested_search", "seed": 17, "level": 2, "depth": 3}
     destination = tmp_path / "nested"

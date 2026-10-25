@@ -347,6 +347,22 @@ class SearchSession:
             self._log.flush()
         return item
 
+    def write_artifact(self, name: str, data: Mapping[str, Any]) -> Path | None:
+        """Write one extra JSON artifact for algorithm-specific metadata.
+
+        The name must be a plain filename so callers cannot escape the run
+        directory. Existing files are never overwritten. With no output
+        destination this is a no-op, which keeps in-memory runs uniform.
+        """
+        self._require_open()
+        if not name or Path(name).name != name:
+            raise ValueError("Artifact name must be a plain filename")
+        if self.destination is None:
+            return None
+        path = self.destination / name
+        _write_json(path, dict(data))
+        return path
+
     def finish(self, stop_reason: str) -> SearchResult:
         self._require_open()
         result = SearchResult(
