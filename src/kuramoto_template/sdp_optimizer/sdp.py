@@ -1,87 +1,18 @@
+"""
+Optimize inter-cluster connection densities P for fixed
+cluster sizes x and phases phi in the homogeneous
+Kuramoto model.
+
+All quantities are asymptotic (large graph limit).
+"""
+
 import cvxpy as cp
 import numpy as np
 from scipy.linalg import null_space
 
 from .sdp_result import SDPResult
-
-
-def validate_input(x, phi, allowed=None):
-    x = np.asarray(x, dtype=float)
-    phi = np.asarray(phi, dtype=float)
-
-    if x.ndim != 1 or phi.shape != x.shape:
-        raise ValueError("x and phi must have the same 1D shape")
-
-    if len(x) < 2:
-        raise ValueError("At least two clusters are required")
-
-    if not np.all(np.isfinite(x)) or not np.all(np.isfinite(phi)):
-        raise ValueError("Inputs must be finite")
-
-    if np.any(x <= 0):
-        raise ValueError("All cluster sizes must be positive")
-
-    if not np.isclose(x.sum(), 1.0, atol=1e-10):
-        raise ValueError("Cluster sizes must sum to one")
-
-    # Differences modulo 2*pi.
-    phase_diff = np.angle(np.exp(1j * (phi - phi[0])))
-
-    if np.max(np.abs(phase_diff)) < 1e-8:
-        raise ValueError(
-            "All phases are synchronized. " "This cannot be a nonsynchronous witness."
-        )
-
-    if allowed is not None:
-        allowed = np.asarray(allowed, dtype=bool)
-
-        if allowed.shape != (len(x), len(x)):
-            raise ValueError("Invalid allowed matrix shape")
-
-        if not np.array_equal(allowed, allowed.T):
-            raise ValueError("allowed must be symmetric")
-
-    return x, phi, allowed
-
-
-def template_metrics(x, phi, P):
-    """Evaluate a template independently of CVXPY."""
-
-    m = len(x)
-
-    diff = phi[:, None] - phi[None, :]
-    sine = np.sin(diff)
-    cosine = np.cos(diff)
-
-    degrees = P @ x
-
-    forces = np.sum(P * sine * x[None, :], axis=1)
-
-    restoring = np.sum(P * cosine * x[None, :], axis=1)
-
-    # Weighted cluster Laplacian.
-    W = P * np.outer(x, x) * cosine
-    np.fill_diagonal(W, 0.0)
-
-    L = np.diag(W.sum(axis=1)) - W
-
-    # Orthonormal basis for vectors perpendicular to 1.
-    B = null_space(np.ones((1, m)))
-
-    restricted = B.T @ L @ B
-    restricted = 0.5 * (restricted + restricted.T)
-
-    eigenvalues = np.linalg.eigvalsh(restricted)
-
-    return {
-        "mu": float(degrees.min()),
-        "degrees": degrees,
-        "forces": forces,
-        "restoring": restoring,
-        "max_force_error": float(np.abs(forces).max()),
-        "min_restoring": float(restoring.min()),
-        "min_cluster_eigenvalue": float(eigenvalues.min()),
-    }
+from .validate_input import validate_input
+from .template_metrics import template_metrics
 
 
 def optimize_template(
@@ -265,23 +196,23 @@ def optimize_template(
         and symmetry_ok
         and pattern_ok
         and clique_ok
-        and metrics["max_force_error"] <= residual_tolerance
-        and metrics["min_restoring"] > 0
-        and metrics["min_cluster_eigenvalue"] > 0
+        and metrics.max_force_error <= residual_tolerance
+        and metrics.min_restoring > 0
+        and metrics.min_cluster_eigenvalue > 0
     )
 
     stats = problem.solver_stats
 
     return SDPResult(
         status=problem.status,
-        mu=metrics["mu"],
+        mu=metrics.mu,
         P=P_result,
-        degrees=metrics["degrees"],
-        forces=metrics["forces"],
-        restoring=metrics["restoring"],
-        max_force_error=metrics["max_force_error"],
-        min_restoring=metrics["min_restoring"],
-        min_cluster_eigenvalue=metrics["min_cluster_eigenvalue"],
+        degrees=metrics.degrees,
+        forces=metrics.forces,
+        restoring=metrics.restoring,
+        max_force_error=metrics.max_force_error,
+        min_restoring=metrics.min_restoring,
+        min_cluster_eigenvalue=metrics.min_cluster_eigenvalue,
         numerically_feasible=numerically_feasible,
         solve_time=stats.solve_time,
     )

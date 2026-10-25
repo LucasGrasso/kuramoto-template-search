@@ -58,7 +58,7 @@ def test_five_cluster_equilibrium(five_cluster_template):
 
     metrics = template_metrics(x, phi, result.P)
 
-    assert metrics["max_force_error"] < 1e-6
+    assert metrics.max_force_error < 1e-6
 
 
 def test_five_cluster_stability(five_cluster_template):
