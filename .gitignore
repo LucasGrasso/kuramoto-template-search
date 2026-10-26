@@ -11,3 +11,5 @@ wheels/
 
 # Local numerical search output
 /runs/
+
+.t4_env
