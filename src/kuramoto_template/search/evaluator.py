@@ -16,7 +16,7 @@ from kuramoto_template.sdp_optimizer.sdp_result import SDPResult
 from kuramoto_template.sdp_optimizer.stability_sdp import maximize_stability_margin
 from kuramoto_template.sdp_optimizer.stability_sdp_result import StabilitySDPResult
 from kuramoto_template.sdp_optimizer.template_metrics import template_metrics
-from kuramoto_template.sdp_optimizer.validate_input import validate_input
+from kuramoto_template.sdp_optimizer.validate_input import in_open_semicircle, validate_input
 
 
 class _SolverArguments(TypedDict):
@@ -75,6 +75,8 @@ class SolverDiagnostics:
     solve_time: float | None = None
     elapsed_seconds: float = 0.0
     message: str = ""
+    optimized_mu: float | None = None
+    objective_gap: float | None = None
 
 
 @dataclass(eq=False)
@@ -88,6 +90,7 @@ class TemplateEvaluation:
     sdp_calls: int = 0
     elapsed_seconds: float = 0.0
     message: str = ""
+    cached: bool = False
 
     @property
     def P_source(self) -> str | None:
@@ -142,6 +145,9 @@ class TemplateEvaluator:
             return diagnostic
         metrics = template_metrics(template.x, template.phi, P)
         diagnostic.mu = metrics.mu
+        diagnostic.optimized_mu = result.optimized_mu
+        diagnostic.objective_gap = (abs(result.optimized_mu - metrics.mu)
+                                    if result.optimized_mu is not None else None)
         diagnostic.max_force_error = metrics.max_force_error
         diagnostic.min_restoring = metrics.min_restoring
         diagnostic.min_cluster_eigenvalue = metrics.min_cluster_eigenvalue
@@ -190,6 +196,8 @@ class TemplateEvaluator:
                 else float("inf")
             ),
         }
+        if source == "density" and diagnostic.objective_gap is not None:
+            residuals["optimized_objective"] = diagnostic.objective_gap
         diagnostic.residuals = residuals
         diagnostic.numerically_valid = bool(
             result.status in ("optimal", "optimal_inaccurate")
@@ -198,11 +206,18 @@ class TemplateEvaluator:
                 np.isfinite(r) and r <= cfg.residual_tolerance
                 for r in residuals.values()
             )
+            and (source != "density" or (
+                residuals["restoring"] <= min(cfg.residual_tolerance, 0.05 * cfg.internal_margin)
+                and residuals["cluster_eigenvalue"] <= min(cfg.residual_tolerance, 0.05 * cfg.cluster_margin)
+            ))
         )
         positive = (
             metrics.min_restoring > cfg.stability_tolerance
             and metrics.min_cluster_eigenvalue > cfg.stability_tolerance
+            and not in_open_semicircle(template.phi)
         )
+        if in_open_semicircle(template.phi):
+            diagnostic.message += " Open-semicircle phases cannot form an exact strictly stable nonsynchronous equilibrium."
         if source == "density":
             diagnostic.solver_agrees = bool(
                 result.numerically_feasible
@@ -291,9 +306,16 @@ class TemplateEvaluator:
                         **common,
                     )
                 diagnostic = self._diagnose(template, result, source, allowed)
-            except Exception as exc:
+            except (KeyboardInterrupt, SystemExit, GeneratorExit, MemoryError):
+                raise
+            except BaseException as exc:  # noqa: BLE001 - conic-solver panics must not abort a run
+                # pyo3-backed solvers raise PanicException, which inherits from
+                # BaseException rather than Exception. A single failed solve is
+                # recorded as a diagnostic; it must not kill a long benchmark.
                 diagnostic = SolverDiagnostics(
-                    source, "solver_error", message=f"{type(exc).__name__}: {exc}"
+                    source,
+                    "solver_error",
+                    message=f"{type(exc).__name__}: {exc}",
                 )
             diagnostic.elapsed_seconds = perf_counter() - call_started
             return diagnostic

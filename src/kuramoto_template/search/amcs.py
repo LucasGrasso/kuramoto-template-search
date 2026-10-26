@@ -24,6 +24,7 @@ from collections.abc import Sequence
 from dataclasses import asdict, dataclass
 from pathlib import Path
 from time import perf_counter
+from typing import Protocol
 
 import numpy as np
 
@@ -39,7 +40,12 @@ from .infrastructure import (
     SearchResult,
     SearchSession,
 )
-from .random_search import restart_proposal, sample_mutation, twisted_seed
+from .random_search import (
+    MutationSamplingConfig,
+    restart_proposal,
+    sample_mutation,
+    twisted_seed,
+)
 
 
 @dataclass(frozen=True)
@@ -238,10 +244,46 @@ class _Rollout:
     complete: bool
 
 
+class RolloutConfig(MutationSamplingConfig, Protocol):
+    """Settings shared by fixed and adaptive nested rollouts.
+
+    ``NestedSearchConfig`` satisfies this structurally. The adaptive driver
+    passes its own subclass, so ``_rollout`` can be reused without copying the
+    search machinery.
+    """
+
+    @property
+    def level(self) -> int: ...
+
+    @property
+    def depth(self) -> int: ...
+
+    @property
+    def branching(self) -> int: ...
+
+    @property
+    def exploration_probability(self) -> float: ...
+
+    @property
+    def restart_probability(self) -> float: ...
+
+    @property
+    def parent_elite_probability(self) -> float: ...
+
+    @property
+    def parent_promising_probability(self) -> float: ...
+
+    @property
+    def parent_random_probability(self) -> float: ...
+
+    @property
+    def max_invalid_attempts(self) -> int: ...
+
+
 @dataclass
 class _Context:
     session: SearchSession
-    config: NestedSearchConfig
+    config: RolloutConfig
     stop: bool = False
     stop_reason: str | None = None
     message: str = ""
@@ -275,9 +317,7 @@ def _try_record(
         ctx.stop = True
         ctx.stop_reason = "sdp_budget"
         return None
-    except (
-        Exception
-    ) as exc:  # noqa: BLE001 - evaluator boundary must not corrupt the run
+    except Exception as exc:  # noqa: BLE001 - evaluator boundary must not corrupt the run
         ctx.stop = True
         ctx.stop_reason = "evaluator_error"
         ctx.message = f"{type(exc).__name__}: {exc}"
@@ -481,6 +521,10 @@ def _episode_result(
     ctx: _Context,
     evaluations_before: int,
     sdp_calls_before: int,
+    *,
+    level: int | None = None,
+    depth: int | None = None,
+    branching: int | None = None,
 ) -> EpisodeResult:
     endpoint_evaluation = rollout.endpoint.evaluation
     if endpoint_evaluation is None:
@@ -494,9 +538,9 @@ def _episode_result(
             stable_mus.append(float(evaluation.stable_mu))
     return EpisodeResult(
         index=index,
-        level=ctx.config.level,
-        depth=ctx.config.depth,
-        branching=ctx.config.branching,
+        level=ctx.config.level if level is None else level,
+        depth=ctx.config.depth if depth is None else depth,
+        branching=ctx.config.branching if branching is None else branching,
         root_id=root.id,
         root_selection=root_selection,
         record_ids=[record.id for record in rollout.records],

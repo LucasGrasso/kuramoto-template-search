@@ -121,3 +121,19 @@ def resize_clusters(
     if x[source] == template.x[source] or x[target] == template.x[target]:
         raise ValueError("amount is too small to change both masses in float64")
     return PhaseTemplate(x, template.phi)
+
+
+def dissolve_cluster(template: PhaseTemplate, index: int) -> PhaseTemplate:
+    """Delete one cluster and redistribute its mass proportionally.
+
+    Other phases are unchanged. This is a pruning proposal, not a stability-
+    preserving operation: callers must re-evaluate the result.
+    """
+    index = _index(template, index)
+    if template.n_clusters <= 2:
+        raise ValueError("Dissolve must leave at least two clusters")
+    x = np.delete(template.x, index)
+    phi = np.delete(template.phi, index)
+    removed = template.x[index]
+    x = x + removed * (x / x.sum())
+    return PhaseTemplate(x, phi)

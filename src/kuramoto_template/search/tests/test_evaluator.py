@@ -175,6 +175,30 @@ def test_exceptions_and_budget_limit(ring, monkeypatch):
     fallback.assert_not_called()
 
 
+class _Panic(BaseException):
+    """Stand-in for pyo3_runtime.PanicException, which is not an Exception."""
+
+
+def test_solver_panic_is_recorded_not_raised(ring, monkeypatch):
+    panic = _Panic("Eigval error: Eigen(1)")
+    monkeypatch.setattr(module, "optimize_template", Mock(side_effect=panic))
+    monkeypatch.setattr(module, "maximize_stability_margin", Mock())
+    result = TemplateEvaluator().evaluate(ring[0], max_solver_calls=1)
+
+    assert result.status == "solver_error"
+    assert result.sdp_calls == 1
+    assert result.density is not None
+    assert "_Panic: Eigval error: Eigen(1)" in result.density.message
+
+
+def test_interrupts_still_propagate(ring, monkeypatch):
+    monkeypatch.setattr(
+        module, "optimize_template", Mock(side_effect=KeyboardInterrupt())
+    )
+    with pytest.raises(KeyboardInterrupt):
+        TemplateEvaluator().evaluate(ring[0])
+
+
 def test_bad_margin_residuals_are_not_ranked(monkeypatch):
     template = PhaseTemplate(np.array([0.5, 0.5]), np.array([0, np.pi]))
     monkeypatch.setattr(

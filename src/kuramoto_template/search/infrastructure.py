@@ -6,6 +6,7 @@ from datetime import datetime, timezone
 import hashlib
 import importlib.metadata
 import json
+import platform
 from pathlib import Path
 from time import perf_counter
 from typing import Any, Callable, Mapping, Protocol, TextIO
@@ -122,7 +123,8 @@ def evaluation_data(evaluation: TemplateEvaluation) -> dict[str, Any]:
     return dict(status=evaluation.status, stable_mu=evaluation.stable_mu, margin_gamma=evaluation.margin_gamma,
                 density=_diagnostic_data(evaluation.density), margin=_diagnostic_data(evaluation.margin),
                 P_source=evaluation.P_source, sdp_calls=evaluation.sdp_calls,
-                elapsed_seconds=evaluation.elapsed_seconds, message=evaluation.message)
+                elapsed_seconds=evaluation.elapsed_seconds, message=evaluation.message,
+                cached=evaluation.cached)
 
 
 
@@ -279,6 +281,8 @@ class SearchSession:
                 started_at=datetime.now(timezone.utc).isoformat(), search_config=self.search_config,
                 evaluation_config=asdict(self.evaluator.config), versions=versions,
                 code_sha256=digest.hexdigest(), seed_templates=[_template_data(s) for s in self.seeds],
+                evaluator_schema_version=2,
+                runtime=dict(python=platform.python_version(), platform=platform.platform()),
                 deduplication="exact float64 arrays; no rounding or symmetry canonicalization",
                 numerical_evidence_only=True,
             ))
