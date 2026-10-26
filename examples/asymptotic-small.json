@@ -1,0 +1,11 @@
+{
+  "stage1_proposals": 15,
+  "stage1_lp_solves": 15,
+  "stage1_screen_sdp_solves": 15,
+  "stage2_sdp_solves": 12,
+  "finite_h_sdp_solves": 0,
+  "shortlist_size": 6,
+  "rng_seed": 0,
+  "sizes": [7, 8, 9, 10, 12],
+  "h_values": [0.01, 0.003, 0.001, 0.0003]
+}

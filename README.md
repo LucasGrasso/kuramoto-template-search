@@ -4,6 +4,19 @@ Phase-cluster templates, mutation operators, and SDP optimization for the homoge
 
 SDP results are numerical evidence, not mathematical certificates.
 
+## Two-stage asymptotic search
+
+The standalone four-parent search screens limiting split templates, optimizes
+first-order corrections with the full effective Hessian, and attempts exact
+finite-angle force repair on a spanning tree. It includes the published S7
+calibration, separate solver budgets, replayable checkpoints and a small
+random/AMCS comparison. See [the API and CLI](src/kuramoto_template/asymptotic_search/README.md)
+and [pilot findings](docs/asymptotic-search-findings.md).
+
+```bash
+uv run python -m kuramoto_template.asymptotic_search --config examples/asymptotic-small.json --output runs/asym-small
+```
+
 ## Learned RL policy
 
 Install `uv sync --extra rl` for the optional CPU PyTorch BC/AWAC pipeline.
