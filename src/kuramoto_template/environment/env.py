@@ -27,6 +27,34 @@ GLOBAL_FEATURES = ("best_mu", "current_stable_mu", "margin_gamma", "cluster_frac
 DIAGNOSTIC_FEATURES = ("mu", "gamma", "min_restoring", "min_cluster_eigenvalue")
 
 
+def build_observation(t, e, c, *, best_mu, remaining_sdp_calls, steps=0, zero_cost_steps=0):
+    """Encode a stored state without invoking a solver; same contract as live env."""
+    m, M = t.n_clusters, c.max_clusters
+    nodes = np.zeros((M, 2), dtype=np.float32)
+    nodes[:m, 0], nodes[:m, 1] = t.x, np.log(t.x)
+    edges = np.zeros((M, M, 2), dtype=np.float32)
+    diff = t.phi[:, None] - t.phi[None, :]
+    edges[:m, :m, 0], edges[:m, :m, 1] = np.sin(diff), np.cos(diff)
+    operations, node_mask, pairs = action_masks(t, c)
+    diagnostics = np.zeros((2, 4), dtype=np.float32)
+    diagnostic_mask = np.zeros((2, 4), dtype=np.int8)
+    limit = np.finfo(np.float32).max
+    for row, diagnostic in enumerate((e.density, e.margin)):
+        if diagnostic is not None:
+            for col, name in enumerate(DIAGNOSTIC_FEATURES):
+                value = getattr(diagnostic, name)
+                if value is not None and np.isfinite(value) and abs(value) <= limit:
+                    diagnostics[row, col], diagnostic_mask[row, col] = value, 1
+    status = np.array([e.status == name for name in STATUSES], dtype=np.int8)
+    gamma = e.margin_gamma if e.margin_gamma is not None and np.isfinite(e.margin_gamma) and abs(e.margin_gamma) <= limit else 0.0
+    features = np.array([best_mu, e.stable_mu or 0., gamma, m/M,
+        remaining_sdp_calls, c.max_sdp_calls,
+        steps/c.max_steps, zero_cost_steps/c.max_zero_cost_steps], dtype=np.float32)
+    return dict(nodes=nodes, edges=edges, node_mask=node_mask, operation_mask=operations,
+                pair_mask=pairs, global_features=features, status=status,
+                diagnostics=diagnostics, diagnostic_mask=diagnostic_mask)
+
+
 class KuramotoEnv(gym.Env):
     metadata = {"render_modes": ["ansi"], "render_fps": 1}
 
@@ -182,31 +210,9 @@ class KuramotoEnv(gym.Env):
         return float(best.evaluation.stable_mu) if best is not None else 0.0
 
     def _observation(self):
-        t, e, c = self._record.template, self._record.evaluation, self.config
-        m, M = t.n_clusters, c.max_clusters
-        nodes = np.zeros((M, 2), dtype=np.float32)
-        nodes[:m, 0], nodes[:m, 1] = t.x, np.log(t.x)
-        edges = np.zeros((M, M, 2), dtype=np.float32)
-        diff = t.phi[:, None] - t.phi[None, :]
-        edges[:m, :m, 0], edges[:m, :m, 1] = np.sin(diff), np.cos(diff)
-        operations, node_mask, pairs = action_masks(t, c)
-        diagnostics = np.zeros((2, 4), dtype=np.float32)
-        diagnostic_mask = np.zeros((2, 4), dtype=np.int8)
-        limit = np.finfo(np.float32).max
-        for row, diagnostic in enumerate((e.density, e.margin)):
-            if diagnostic is not None:
-                for col, name in enumerate(DIAGNOSTIC_FEATURES):
-                    value = getattr(diagnostic, name)
-                    if value is not None and np.isfinite(value) and abs(value) <= limit:
-                        diagnostics[row, col], diagnostic_mask[row, col] = value, 1
-        status = np.array([e.status == name for name in STATUSES], dtype=np.int8)
-        gamma = e.margin_gamma if e.margin_gamma is not None and np.isfinite(e.margin_gamma) and abs(e.margin_gamma) <= limit else 0.0
-        features = np.array([self._best_mu(), e.stable_mu or 0., gamma, m/M,
-            self._session.budget.remaining(), c.max_sdp_calls,
-            self._steps/c.max_steps, self._zero_cost/c.max_zero_cost_steps], dtype=np.float32)
-        return dict(nodes=nodes, edges=edges, node_mask=node_mask, operation_mask=operations,
-                    pair_mask=pairs, global_features=features, status=status,
-                    diagnostics=diagnostics, diagnostic_mask=diagnostic_mask)
+        return build_observation(self._record.template, self._record.evaluation, self.config,
+            best_mu=self._best_mu(), remaining_sdp_calls=self._session.budget.remaining(),
+            steps=self._steps, zero_cost_steps=self._zero_cost)
 
     def _info(self, cost, reason):
         return dict(sdp_calls=int(cost), total_sdp_calls=self._session.budget.sdp_calls,

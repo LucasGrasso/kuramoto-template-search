@@ -4,6 +4,14 @@ Phase-cluster templates, mutation operators, and SDP optimization for the homoge
 
 SDP results are numerical evidence, not mathematical certificates.
 
+## Learned RL policy
+
+Install `uv sync --extra rl` for the optional CPU PyTorch BC/AWAC pipeline.
+See [policy training and evaluation](src/kuramoto_template/policy/README.md)
+for bounded smoke commands, data/replay safeguards, checkpoints and frozen
+held-out comparisons. Historical branch logs train imitation only unless full
+sequential context is reconciled. No large research matrix runs by default.
+
 ## Gymnasium environment
 
 The optional `environment` package exposes `reset`, `step`, `render`, and
