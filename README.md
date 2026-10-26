@@ -4,6 +4,23 @@ Phase-cluster templates, mutation operators, and SDP optimization for the homoge
 
 SDP results are numerical evidence, not mathematical certificates.
 
+## Gymnasium environment
+
+The optional `environment` package exposes `reset`, `step`, `render`, and
+`close`, padded variable-size observations, hierarchical mutation actions,
+and exact SDP-call budgets including seed evaluation. Install and run:
+
+```bash
+uv sync --extra environment
+uv run --extra environment python -m kuramoto_template.environment --seed 42 --episodes 2 --max-sdp-calls 128 --output runs/gym-smoke
+```
+
+Import `KuramotoEnv, EnvironmentConfig` from `kuramoto_template.environment`,
+or use `gymnasium.make("kuramoto_template.environment:KuramotoTemplate-v0")`.
+See [the environment API](src/kuramoto_template/environment/README.md) for
+observation/action schemas, rewards, end flags, masks and replay artifacts.
+This includes a random policy runner; no learned RL policy is implemented yet.
+
 ## Running the tests
 
 ```bash

@@ -17,6 +17,9 @@ dependencies = [
 [project.scripts]
 kuramoto-template = "kuramoto_template:main"
 
+[project.optional-dependencies]
+environment = ["gymnasium>=1.2,<2"]
+
 [build-system]
 requires = ["uv_build>=0.12.20,<0.13.0"]
 build-backend = "uv_build"

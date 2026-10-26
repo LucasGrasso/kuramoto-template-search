@@ -218,6 +218,8 @@ class SearchSession:
     policy lives here: parent selection, restarts and rollout depth belong to
     callers. finish() saves the final snapshot; exceptions still close JSONL,
     preserving already flushed records. Exact interrupted-run resume is deferred.
+    Set deduplicate=False for serial RL episodes that pay for repeat states;
+    the default preserves the search algorithms' exact-data screening.
     """
 
     def __init__(
@@ -226,9 +228,12 @@ class SearchSession:
         max_sdp_calls: int | None = None, max_wall_seconds: float | None = None,
         output: str | Path | None = None, search_config: Mapping[str, Any] | None = None,
         clock: Callable[[], float] | None = None,
+        deduplicate: bool = True,
     ) -> None:
         if not seeds:
             raise ValueError("At least one initial seed is required")
+        if not isinstance(deduplicate, bool):
+            raise ValueError("deduplicate must be a bool")
         for name, value, lower in (("seed", seed, 0), ("min_clusters", min_clusters, 2),
                                    ("max_clusters", max_clusters, 2), ("archive_size", archive_size, 1)):
             if isinstance(value, bool) or not isinstance(value, int) or value < lower:
@@ -244,6 +249,7 @@ class SearchSession:
                 raise ValueError("Seed cluster count is outside search bounds")
             validate_input(template.x, template.phi)
         self.seeds = list(seeds)
+        self.deduplicate = deduplicate
         self.evaluator = evaluator
         self.seed = seed
         self.search_config = dict(search_config) if search_config is not None else dict(
@@ -283,7 +289,8 @@ class SearchSession:
                 code_sha256=digest.hexdigest(), seed_templates=[_template_data(s) for s in self.seeds],
                 evaluator_schema_version=2,
                 runtime=dict(python=platform.python_version(), platform=platform.platform()),
-                deduplication="exact float64 arrays; no rounding or symmetry canonicalization",
+                deduplication=("exact float64 arrays; no rounding or symmetry canonicalization"
+                               if self.deduplicate else "disabled; repeat proposals are evaluated"),
                 numerical_evidence_only=True,
             ))
             self._log = (self.destination / "trace.jsonl").open("x", encoding="utf-8")
@@ -319,7 +326,7 @@ class SearchSession:
         disposition = "rejected"
         previous = self.archive.best
         if template is not None:
-            if selection != "seed" and _signature(template) in self.seen:
+            if self.deduplicate and selection != "seed" and _signature(template) in self.seen:
                 disposition = "duplicate"
             else:
                 calls_left = self.budget.remaining(reserve)
