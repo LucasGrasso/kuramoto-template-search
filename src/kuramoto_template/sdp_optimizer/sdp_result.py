@@ -21,3 +21,5 @@ class SDPResult:
     numerically_feasible: bool = False
     solve_time: Optional[float] = None
     message: str = ""
+    optimized_mu: Optional[float] = None
+    objective_gap: Optional[float] = None

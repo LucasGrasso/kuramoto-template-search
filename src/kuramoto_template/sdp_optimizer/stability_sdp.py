@@ -8,7 +8,7 @@ from scipy.linalg import null_space
 
 from .stability_sdp_result import StabilitySDPResult
 from .template_metrics import template_metrics
-from .validate_input import validate_input
+from .validate_input import in_open_semicircle, validate_input
 
 
 class _ResultMetadata(TypedDict):
@@ -121,7 +121,7 @@ def maximize_stability_margin(
         "cluster_eigenvalue": float(max(0.0, margin - metrics.min_cluster_eigenvalue)),
     }
     valid = all(np.isfinite(r) and r <= residual_tolerance for r in residuals.values())
-    stable = bool(valid and margin > stability_tolerance
+    stable = bool(valid and not in_open_semicircle(phi) and margin > stability_tolerance
                   and metrics.min_restoring > stability_tolerance
                   and metrics.min_cluster_eigenvalue > stability_tolerance)
     return StabilitySDPResult(

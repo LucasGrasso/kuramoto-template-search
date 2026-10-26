@@ -11,7 +11,7 @@ import numpy as np
 from scipy.linalg import null_space
 
 from .sdp_result import SDPResult
-from .validate_input import validate_input
+from .validate_input import in_open_semicircle, validate_input
 from .template_metrics import template_metrics
 
 
@@ -199,6 +199,9 @@ def optimize_template(
         and metrics.max_force_error <= residual_tolerance
         and metrics.min_restoring > 0
         and metrics.min_cluster_eigenvalue > 0
+        and metrics.min_restoring >= internal_margin - min(residual_tolerance, 0.05 * internal_margin)
+        and metrics.min_cluster_eigenvalue >= cluster_margin - min(residual_tolerance, 0.05 * cluster_margin)
+        and not in_open_semicircle(phi)
     )
 
     stats = problem.solver_stats
@@ -215,6 +218,8 @@ def optimize_template(
         min_cluster_eigenvalue=metrics.min_cluster_eigenvalue,
         numerically_feasible=numerically_feasible,
         solve_time=stats.solve_time,
+        optimized_mu=float(mu.value) if mu.value is not None else None,
+        objective_gap=(abs(float(mu.value) - metrics.mu) if mu.value is not None else None),
     )
 
 
