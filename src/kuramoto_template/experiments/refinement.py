@@ -670,6 +670,31 @@ def audit_candidate(
     return checks, all(check.passed for check in checks), message
 
 
+def _check_cluster_limit(
+    templates: Sequence[tuple[str, PhaseTemplate]], config: RefinementConfig
+) -> None:
+    """Fail fast when a candidate exceeds the configured cluster limit.
+
+    The evaluator would otherwise return ``invalid`` for every oversized
+    candidate, which looks like a failed audit instead of a configuration
+    mistake. This is especially easy to hit when refining runs that searched
+    with a raised ``--max-clusters``.
+    """
+    oversized = [
+        (source, template.n_clusters)
+        for source, template in templates
+        if template.n_clusters > config.max_clusters
+    ]
+    if not oversized:
+        return
+    source, largest = max(oversized, key=lambda item: item[1])
+    raise ValueError(
+        f"{len(oversized)} candidate(s) exceed max_clusters={config.max_clusters} "
+        f"(largest has {largest} clusters in {source}); "
+        f"pass --max-clusters {largest} or higher"
+    )
+
+
 def refine_candidate(
     template: PhaseTemplate,
     config: RefinementConfig,
@@ -678,6 +703,7 @@ def refine_candidate(
     evaluator: RefinementEvaluator | None = None,
 ) -> RefinementResult:
     """Re-evaluate and audit one candidate with a fresh evaluator."""
+    _check_cluster_limit([("<candidate>", template)], config)
     target: RefinementEvaluator = (
         evaluator
         if evaluator is not None
@@ -735,6 +761,8 @@ def refine_candidates(
     ``evaluator_factory`` exists for tests; the default creates a fresh
     :class:`TemplateEvaluator`, never a cache.
     """
+    _check_cluster_limit(templates, config)
+
     def factory(
         cfg: RefinementConfig, requested: RefinementLevel
     ) -> RefinementEvaluator:

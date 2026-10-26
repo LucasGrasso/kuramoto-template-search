@@ -105,6 +105,11 @@ A full 20-repetition, three-budget, three-algorithm, four-family matrix is
 several hundred runs and can take hours. For a quick workflow check, use
 `--repetitions 1 --budgets 64`.
 
+Search defaults to at most 12 clusters. Random and adaptive proposals can create
+larger templates, so the cap is a real search restriction rather than a reporting
+limit. Raise it explicitly when structure above that size matters, for example
+`--max-clusters 20`.
+
 All reported outcomes are numerical evidence, not certificates.
 `optimal_inaccurate` results are counted and reported but never treated as
 proofs.
@@ -148,6 +153,12 @@ separate pairwise/Hessian implementation and checks its actual force and
 stability values against the requested thresholds. Arithmetic is still
 float64, not arbitrary precision, and the output records that fact.
 
+Refinement applies the same cluster limit (default 12). When refining a run that
+searched with a raised cap, pass the matching `--max-clusters`. An oversized
+candidate raises
+`... exceed max_clusters=N ... pass --max-clusters M or higher` before any solve;
+it is never silently reported as `invalid`.
+
 `certified` is still only a numerical gate. `proof_available` is always `false`
 in the output; interval arithmetic and a rigorous equilibrium/stability proof
 remain future work. Every result is numerical evidence, not a certificate.
@@ -173,3 +184,53 @@ creation. Pruning `parent_id` names its actual mutation source;
 records include the sampled perturbation index and displacement for exact
 replay. Historical traces are not rewritten and may have the earlier defects.
 New run metadata records evaluator schema version 2 and Python/platform data.
+
+## Current status (numerical)
+
+The `runs/bench-final-*` matrices use 20 independent repetitions for every
+`(algorithm, family, budget)` cell, so each budget column holds 80 runs per
+algorithm. Budgets count SDP calls, including both density and margin solves.
+Mean best strictly stable `mu`, over runs that found a stable template (all 80
+for random; a few nested/adaptive runs found none at low budgets):
+
+| SDP budget | random   | nested   | adaptive |
+| ---------- | -------- | -------- | -------- |
+| 500        | 0.680772 | 0.598494 | 0.635025 |
+| 2,000      | 0.681966 | 0.641626 | 0.606130 |
+| 5,000      | 0.681966 | 0.675954 | 0.613988 |
+
+- Random search reaches the ten-cluster twisted optimum (`0.681965750`) in every
+  run by 2,000 calls. At that budget, 63 of 80 bests are one canonical template
+  to 12 decimals. At 5,000 calls, 66 of 80 bests have ten clusters and they
+  coincide to `1e-6`; the standard deviation across all bests is `1.5e-8`.
+- Paired at 5,000 calls (same starts, 80 pairs): nested wins 5, loses 53, ties
+  22 against random; adaptive wins 0, loses 78, ties 2. Extra budget helps nested
+  but does not close the gap.
+- No run in these matrices reaches `0.6929077` or `0.693`;
+  `target_run_rate` is zero everywhere. The best matrix stable `mu` is
+  `0.681965858`; the cluster-cap pilot below reaches higher.
+- The reported `~1e-9` stability eigenvalues are a `cluster_margin=1e-9` solver
+  artifact, not intrinsic marginality; certified re-solves at `2e-6` succeed.
+
+The ten-cluster state is one point in the twisted family. Evaluating
+`twisted_seed(m)` with the cluster cap raised to 64 gives:
+
+| `m`  | 8        | 10       | 12       | 16       | 19       | 22       | 25       | 32       | 48       |
+| ---- | -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- |
+| `mu` | 0.667893 | 0.681966 | 0.664672 | 0.683847 | 0.683875 | 0.682890 | 0.682140 | 0.678980 | 0.680612 |
+
+The maximum is near `m = 19`, so the default `--max-clusters 12` excludes a
+better region. The `runs/bench-clusters-20` pilot (2,000 calls, 20 repetitions,
+four families) confirms the cap was binding: 76 of 80 runs reach a 19-cluster
+best, 75 of 80 are the identical canonical template, and the overall mean best
+`mu` is `0.683870`. A certified audit of that template gives `0.683808332` with
+a strict `2e-6` eigenvalue margin, an optimal solve, and only `target_density`
+failing.
+The best ten-cluster candidate refines to `0.681903635` and likewise fails only
+`target_density`.
+
+Both the ten- and nineteen-cluster states are stable fixed points that every run
+reproduces, and budget increases converge to them rather than past them. The
+current bottleneck is reachable template structure, not search budget. Exceeding
+the target requires a non-twisted structural family or direct optimization over
+masses and phases; more calls on the same landscape cannot help.

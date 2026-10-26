@@ -377,6 +377,15 @@ def test_refinement_status_labels_distinguish_levels() -> None:
     assert result("certified", False).status == "certified_numerical_gate_failed"
 
 
+def test_refinement_rejects_candidates_above_max_clusters() -> None:
+    config = RefinementConfig(max_clusters=12)
+    template = twisted_seed(19)
+    with pytest.raises(ValueError, match="max_clusters=12"):
+        refine_candidate(template, config)
+    with pytest.raises(ValueError, match="--max-clusters 19"):
+        refine_candidates([("big", template)], config)
+
+
 def test_load_templates_from_result_and_trace(tmp_path: Path) -> None:
     template = twisted_seed(5)
     payload = {
