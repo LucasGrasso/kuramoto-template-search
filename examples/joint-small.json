@@ -1,0 +1,27 @@
+{
+  "proposals": 120,
+  "seed": 0,
+  "sizes": [7, 8, 9, 10, 12],
+  "families": [
+    "complete",
+    "anchor_zero",
+    "cut_zero",
+    "mixed_zero",
+    "internal_sparse",
+    "nonuniform_anchor"
+  ],
+  "guard_scales": [0.01, 0.003, 0.001],
+  "targets": [0.693, 0.6935, 0.695],
+  "joint_sdp_calls": 120,
+  "finite_tree_calls": 30,
+  "full_sdp_calls": 0,
+  "audit_calls": 6,
+  "shortlist_size": 6,
+  "inner": {
+    "secondary": false,
+    "gamma0": 0.000001,
+    "hard_floor": 0.000001,
+    "restoring_floor": 0.0001,
+    "box_buffer": 0.00000001
+  }
+}

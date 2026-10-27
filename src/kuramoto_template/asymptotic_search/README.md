@@ -1,5 +1,10 @@
 # Four-parent asymptotic search
 
+For the additive joint `(P0,R)` SDP, target-margin mode and weak-mode outer
+search, see [the joint workflow](../../../docs/joint-search.md) and
+[research findings](../../../docs/joint-search-findings.md). The two-stage
+workflow below remains an independent control.
+
 This standalone search uses `phi_a(h) = j_a*pi/2 + h*s_a`, fixed positive
 masses, no opposite-parent links, connected limiting graphs within each parent,
 and clique diagonals. It does not change the environment or policy action space.

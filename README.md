@@ -17,6 +17,11 @@ and [pilot findings](docs/asymptotic-search-findings.md).
 uv run python -m kuramoto_template.asymptotic_search --config examples/asymptotic-small.json --output runs/asym-small
 ```
 
+An additive joint SDP now optimizes limiting densities and first-order
+corrections together, followed by weak-mode topology and continuous outer moves.
+It preserves both earlier stages as controls. See [joint API, CLI and accounting](docs/joint-search.md)
+and [the 1,050-proposal research findings](docs/joint-search-findings.md).
+
 ## Learned RL policy
 
 Install `uv sync --extra rl` for the optional CPU PyTorch BC/AWAC pipeline.
