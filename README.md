@@ -11,9 +11,12 @@ statistics are versioned under [`research/`](research/README.md).
 | S7 follow-up, limit | 0.6929072637491324 | [follow-up limit](research/s7-analysis/evidencia/fine-offset-1e-07--0.0001.json) |
 | Fixed-P0 refinement, finite h=0.00003 | 0.6926591963503084 | [finite witness and audits](research/joint-research-final/finalist-refinement.json) |
 
-These are numerical results. The limiting record and the finite witness are
-different objects. Decimal pivot checks do not enclose an exact equilibrium
-or certify a graph realization.
+These original snapshots are numerical results. The limiting record and finite
+witness are different objects. Separate [interval certificates](research/certification/README.md)
+now verify explicitly recorded nearby rational variants. The finite variant
+passes Krawczyk inclusion and interval Cholesky. The limiting variants satisfy
+exact leading identities and the hypotheses of a small-splitting lifting proof.
+The original snapshots' flags remain unchanged; no explicit graph is certified.
 
 ## Setup and verification
 
@@ -33,6 +36,20 @@ limiting and finite diagnostics, and performs two Decimal audits without
 conic solves. Best replay additionally spends three joint SDP calls, three
 finite tree solves and two Decimal audits. It checks both numerical densities
 against the saved results, with a 1e-9 tolerance for new solves.
+
+## Interval certification
+
+```powershell
+uv sync --locked --extra certification
+uv run --locked --extra certification python scripts/certify_witnesses.py --verify research/certification
+uv run --locked --extra certification python scripts/certify_witnesses.py --output runs/new-certificates
+uv run --locked --extra certification pytest -q
+```
+
+Certificate verification recomputes exact rational identities and outward Arb
+bounds. Rebuilding certificates records every rational repair and does not run
+SDPs. See the [method and lifting proof](docs/interval-certification.md) and
+[results, scope and rational data](research/certification/README.md).
 
 ## Reproduce the experiments
 

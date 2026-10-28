@@ -139,6 +139,7 @@
     "proof_available": false
   },
   "script_sha256": {
+    "scripts/certify_witnesses.py": "a0d8e752be6b953f6814bd1cdd4fff2e1b79b4e047875a0e6f1de3dbfb50e8b0",
     "scripts/reproduce_best.py": "f237df4d03f735ad53a8732fc6b594030c6909ca4f1ba17f00f53398f3587fc1",
     "scripts/reproduce_s7_analysis.py": "ee835f83c714be3fed5cf40a608faedf89ccc9ca629f4ce18167f0e69f493746",
     "scripts/s7_analysis/analyze_sweep.py": "3fa81b29cf743f2110ec7c1c0794e7d60c7d332826f9788bda3a5c80b5640041",
@@ -191,5 +192,28 @@
       "html_and_figures_regenerated": true,
       "incomplete_source_run_rejected_before_solver_calls": true
     }
+  },
+  "interval_certification_verification": {
+    "source_hash": "5a4b91b04ba5ce7ea6981682b15f4c6ee11aae57daec70a47e9979059f03120f",
+    "arithmetic_backend": "python-flint 0.9.0 / FLINT-Arb",
+    "precision_bits": 256,
+    "independent_recheck_bits": [
+      192,
+      320
+    ],
+    "certificates": {
+      "original_best_limit": "research/certification/original-limit.json",
+      "best_limit": "research/certification/best-limit.json",
+      "best_finite": "research/certification/best-finite.json"
+    },
+    "original_snapshots_certified": false,
+    "certificate_scope": "Explicit nearby rational variants of the same three best results",
+    "finite": "Exact rational equilibrium plus Krawczyk inclusion/uniqueness, interval Cholesky, positive restoring and nonsynchrony",
+    "limiting": "Exact leading identities plus interval Cholesky and the documented sufficiently-small-h lifting lemma",
+    "explicit_finite_h_for_improved_limit_certified": false,
+    "explicit_graph_realization_certified": false,
+    "sdp_calls": 0,
+    "tests_passed": 81,
+    "test_warnings": 2
   }
 }

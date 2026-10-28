@@ -11,9 +11,29 @@
   "best_limiting_witness": "research/s7-analysis/evidencia/fine-offset-1e-07--0.0001.json",
   "best_finite_witness": "research/joint-research-final/finalist-refinement.json",
   "files": {
+    "research/certification/best-finite.json": {
+      "bytes": 31886,
+      "sha256": "e29ec842ed4ef6daee3e1339b558867bd574c1687f97e04236b98ff8b8b6a6d9"
+    },
+    "research/certification/best-limit.json": {
+      "bytes": 24887,
+      "sha256": "bcb5ee7b8d62502c118275a236e20c28e7fe883d2fff6291f908194059b17ab4"
+    },
+    "research/certification/original-limit.json": {
+      "bytes": 23875,
+      "sha256": "5e1ae4e2bd222a636d0e5b872a77941b43a60d5f30a525bee6af0e752bf55929"
+    },
+    "research/certification/README.md": {
+      "bytes": 4029,
+      "sha256": "ae896850358bf91c2923baf131932990628ae55d162b42899aca376d8db0213d"
+    },
+    "research/certification/summary.json": {
+      "bytes": 3184,
+      "sha256": "0370dc1859566642429a7b14bdfbcae09f083291ee61e65538cf25dfa7859613"
+    },
     "research/cleanup-verification.json": {
-      "bytes": 8629,
-      "sha256": "4688f93ce2fbca7b6b0e6b0e562e1907e8702d6a331140e3ddb81dabf6697643"
+      "bytes": 9841,
+      "sha256": "5a97a12c131efd34a91cd1b7f6f8f4ec2e4a304a1c7fd30aadbb8ecea75edbc6"
     },
     "research/joint-research-final/benchmark-config.json": {
       "bytes": 383,
@@ -56,8 +76,8 @@
       "sha256": "1d01637a7572bb7fabb3fbf0e0218863d34b7cbcac40658347171613b01cf001"
     },
     "research/README.md": {
-      "bytes": 2802,
-      "sha256": "8b2e2b4f4fa8ac4147c650a3312e6db0312dfb8e0727b77612023123007072bf"
+      "bytes": 3242,
+      "sha256": "691434b37ec96a3dbea552bde494c1da4e21c832059226abeee87485fe93ebd5"
     },
     "research/s7-analysis/analisis-datos.json": {
       "bytes": 1024834,
@@ -152,17 +172,21 @@
     {
       "kind": "original_best_limit",
       "mu": 0.6929033189148635,
-      "path": "research/joint-research-final/sweep/top-limit.json"
+      "path": "research/joint-research-final/sweep/top-limit.json",
+      "rational_certificate": "research/certification/original-limit.json"
     },
     {
       "kind": "best_limit",
       "mu": 0.6929072637491324,
-      "path": "research/s7-analysis/evidencia/fine-offset-1e-07--0.0001.json"
+      "path": "research/s7-analysis/evidencia/fine-offset-1e-07--0.0001.json",
+      "rational_certificate": "research/certification/best-limit.json"
     },
     {
       "kind": "best_finite",
       "mu": 0.6926591963503084,
-      "path": "research/joint-research-final/finalist-refinement.json"
+      "path": "research/joint-research-final/finalist-refinement.json",
+      "rational_certificate": "research/certification/best-finite.json"
     }
-  ]
+  ],
+  "certificate_scope": "Nearby exact rational companion data for the same three best results; original snapshots remain numerical."
 }

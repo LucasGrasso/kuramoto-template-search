@@ -1,6 +1,7 @@
 # Tracked research evidence
 
-Git contains only the witnesses for the three best reported results:
+Git contains witnesses for only the three best reported results, plus their
+[exact-rational certificate companions](certification/README.md):
 
 | Result | Density | Witness |
 | --- | ---: | --- |
@@ -48,5 +49,10 @@ Git. Original raw files remain locally in ignored `runs/` and the source
 Documents/Codex task output. A fresh checkout can regenerate them using the
 commands above. Historical absolute paths and source hashes are provenance.
 
-All witnesses are numerical. Decimal audits do not enclose an exact equilibrium
-or certify a graph realization. Proof flags remain false.
+The original witnesses retain their numerical status and false proof flags.
+Separate certificate companions verify nearby rational data: the finite case
+has exact equilibrium, Krawczyk inclusion and interval Cholesky; the limiting
+cases have exact leading identities, a positive limiting form and a
+small-splitting lifting proof. Certificate scope excludes an explicit finite
+member for the improved limit and any explicit graph realization. See the
+[certification report](certification/README.md).

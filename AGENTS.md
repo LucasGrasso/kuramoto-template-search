@@ -8,7 +8,9 @@ random/AMCS, full-template optimization/fallback, the old two-stage outer driver
 and aggregate-flow/compensated pilots are outside this branch's scope.
 
 Python >=3.14; use `uv sync --locked` and `uv run --locked pytest -q`.
-The optional `reports` extra adds Matplotlib for regenerating the informe.
+The optional `reports` extra adds Matplotlib; `certification` adds FLINT/Arb
+for exact rational and interval certificates. Run `uv run --locked --extra
+certification pytest -q` when changing certification code.
 Source uses a `src/` layout and the `uv_build` backend.
 
 ## Source map
@@ -25,7 +27,11 @@ Source uses a `src/` layout and the `uv_build` backend.
   120-solve structural analysis with portable paths and scratch output.
 - `research/`: intentionally versioned reports, figures, configurations,
   aggregate statistics, ledgers and only the three best-result witness files.
-  Non-winning snapshots and embedded candidate matrices must stay outside Git.
+  Exact rational certificate companions are limited to these same three best
+  results. Non-winning snapshots and embedded candidate matrices stay outside Git.
+- `asymptotic_search/interval_certification.py`, `scripts/certify_witnesses.py`:
+  exact rational repair, Krawczyk inclusion, interval Cholesky and independent
+  certificate verification. Mathematical lifting proof: `docs/interval-certification.md`.
 
 ## Mathematical and reproducibility contracts
 
@@ -36,8 +42,11 @@ Source uses a `src/` layout and the `uv_build` backend.
 - Retain within-cluster restoring checks and the intercluster Laplacian
   restricted off the global rotation mode. Solver status alone is insufficient.
 - Limiting strictness, finite numerical strictness and rigorous certification
-  are separate. Decimal audits evaluate saved float inputs; no root enclosure
-  or graph-realization proof is available.
+  are separate. Decimal audits evaluate saved float inputs and do not prove
+  root existence. Optional interval certificates verify explicitly stored nearby
+  rational variants; never transfer their success to the original float arrays.
+  Limiting certificates verify the hypotheses of the documented sufficiently-
+  small-h lifting lemma, not an explicit finite h. No explicit graph is certified.
 - Count every actual conic invocation, including failed and secondary attempts.
   Tree solves and high-precision audits have separate counters. Preserve failed
   and uncertain outputs, actual proposal parentage, seeds, settings and versions.

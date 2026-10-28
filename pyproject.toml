@@ -19,6 +19,9 @@ kuramoto-template = "kuramoto_template.asymptotic_search.joint_outer:main"
 
 [project.optional-dependencies]
 reports = ["matplotlib>=3.11.2,<4"]
+certification = [
+    "python-flint==0.9.0",
+]
 
 [build-system]
 requires = ["uv_build>=0.12.20,<0.13.0"]
