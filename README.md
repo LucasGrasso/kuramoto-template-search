@@ -22,6 +22,12 @@ corrections together, followed by weak-mode topology and continuous outer moves.
 It preserves both earlier stages as controls. See [joint API, CLI and accounting](docs/joint-search.md)
 and [the 1,050-proposal research findings](docs/joint-search-findings.md).
 
+The next bounded workflow adds necessary aggregate-flow screening, legal
+mass-ratio starts above one, winding-two supports and compensated topology
+proposals, with fresh physical-margin split/merge comparisons. See
+[the flow-search API and CLI](docs/aggregate-flow-search.md) and
+[the bounded pilot findings](docs/aggregate-flow-findings.md).
+
 ## Learned RL policy
 
 Install `uv sync --extra rl` for the optional CPU PyTorch BC/AWAC pipeline.

@@ -5,6 +5,11 @@ search, see [the joint workflow](../../../docs/joint-search.md) and
 [research findings](../../../docs/joint-search-findings.md). The two-stage
 workflow below remains an independent control.
 
+For necessary aggregate-flow screening, compensated linked-edge proposals,
+legal q-mass ratios above one and winding-two supports, see
+[the bounded flow workflow](../../../docs/aggregate-flow-search.md) and
+[its measured findings](../../../docs/aggregate-flow-findings.md).
+
 This standalone search uses `phi_a(h) = j_a*pi/2 + h*s_a`, fixed positive
 masses, no opposite-parent links, connected limiting graphs within each parent,
 and clique diagonals. It does not change the environment or policy action space.

@@ -60,12 +60,14 @@ def validate_finite(c, P, h, *, numerics=None):
                        c_min=metrics.min_restoring, cluster_gap=metrics.min_cluster_eigenvalue,
                        rescaled_gap=scaled_gap, roundoff_floor=noise, box_violation=box,
                        structural_violation=structural,
-                       winding_one=winding(c,P,h,min_density=n.backbone_density),
+                       winding_valid=winding(c,P,h,min_density=n.backbone_density),
+                       winding_one=c.backbone_winding==1 and winding(c,P,h,min_density=n.backbone_density),
+                       backbone_winding=c.backbone_winding,
                        nonsynchronous=not in_open_semicircle(template.phi),
                        force_tolerance=n.residual_tolerance, proof_available=False)
     if box > 0 or structural > n.residual_tolerance or metrics.max_force_error > n.residual_tolerance:
         status = "finite_invalid"
-    elif not diagnostics["winding_one"] or not diagnostics["nonsynchronous"]:
+    elif not diagnostics["winding_valid"] or not diagnostics["nonsynchronous"]:
         status = "finite_invalid"
     elif metrics.min_cluster_eigenvalue < -noise or metrics.min_restoring < -noise or scaled_gap < -n.slack_tolerance:
         status = "finite_unstable"

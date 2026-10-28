@@ -105,10 +105,14 @@ def winding(c, P, h, *, min_density=1e-4, tolerance=1e-10):
     """Check this backbone only, on the actual matrix and finite phase path."""
     phi = c.groups * (np.pi/2) + h*c.s
     cycle = c.backbone_cycle
-    steps = []
     for a, b in zip(cycle, cycle[1:] + cycle[:1]):
-        step = ((phi[b] - phi[a] + np.pi) % (2*np.pi)) - np.pi
-        if not c.allowed_mask[a, b] or P[a, b] < min_density or not tolerance < step < np.pi-tolerance:
+        if not c.allowed_mask[a, b] or P[a, b] < min_density:
             return False
-        steps.append(step)
-    return bool(abs(sum(steps)-2*np.pi) <= tolerance)
+    from .topology import cycle_audit
+    audit=cycle_audit(c.groups,cycle,phi=phi,P=P,tolerance=tolerance)
+    # Also keep each nonzero parent step on its intended signed branch.
+    from .topology import parent_step
+    signed=all((parent_step(c.groups[a],c.groups[b])==0 or
+                parent_step(c.groups[a],c.groups[b])*v>tolerance)
+               for a,b,v in zip(cycle,cycle[1:]+cycle[:1],audit.get("wrapped_steps",[])))
+    return bool(audit["valid"] and signed)

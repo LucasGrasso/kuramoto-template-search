@@ -23,7 +23,7 @@ class LimitingCandidate:
     groups: np.ndarray
     p0: np.ndarray
     allowed_mask: np.ndarray
-    backbone_cycle: tuple[int, int, int, int]
+    backbone_cycle: tuple[int, ...]
     family_id: str = "custom"
 
     def __post_init__(self):
@@ -52,11 +52,13 @@ class LimitingCandidate:
         if max(-p.min(), p.max() - 1) > 1e-7:
             raise ValueError("p0 violates symmetry, box, mask, or clique convention")
         cycle = tuple(self.backbone_cycle)
-        if len(cycle) != 4 or any(isinstance(a, bool) or not isinstance(a, (int, np.integer))
+        if len(cycle)<4 or len(set(cycle))!=len(cycle) or any(isinstance(a, bool) or not isinstance(a, (int, np.integer))
                                   or not 0 <= a < m for a in cycle):
-            raise ValueError("backbone must contain four cluster indices")
-        if tuple(groups[list(cycle)]) != (0, 1, 2, 3):
-            raise ValueError("backbone must visit parents 0,1,2,3 in order")
+            raise ValueError("backbone must be a simple cycle of valid cluster indices")
+        from .topology import cycle_audit
+        audit=cycle_audit(groups,cycle)
+        if not audit["valid"] or audit["winding"]<=0:
+            raise ValueError("backbone must have positive integer nearest-parent winding")
         if any(not mask[a,b] for a,b in zip(cycle,cycle[1:]+cycle[:1])):
             raise ValueError("mask must allow the backbone edges")
         for name, value in (("x", x), ("s", s), ("groups", groups),
@@ -68,6 +70,11 @@ class LimitingCandidate:
     @property
     def m(self):
         return len(self.x)
+
+    @property
+    def backbone_winding(self):
+        from .topology import cycle_audit
+        return cycle_audit(self.groups,self.backbone_cycle)["winding"]
 
     @property
     def mask_hash(self):

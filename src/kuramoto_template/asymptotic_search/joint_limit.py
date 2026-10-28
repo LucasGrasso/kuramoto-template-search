@@ -11,12 +11,14 @@ from typing import Any
 
 import cvxpy as cp
 import numpy as np
+from scipy.linalg import eigvalsh
 
 from .expansions import (U4, coefficients, effective_matrix, full_rescaled_matrix,
                          internal_basis, reference_rescaled_matrix)
 from .families import winding
 from .models import LimitingCandidate, Numerics
 from .solvers import SolverLedger, solve
+from .physical import mass_quotient_metrics
 
 
 @dataclass(frozen=True)
@@ -39,6 +41,7 @@ class JointLimitConfig:
     neutral: bool = False
     secondary: bool = True
     density_allowance: float = 1e-7
+    margin_metric: str = "euclidean"
     solver: str = "CLARABEL"
     solver_options: dict[str, Any] = field(default_factory=lambda: dict(
         tol_gap_abs=1e-11, tol_gap_rel=1e-11, tol_feas=1e-11, max_iter=500))
@@ -47,13 +50,15 @@ class JointLimitConfig:
         if self.mode not in ("density", "margin"):
             raise ValueError("mode must be density or margin")
         for name in self.__dataclass_fields__:
-            if name in ("mode", "neutral", "secondary", "solver", "solver_options"):
+            if name in ("mode", "neutral", "secondary", "solver", "solver_options", "margin_metric"):
                 continue
             value = getattr(self, name)
             if not np.isfinite(value) or value <= 0:
                 raise ValueError(f"{name} must be positive and finite")
         if not self.mu_target <= 1 or self.h_guard >= 1 or self.repair_density >= 1:
             raise ValueError("Invalid target, guard, or repair density")
+        if self.margin_metric not in ("euclidean","mass"):
+            raise ValueError("margin_metric must be euclidean or mass")
         object.__setattr__(self, "solver_options", dict(self.solver_options))
 
     def lift_numerics(self):
@@ -83,13 +88,14 @@ class JointAffineModel:
     h_p: np.ndarray
     h_r: np.ndarray
     z: np.ndarray
+    flow_map: np.ndarray
 
     def evaluate(self, p, r):
         pv = np.array([p[a, b] for a, b in self.p_pairs])
         rv = np.array([r[a, b] for a, b in self.r_pairs])
         m = self.geometry.m
         return dict(f0=self.f0_map @ pv, f1=self.f1_p @ pv + self.f1_r @ rv,
-                    cuts=self.cut_map @ pv, energy=float(self.energy_map @ pv),
+                    cuts=self.cut_map @ pv, flows=self.flow_map@pv, energy=float(self.energy_map @ pv),
                     restoring=self.geometry.x + self.restoring_map @ pv,
                     hlim=(self.h_p @ pv + self.h_r @ rv).reshape(m-1, m-1))
 
@@ -109,6 +115,7 @@ def build_affine_model(x, s, groups, mask, *, backbone_cycle=None):
     pm, rm = np.zeros((m*m, n)), np.zeros((m*m, nr))
     f0, f1p, f1r = np.zeros((m, n)), np.zeros((m, n)), np.zeros((m, nr))
     K, I, restoring = np.zeros((4, n)), np.zeros(n), np.zeros((m, n))
+    flows=np.zeros((4,n))
     hp, hr = np.zeros((d*d, n)), np.zeros((d*d, nr))
     Z, eye, eye4 = internal_basis(c), np.eye(m), np.eye(4)
     r_indices = {pair: i for i, pair in enumerate(neighbors)}
@@ -132,6 +139,7 @@ def build_affine_model(x, s, groups, mask, *, backbone_cycle=None):
             f0[a, i], f0[b, i] = c.x[b], -c.x[a]
             f1r[a, ri], f1r[b, ri] = c.x[b], -c.x[a]
             K[j, i] = mass*ds
+            flows[j,i]=mass
             u = U4.T @ (eye4[j]-eye4[(j+1) % 4])
             z = Z.T @ (eye[a]-eye[b])
             H[:3, 3:] = -mass*ds*np.outer(u, z)
@@ -141,7 +149,7 @@ def build_affine_model(x, s, groups, mask, *, backbone_cycle=None):
             hr[:, ri] = R.ravel()
         hp[:, i] = H.ravel()
     return JointAffineModel(c, pairs, neighbors, pm, rm, f0, f1p, f1r, K, I,
-                            restoring, hp, hr, Z)
+                            restoring, hp, hr, Z,flows)
 
 
 @dataclass(eq=False)
@@ -163,6 +171,7 @@ class JointLimitResult:
     proof_available: bool = False
     certification_status: str = "not_attempted"
     message: str = ""
+    flow_target: float | None = None
 
     def data(self):
         return asdict(self)
@@ -195,11 +204,11 @@ def _fixed_entries(c, fixed_p0):
 
 
 def validate_joint(c, r, config=None, *, solver_status="analytic", fixed_p0=None,
-                   repair_edges=(), reported_gamma=None):
+                   repair_edges=(), reported_gamma=None,flow_target=None):
     cfg = config or JointLimitConfig()
     r = np.asarray(r, dtype=float)
     result = JointLimitResult(c, np.array(r, copy=True), "failed", solver_status, cfg,
-                              repair_edges=tuple(repair_edges), fixed_p0=fixed_p0)
+                              repair_edges=tuple(repair_edges), fixed_p0=fixed_p0,flow_target=flow_target)
     if r.shape != c.p0.shape or not np.all(np.isfinite(r)):
         result.message = "Invalid correction matrix"
         return result
@@ -215,6 +224,11 @@ def validate_joint(c, r, config=None, *, solver_status="analytic", fixed_p0=None
     spectrum = np.linalg.eigvalsh(H)
     hard = H[3:, 3:]
     hard_gap = float(np.linalg.eigvalsh(hard).min()) if hard.size else None
+    mass_metric,hard_metric,soft_metric=mass_quotient_metrics(c)
+    physical_values=eigvalsh(H,mass_metric)
+    hard_physical=float(eigvalsh(hard,hard_metric).min()) if hard.size else None
+    selected_gap=float(physical_values.min()) if cfg.margin_metric=="mass" else float(spectrum.min())
+    selected_hard=hard_physical if cfg.margin_metric=="mass" else hard_gap
     try:
         effective = U4.T @ effective_matrix(c, r, cfg.rank_tolerance) @ U4
         effective_gap = float(np.linalg.eigvalsh(effective).min())
@@ -246,8 +260,9 @@ def validate_joint(c, r, config=None, *, solver_status="analytic", fixed_p0=None
     gamma = 0. if cfg.neutral else cfg.gamma0
     h_gap = float(spectrum.min())
     floor_violation = max(0., cfg.restoring_floor-c0.min(), cfg.energy_floor-e.energy,
-                          cfg.hard_floor-hard_gap if hard_gap is not None else 0.,
-                          gamma-h_gap if cfg.mode == "density" else cfg.mu_target-(c.p0@c.x).min())
+                          cfg.hard_floor-selected_hard if selected_hard is not None else 0.,
+                          gamma-selected_gap if cfg.mode == "density" else cfg.mu_target-(c.p0@c.x).min())
+    flow_error=float(np.max(np.abs(affine["flows"]-flow_target))) if flow_target is not None else 0.
     equation_error = max(float(np.max(np.abs(e.f0))), float(np.max(np.abs(e.f1))),
                          float(np.max(np.abs(e.cuts))), abs(e.k.sum()-e.energy))
     affine_error = max(float(np.max(np.abs(H-reference))), float(np.max(np.abs(H-affine["hlim"]))),
@@ -265,26 +280,32 @@ def validate_joint(c, r, config=None, *, solver_status="analytic", fixed_p0=None
                       r_inf=float(np.max(np.abs(r))), roundoff_floor=n_roundoff,
                       h_guard=cfg.h_guard, offset_variance=float(c.x@(c.s-c.x@c.s)**2),
                       gauge="Euclidean U4 on 1-perp; Euclidean within-parent Z",
+                      margin_metric=cfg.margin_metric,physical_spectrum=physical_values,
+                      physical_gap=float(physical_values.min()),hard_physical_gap=hard_physical,
+                      soft_physical_gap=float(eigvalsh(effective,soft_metric).min()) if effective_gap is not None else None,
+                      flows=affine["flows"],flow_target_error=flow_error,
                       degrees=c.p0@c.x,restoring0=c0,hard_spectrum=np.linalg.eigvalsh(hard) if hard.size else [],
                       effective_spectrum=np.linalg.eigvalsh(effective) if effective_gap is not None else None,
-                      winding_one=winding(c, trial, cfg.h_guard, min_density=cfg.backbone_density))
+                      winding_valid=winding(c, trial, cfg.h_guard, min_density=cfg.backbone_density),
+                      winding_one=c.backbone_winding==1 and winding(c, trial, cfg.h_guard, min_density=cfg.backbone_density),
+                      backbone_winding=c.backbone_winding)
     result.diagnostics, result.hlim, result.spectrum = diagnostic, H, spectrum
     result.mu0 = float((c.p0@c.x).min())
-    violations = max(equation_error, affine_error, box, cone, backbone_violation, fixed_error, repair_violation, buffer_violation,
+    violations = max(equation_error, affine_error, box, cone, backbone_violation, fixed_error, repair_violation, buffer_violation,flow_error,
                      floor_violation, diagnostic["r_inf"]-cfg.r_max)
     diagnostic["independent_primal_check_inf"]=float(violations)
     positive_floors_resolved = (c0.min() >= .95*cfg.restoring_floor and
-                               (hard_gap is None or hard_gap >= .95*cfg.hard_floor))
-    if violations > cfg.residual_tolerance or not diagnostic["winding_one"]:
+                               (selected_hard is None or selected_hard >= .95*cfg.hard_floor))
+    if violations > cfg.residual_tolerance or not diagnostic["winding_valid"]:
         result.message = "Independent constraints exceed configured tolerances"
     elif solver_status not in ("analytic", "optimal"):
         result.status, result.message = "uncertain", "Solver status cannot support strict classification"
-    elif reported_gamma is not None and (not np.isfinite(reported_gamma) or reported_gamma-h_gap > cfg.residual_tolerance):
+    elif reported_gamma is not None and (not np.isfinite(reported_gamma) or reported_gamma-selected_gap > cfg.residual_tolerance):
         result.status, result.message = "uncertain", "Reported full margin disagrees with independent spectrum"
     elif not positive_floors_resolved or effective_gap is None or schur_error > cfg.residual_tolerance:
         result.status = "uncertain"
     elif h_gap > max(cfg.strict_tolerance, n_roundoff) and effective_gap > cfg.strict_tolerance:
-        if cfg.mode == "density" and not cfg.neutral and h_gap < .95*cfg.gamma0:
+        if cfg.mode == "density" and not cfg.neutral and selected_gap < .95*cfg.gamma0:
             result.status = "uncertain"
         else:
             result.status = "joint_asymptotic_strict"
@@ -313,11 +334,13 @@ def _solver_diagnostics(problem, outcome, objective):
 
 
 def solve_joint_limit(x, s, groups, mask, config=None, *, backbone_cycle=None,
-                      repair_edges=(), fixed_p0=None, family_id="joint", ledger=None):
+                      repair_edges=(), fixed_p0=None, family_id="joint", ledger=None,flow_target=None):
     cfg = config or JointLimitConfig()
     model = build_affine_model(x, s, groups, mask, backbone_cycle=backbone_cycle)
     c, m = model.geometry, model.geometry.m
     fixed = _fixed_entries(c, fixed_p0)
+    if flow_target is not None and (not np.isfinite(flow_target) or flow_target<=0):
+        raise ValueError("flow_target must be finite and positive")
     repair_edges = tuple(tuple(sorted(e)) for e in repair_edges)
     for a, b in repair_edges:
         if (a, b) not in model.r_pairs:
@@ -336,10 +359,13 @@ def solve_joint_limit(x, s, groups, mask, config=None, *, backbone_cycle=None,
     H = cp.reshape(model.h_p@pv+model.h_r@rv, (m-1, m-1), order="C")
     mu = cp.Variable()
     gamma = cp.Variable() if cfg.mode == "margin" else (0. if cfg.neutral else cfg.gamma0)
+    mass_metric,hard_mass,_=mass_quotient_metrics(c)
+    metric=mass_metric if cfg.margin_metric=="mass" else np.eye(m-1)
+    hard_constraint_metric=hard_mass if cfg.margin_metric=="mass" else np.eye(m-4)
     constraints = [pv >= 0, pv <= 1, rv >= -cfg.r_max, rv <= cfg.r_max,
                    P@c.x >= mu, model.f0_map@pv == 0,
                    model.f1_p@pv+model.f1_r@rv == 0, model.cut_map@pv == 0,
-                   H >> gamma*np.eye(m-1), c.x+model.restoring_map@pv >= cfg.restoring_floor,
+                   H >> gamma*metric, c.x+model.restoring_map@pv >= cfg.restoring_floor,
                    model.energy_map@pv >= cfg.energy_floor,
                    P+cfg.h_guard*R >= 0, P+cfg.h_guard*R <= 1]
     if free_variable is not None:
@@ -349,7 +375,9 @@ def solve_joint_limit(x, s, groups, mask, config=None, *, backbone_cycle=None,
     constraints += [neighbor_p+cfg.h_guard*rv >= cfg.box_buffer,
                     neighbor_p+cfg.h_guard*rv <= 1-cfg.box_buffer]
     if m > 4:
-        constraints.append(H[3:, 3:] >> cfg.hard_floor*np.eye(m-4))
+        constraints.append(H[3:, 3:] >> cfg.hard_floor*hard_constraint_metric)
+    if flow_target is not None:
+        constraints.append(model.flow_map@pv==flow_target)
     if cfg.mode == "margin":
         constraints.append(mu >= cfg.mu_target)
     for a, b in zip(c.backbone_cycle, c.backbone_cycle[1:]+c.backbone_cycle[:1]):
@@ -365,11 +393,15 @@ def solve_joint_limit(x, s, groups, mask, config=None, *, backbone_cycle=None,
     problem = cp.Problem(cp.Maximize(objective), constraints)
     outcome = solve(problem, "joint_sdp", cfg, ledger)
     records = [_solver_diagnostics(problem, outcome, problem.value)]
+    def add_duals(record):
+        record["dual_degree"]=np.array(constraints[4].dual_value,copy=True) if constraints[4].dual_value is not None else None
+        record["dual_full_hessian"]=np.array(constraints[8].dual_value,copy=True) if constraints[8].dual_value is not None else None
+    add_duals(records[0])
     if outcome.status not in ("optimal", "optimal_inaccurate") or pv.value is None or rv.value is None:
         return JointLimitResult(None, None,
             "conditional_infeasible" if outcome.status == "infeasible" else "uncertain",
             outcome.status, cfg, solve_records=records, repair_edges=repair_edges,
-            fixed_p0=fixed, elapsed_seconds=perf_counter()-started, message=outcome.message)
+            fixed_p0=fixed, elapsed_seconds=perf_counter()-started, message=outcome.message,flow_target=flow_target)
     p_values, r_values = pv.value.copy(), rv.value.copy()
     original_objective = float(objective.value)
     reported_gamma = float(gamma.value) if cfg.mode == "margin" else float(gamma)
@@ -383,7 +415,7 @@ def solve_joint_limit(x, s, groups, mask, config=None, *, backbone_cycle=None,
         try:
             candidate = LimitingCandidate(c.x,c.s,c.groups,density,c.allowed_mask,c.backbone_cycle,family_id)
             return validate_joint(candidate,correction,cfg,solver_status=outcome.status,
-                                  repair_edges=repair_edges,fixed_p0=fixed,reported_gamma=margin)
+                                  repair_edges=repair_edges,fixed_p0=fixed,reported_gamma=margin,flow_target=flow_target)
         except ValueError as exc:
             return JointLimitResult(None,correction,"failed",outcome.status,cfg,message=str(exc),
                                     fixed_p0=fixed,repair_edges=repair_edges)
@@ -402,6 +434,7 @@ def solve_joint_limit(x, s, groups, mask, config=None, *, backbone_cycle=None,
         secondary = cp.Problem(cp.Minimize(cp.norm1(rv)), constraints+[hold])
         secondary_outcome = solve(secondary, "joint_sdp", cfg, ledger)
         records.append(_solver_diagnostics(secondary, secondary_outcome, secondary.value))
+        add_duals(records[-1])
         records[-1]["selected"] = False
         if secondary_outcome.status == "optimal" and pv.value is not None and rv.value is not None:
             p_values, r_values = pv.value.copy(), rv.value.copy()
@@ -476,7 +509,7 @@ def main():
     ledger=SolverLedger(dict(joint_sdp=args.max_joint_calls))
     result=solve_joint_limit(geometry["x"],geometry["s"],geometry["groups"],geometry["allowed_mask"],cfg,
         backbone_cycle=geometry.get("backbone_cycle"),repair_edges=data.get("repair_edges",()),
-        fixed_p0=data.get("fixed_p0"),family_id=geometry.get("family_id","joint-cli"),ledger=ledger)
+        fixed_p0=data.get("fixed_p0"),family_id=geometry.get("family_id","joint-cli"),ledger=ledger,flow_target=data.get("flow_target"))
     destination.parent.mkdir(parents=True,exist_ok=True)
     _write(destination,dict(schema_version=1,source_hash=_code_hash(),result=result.data(),
                             counts=ledger.counts,solver_events=ledger.events))
