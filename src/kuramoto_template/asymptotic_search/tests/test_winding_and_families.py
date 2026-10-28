@@ -3,7 +3,7 @@ from dataclasses import replace
 import numpy as np
 import pytest
 
-from kuramoto_template.asymptotic_search.families import outer_proposals, parent_mask, s7, split_candidate, winding
+from kuramoto_template.asymptotic_search.families import parent_mask, s7, split_candidate, winding
 from kuramoto_template.asymptotic_search.models import LimitingCandidate
 from kuramoto_template.asymptotic_search.stage1 import screen_candidate
 
@@ -31,18 +31,6 @@ def test_arrays_and_invalid_inputs():
         replace(c,allowed_mask=np.ones((7,7),bool))
     with pytest.raises(ValueError):
         split_candidate(c,0,.5,.1,min_mass=.2)
-
-
-def test_deterministic_structural_diversity():
-    first = list(outer_proposals(4,18))
-    second = list(outer_proposals(4,18))
-    assert {c.m for c in first}=={7,8,9,10,12}
-    assert len({c.mask_hash for c in first})>5
-    for a,b in zip(first,second):
-        np.testing.assert_array_equal(a.x,b.x)
-        np.testing.assert_array_equal(a.s,b.s)
-        assert a.mask_hash==b.mask_hash
-        assert a.x.min()>1e-5
 
 
 def test_degeneracies_bad_dipole_and_singleton_hard_block():

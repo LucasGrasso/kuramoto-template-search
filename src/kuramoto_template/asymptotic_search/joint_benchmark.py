@@ -13,13 +13,13 @@ from time import perf_counter
 
 import numpy as np
 
-from kuramoto_template.experiments.reporting import json_safe
+from .persistence import json_safe
 from .families import appendix_a_correction,s7
 from .finite_lift import lift_candidate,scaling_slopes
 from .joint_limit import JointLimitConfig,solve_joint_limit,validate_joint
 from .joint_outer import FAMILIES,JointOuterConfig,canonical_outer,make_outer_seed,repair_tree,run_joint_outer
 from .models import MU_RECORD
-from .search import _write
+from .persistence import _write
 from .solvers import SolverLedger
 from .stage1 import optimize_limiting
 from .stage2 import solve_correction,validate_correction

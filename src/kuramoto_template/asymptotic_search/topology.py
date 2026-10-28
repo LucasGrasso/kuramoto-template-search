@@ -34,39 +34,3 @@ def cycle_audit(groups,cycle,*,phi=None,P=None,tolerance=1e-10):
         result.update(wrapped_steps=wrapped,wrapped_total=sum(wrapped),antipodal=branch)
         result["valid"]=bool(result["valid"] and not branch and abs(sum(wrapped)-2*np.pi*winding)<=tolerance)
     return result
-
-
-def shortest_nonzero_cycle(groups,support):
-    """Shortest simple nonzero-winding cycle, exact for these small supports.
-
-    The length-ordered search carries visited vertices, so a concatenated closed walk is never
-    returned as a simple cycle. Nearest-parent winding needs at least four
-    interparent edges. Dense graphs generally terminate at length four.
-    """
-    groups,mask=np.asarray(groups),np.asarray(support,dtype=bool)
-    m=len(groups)
-    neighbors=[list(np.flatnonzero(mask[a] & (np.arange(m)!=a))) for a in range(m)]
-    for length in range(4,m+1):
-        for start in range(m):
-            stack=[((start,),0)]
-            while stack:
-                path,total=stack.pop()
-                last=path[-1]
-                if len(path)==length:
-                    if mask[last,start]:
-                        try:
-                            winding=(total+parent_step(groups[last],groups[start]))
-                        except ValueError:
-                            continue
-                        if winding and winding%4==0:
-                            return dict(length=length,winding=winding//4,cycle=path)
-                    continue
-                for b in neighbors[last]:
-                    if b<=start or b in path:
-                        continue
-                    try:
-                        step=parent_step(groups[last],groups[b])
-                    except ValueError:
-                        continue
-                    stack.append((path+(int(b),),total+step))
-    return dict(length=None,winding=None,cycle=None)

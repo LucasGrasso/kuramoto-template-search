@@ -1,0 +1,5186 @@
+{
+  "checks": [
+    {
+      "id": 600,
+      "error": 7.364985132206888e-17
+    },
+    {
+      "id": 600,
+      "error": 9.169178751649232e-17
+    },
+    {
+      "id": 600,
+      "error": 1.4129319584585453e-11
+    },
+    {
+      "id": 180,
+      "error": 2.220446049250313e-16
+    },
+    {
+      "id": 180,
+      "error": 9.169178751649232e-17
+    },
+    {
+      "id": 180,
+      "error": 1.4129294176985167e-11
+    },
+    {
+      "id": 1,
+      "error": 0.0
+    },
+    {
+      "id": 1,
+      "error": 1.5081590761401725e-11
+    },
+    {
+      "id": 1,
+      "error": 1.5081590761401725e-11
+    },
+    {
+      "id": 391,
+      "error": 6.49706558084745e-12
+    },
+    {
+      "id": 391,
+      "error": 1.9081958235744878e-17
+    },
+    {
+      "id": 391,
+      "error": 1.9081958235744878e-17
+    },
+    {
+      "id": 782,
+      "error": 1.3175266270776947e-12
+    },
+    {
+      "id": 782,
+      "error": 6.587632999863202e-13
+    },
+    {
+      "id": 782,
+      "error": 1.3175266270776947e-12
+    },
+    {
+      "id": 153,
+      "error": 2.220446049250313e-16
+    },
+    {
+      "id": 153,
+      "error": 3.6244168473767435e-13
+    },
+    {
+      "id": 153,
+      "error": 3.6244168473767435e-13
+    },
+    {
+      "id": 301,
+      "error": 2.0816681711721685e-17
+    },
+    {
+      "id": 301,
+      "error": 2.740527531470971e-13
+    },
+    {
+      "id": 301,
+      "error": 0.0
+    },
+    {
+      "id": 0,
+      "error": 0.0
+    },
+    {
+      "id": 0,
+      "error": 1.2805132388465923e-13
+    },
+    {
+      "id": 0,
+      "error": 1.2805132388465923e-13
+    },
+    {
+      "id": 899,
+      "error": 1.139395652480224e-13
+    },
+    {
+      "id": 899,
+      "error": 1.139395652480224e-13
+    },
+    {
+      "id": 899,
+      "error": 1.139395652480224e-13
+    },
+    {
+      "id": 991,
+      "error": 1.5543122344752192e-15
+    },
+    {
+      "id": 991,
+      "error": 6.938893903907228e-18
+    },
+    {
+      "id": 991,
+      "error": 4.85722573273506e-17
+    },
+    {
+      "id": 959,
+      "error": 0.0
+    },
+    {
+      "id": 959,
+      "error": 0.0
+    },
+    {
+      "id": 959,
+      "error": 0.0
+    },
+    {
+      "id": 62,
+      "error": 0.0
+    },
+    {
+      "id": 62,
+      "error": 1.3877787807814457e-17
+    },
+    {
+      "id": 62,
+      "error": 1.333194622407663e-13
+    },
+    {
+      "id": 420,
+      "error": 1.1357017756785659e-17
+    },
+    {
+      "id": 420,
+      "error": 2.8541622190680904e-17
+    },
+    {
+      "id": 420,
+      "error": 2.8541622190680904e-17
+    },
+    {
+      "id": 1018,
+      "error": 1.2555061157382141e-16
+    },
+    {
+      "id": 1018,
+      "error": 0.0
+    },
+    {
+      "id": 1018,
+      "error": 2.8541622190680904e-17
+    },
+    {
+      "id": 3,
+      "error": 6.437428715089233e-14
+    },
+    {
+      "id": 3,
+      "error": 1.2874835746135016e-13
+    },
+    {
+      "id": 3,
+      "error": 2.7755575615628914e-17
+    },
+    {
+      "id": 602,
+      "error": 1.5995885171982138e-14
+    },
+    {
+      "id": 602,
+      "error": 7.99707522425308e-15
+    },
+    {
+      "id": 602,
+      "error": 1.5995885171982138e-14
+    },
+    {
+      "id": 752,
+      "error": 1.0471116161647753e-13
+    },
+    {
+      "id": 752,
+      "error": 1.0471116161647753e-13
+    },
+    {
+      "id": 752,
+      "error": 0.0
+    },
+    {
+      "id": 511,
+      "error": 2.1994190323171292e-13
+    },
+    {
+      "id": 511,
+      "error": 1.0997084319563921e-13
+    },
+    {
+      "id": 511,
+      "error": 1.734723475976807e-18
+    },
+    {
+      "id": 662,
+      "error": 0.0
+    },
+    {
+      "id": 662,
+      "error": 2.7755575615628914e-17
+    },
+    {
+      "id": 662,
+      "error": 0.0
+    },
+    {
+      "id": 483,
+      "error": 0.0
+    },
+    {
+      "id": 483,
+      "error": 1.3877787807814457e-17
+    },
+    {
+      "id": 483,
+      "error": 1.2625989663506143e-13
+    },
+    {
+      "id": 994,
+      "error": 2.7755575615628914e-16
+    },
+    {
+      "id": 994,
+      "error": 2.7755575615628914e-16
+    },
+    {
+      "id": 994,
+      "error": 2.7755575615628914e-16
+    },
+    {
+      "id": 431,
+      "error": 3.885780586188048e-16
+    },
+    {
+      "id": 431,
+      "error": 3.885780586188048e-16
+    },
+    {
+      "id": 431,
+      "error": 8.049116928532385e-16
+    },
+    {
+      "id": 616,
+      "error": 0.0
+    },
+    {
+      "id": 616,
+      "error": 3.6741443221188774e-15
+    },
+    {
+      "id": 616,
+      "error": 3.6741443221188774e-15
+    },
+    {
+      "id": 1039,
+      "error": 3.608224830031759e-16
+    },
+    {
+      "id": 1039,
+      "error": 3.608224830031759e-16
+    },
+    {
+      "id": 1039,
+      "error": 1.6653345369377348e-16
+    },
+    {
+      "id": 995,
+      "error": 5.551115123125783e-17
+    },
+    {
+      "id": 995,
+      "error": 8.326672684688674e-16
+    },
+    {
+      "id": 995,
+      "error": 2.7755575615628914e-17
+    },
+    {
+      "id": 492,
+      "error": 3.885780586188048e-16
+    },
+    {
+      "id": 492,
+      "error": 5.551115123125783e-17
+    },
+    {
+      "id": 492,
+      "error": 0.0
+    },
+    {
+      "id": 915,
+      "error": 9.992007221626409e-16
+    },
+    {
+      "id": 915,
+      "error": 4.996003610813204e-16
+    },
+    {
+      "id": 915,
+      "error": 9.992007221626409e-16
+    },
+    {
+      "id": 1040,
+      "error": 1.1102230246251565e-16
+    },
+    {
+      "id": 1040,
+      "error": 1.1102230246251565e-16
+    },
+    {
+      "id": 1040,
+      "error": 2.220446049250313e-16
+    },
+    {
+      "id": 1026,
+      "error": 3.885780586188048e-16
+    },
+    {
+      "id": 1026,
+      "error": 3.885780586188048e-16
+    },
+    {
+      "id": 1026,
+      "error": 3.885780586188048e-16
+    },
+    {
+      "id": 493,
+      "error": 5.190292640122607e-15
+    },
+    {
+      "id": 493,
+      "error": 3.4555691641457997e-15
+    },
+    {
+      "id": 493,
+      "error": 1.734723475976807e-15
+    },
+    {
+      "id": 857,
+      "error": 5.828670879282072e-16
+    },
+    {
+      "id": 857,
+      "error": 5.828670879282072e-16
+    },
+    {
+      "id": 857,
+      "error": 9.43689570931383e-16
+    },
+    {
+      "id": 1041,
+      "error": 4.440892098500626e-16
+    },
+    {
+      "id": 1041,
+      "error": 0.0
+    },
+    {
+      "id": 1041,
+      "error": 3.885780586188048e-16
+    },
+    {
+      "id": 304,
+      "error": 5.551115123125783e-17
+    },
+    {
+      "id": 304,
+      "error": 4.326400349086157e-15
+    },
+    {
+      "id": 304,
+      "error": 2.220446049250313e-16
+    },
+    {
+      "id": 129,
+      "error": 2.7755575615628914e-17
+    },
+    {
+      "id": 129,
+      "error": 1.0685896612017132e-15
+    },
+    {
+      "id": 129,
+      "error": 1.0685896612017132e-15
+    },
+    {
+      "id": 912,
+      "error": 5.551115123125783e-16
+    },
+    {
+      "id": 912,
+      "error": 2.220446049250313e-16
+    },
+    {
+      "id": 912,
+      "error": 1.304512053934559e-15
+    },
+    {
+      "id": 619,
+      "error": 5.828670879282072e-16
+    },
+    {
+      "id": 619,
+      "error": 5.828670879282072e-16
+    },
+    {
+      "id": 619,
+      "error": 5.828670879282072e-16
+    },
+    {
+      "id": 1012,
+      "error": 0.0
+    },
+    {
+      "id": 1012,
+      "error": 3.885780586188048e-16
+    },
+    {
+      "id": 1012,
+      "error": 4.440892098500626e-16
+    },
+    {
+      "id": 840,
+      "error": 0.0
+    },
+    {
+      "id": 840,
+      "error": 8.316264343832813e-15
+    },
+    {
+      "id": 840,
+      "error": 2.220446049250313e-16
+    },
+    {
+      "id": 722,
+      "error": 0.0
+    },
+    {
+      "id": 722,
+      "error": 0.0
+    },
+    {
+      "id": 722,
+      "error": 6.841749389252527e-15
+    },
+    {
+      "id": 633,
+      "error": 6.043776590303196e-15
+    },
+    {
+      "id": 633,
+      "error": 6.043776590303196e-15
+    },
+    {
+      "id": 633,
+      "error": 6.043776590303196e-15
+    },
+    {
+      "id": 1022,
+      "error": 9.783840404509192e-16
+    },
+    {
+      "id": 1022,
+      "error": 9.645062526431047e-16
+    },
+    {
+      "id": 1022,
+      "error": 9.783840404509192e-16
+    },
+    {
+      "id": 260,
+      "error": 2.7755575615628914e-17
+    },
+    {
+      "id": 260,
+      "error": 3.639449852599341e-15
+    },
+    {
+      "id": 260,
+      "error": 3.639449852599341e-15
+    }
+  ],
+  "max_invariance_error": 1.5081590761401725e-11,
+  "lineage": [
+    {
+      "id": 30,
+      "parent": 0,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 31,
+      "parent": 1,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 33,
+      "parent": 3,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 34,
+      "parent": 4,
+      "operation": "weak_topology",
+      "predicted_gain": 0.021776870007970118,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 36,
+      "parent": 6,
+      "operation": "weak_topology",
+      "predicted_gain": 0.019474087189473487,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 37,
+      "parent": 7,
+      "operation": "weak_topology",
+      "predicted_gain": 0.007012063967725469,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 42,
+      "parent": 12,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 43,
+      "parent": 13,
+      "operation": "weak_topology",
+      "predicted_gain": 0.0049184872477056355,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 52,
+      "parent": 22,
+      "operation": "weak_topology",
+      "predicted_gain": 0.004562805879001556,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 53,
+      "parent": 23,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 60,
+      "parent": 30,
+      "operation": "weak_topology",
+      "predicted_gain": 0.03011380159830719,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 61,
+      "parent": 31,
+      "operation": "weak_topology",
+      "predicted_gain": 0.022386915910117197,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 64,
+      "parent": 4,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 66,
+      "parent": 6,
+      "operation": "weak_topology",
+      "predicted_gain": 0.019474087189473487,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": null
+    },
+    {
+      "id": 70,
+      "parent": 10,
+      "operation": "weak_topology",
+      "predicted_gain": 0.015378458589533886,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": null
+    },
+    {
+      "id": 71,
+      "parent": 41,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 72,
+      "parent": 42,
+      "operation": "weak_topology",
+      "predicted_gain": 0.01431840730774649,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 73,
+      "parent": 13,
+      "operation": "weak_topology",
+      "predicted_gain": 0.0049184872477056355,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 74,
+      "parent": 14,
+      "operation": "weak_topology",
+      "predicted_gain": 0.021757117291478008,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 77,
+      "parent": 17,
+      "operation": "weak_topology",
+      "predicted_gain": 0.0029922768686780174,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 79,
+      "parent": 49,
+      "operation": "weak_topology",
+      "predicted_gain": 0.004640777062211189,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 81,
+      "parent": 51,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 84,
+      "parent": 54,
+      "operation": "weak_topology",
+      "predicted_gain": 0.010090835465873763,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 90,
+      "parent": 0,
+      "operation": "weak_topology",
+      "predicted_gain": 0.014246719357355135,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 92,
+      "parent": 2,
+      "operation": "weak_topology",
+      "predicted_gain": 0.04686938477667638,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 96,
+      "parent": 6,
+      "operation": "weak_topology",
+      "predicted_gain": 0.005675314411448001,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 97,
+      "parent": 7,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 99,
+      "parent": 69,
+      "operation": "weak_topology",
+      "predicted_gain": 0.0012496037599413381,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 102,
+      "parent": 42,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 103,
+      "parent": 13,
+      "operation": "weak_topology",
+      "predicted_gain": 0.009530085606794272,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 104,
+      "parent": 14,
+      "operation": "weak_topology",
+      "predicted_gain": 0.005309391514787214,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 108,
+      "parent": 78,
+      "operation": "weak_topology",
+      "predicted_gain": 0.002417343738029269,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 109,
+      "parent": 49,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 112,
+      "parent": 52,
+      "operation": "weak_topology",
+      "predicted_gain": 0.0006979259009305441,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 114,
+      "parent": 54,
+      "operation": "weak_topology",
+      "predicted_gain": 0.01425306941129232,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 121,
+      "parent": 91,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_unstable",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 122,
+      "parent": 2,
+      "operation": "weak_topology",
+      "predicted_gain": 0.02009085764828023,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 123,
+      "parent": 63,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": null
+    },
+    {
+      "id": 124,
+      "parent": 64,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 127,
+      "parent": 7,
+      "operation": "weak_topology",
+      "predicted_gain": 0.007012063967725469,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 132,
+      "parent": 42,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": -0.00030226577395342513
+    },
+    {
+      "id": 133,
+      "parent": 13,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 134,
+      "parent": 14,
+      "operation": "weak_topology",
+      "predicted_gain": 0.013617991550726741,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 136,
+      "parent": 46,
+      "operation": "weak_topology",
+      "predicted_gain": 0.004102703044315797,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": -0.01600707903929699
+    },
+    {
+      "id": 137,
+      "parent": 17,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 141,
+      "parent": 51,
+      "operation": "weak_topology",
+      "predicted_gain": 0.002691211660529346,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": null
+    },
+    {
+      "id": 142,
+      "parent": 52,
+      "operation": "weak_topology",
+      "predicted_gain": 0.002615862238873255,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": -0.004762651575625887
+    },
+    {
+      "id": 143,
+      "parent": 53,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": -0.001382360693260476
+    },
+    {
+      "id": 144,
+      "parent": 54,
+      "operation": "weak_topology",
+      "predicted_gain": 0.01425306941129232,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": 1.1761142060251473e-10
+    },
+    {
+      "id": 150,
+      "parent": 30,
+      "operation": "weak_topology",
+      "predicted_gain": 0.005559290240852102,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 151,
+      "parent": 1,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 152,
+      "parent": 122,
+      "operation": "weak_topology",
+      "predicted_gain": 0.0031220578195736157,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": null
+    },
+    {
+      "id": 154,
+      "parent": 34,
+      "operation": "weak_topology",
+      "predicted_gain": 0.0001623305231111574,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 157,
+      "parent": 127,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 158,
+      "parent": 128,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 159,
+      "parent": 69,
+      "operation": "weak_topology",
+      "predicted_gain": 0.0012496037599413381,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": -6.2901905906187494e-12
+    },
+    {
+      "id": 160,
+      "parent": 40,
+      "operation": "weak_topology",
+      "predicted_gain": 0.0521464121361878,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 162,
+      "parent": 132,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 167,
+      "parent": 47,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 168,
+      "parent": 78,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": 0.0006800526682021468
+    },
+    {
+      "id": 169,
+      "parent": 49,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": null
+    },
+    {
+      "id": 171,
+      "parent": 51,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 181,
+      "parent": 121,
+      "operation": "weak_topology",
+      "predicted_gain": 0.008626466854304935,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 184,
+      "parent": 64,
+      "operation": "weak_topology",
+      "predicted_gain": 0.018097504012941114,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 188,
+      "parent": 128,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 189,
+      "parent": 129,
+      "operation": "weak_topology",
+      "predicted_gain": 0.007289469811673547,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": null
+    },
+    {
+      "id": 190,
+      "parent": 10,
+      "operation": "weak_topology",
+      "predicted_gain": 0.05436893415038401,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": null
+    },
+    {
+      "id": 192,
+      "parent": 132,
+      "operation": "weak_topology",
+      "predicted_gain": 0.005599477609035554,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": null
+    },
+    {
+      "id": 193,
+      "parent": 13,
+      "operation": "weak_topology",
+      "predicted_gain": 0.0049184872477056355,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": -0.050885866153621895
+    },
+    {
+      "id": 194,
+      "parent": 14,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": -0.0009069005335857749
+    },
+    {
+      "id": 196,
+      "parent": 46,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 198,
+      "parent": 78,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 199,
+      "parent": 49,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 200,
+      "parent": 170,
+      "operation": "weak_topology",
+      "predicted_gain": 0.00025642193590575177,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 202,
+      "parent": 142,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 203,
+      "parent": 53,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 204,
+      "parent": 144,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 210,
+      "parent": 120,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 211,
+      "parent": 1,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 213,
+      "parent": 153,
+      "operation": "weak_topology",
+      "predicted_gain": 0.013695798986946372,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 216,
+      "parent": 6,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 218,
+      "parent": 158,
+      "operation": "weak_topology",
+      "predicted_gain": 0.004665714288835757,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 220,
+      "parent": 40,
+      "operation": "weak_topology",
+      "predicted_gain": 0.0521464121361878,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 223,
+      "parent": 73,
+      "operation": "weak_topology",
+      "predicted_gain": 0.003408151379390033,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 229,
+      "parent": 49,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 230,
+      "parent": 170,
+      "operation": "weak_topology",
+      "predicted_gain": 0.021134832468827434,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 231,
+      "parent": 81,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 232,
+      "parent": 172,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 234,
+      "parent": 204,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 240,
+      "parent": 120,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 241,
+      "parent": 31,
+      "operation": "weak_topology",
+      "predicted_gain": 0.007354354277036218,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 242,
+      "parent": 62,
+      "operation": "weak_topology",
+      "predicted_gain": 0.01422499517195193,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": -0.17864260968582468
+    },
+    {
+      "id": 244,
+      "parent": 4,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 246,
+      "parent": 6,
+      "operation": "weak_topology",
+      "predicted_gain": 0.005675314411448001,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 249,
+      "parent": 129,
+      "operation": "weak_topology",
+      "predicted_gain": 0.007289469811673547,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": null
+    },
+    {
+      "id": 250,
+      "parent": 10,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 251,
+      "parent": 71,
+      "operation": "weak_topology",
+      "predicted_gain": 0.021977868346398022,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": -0.2542293518761048
+    },
+    {
+      "id": 252,
+      "parent": 132,
+      "operation": "weak_topology",
+      "predicted_gain": 0.012168741983412737,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 254,
+      "parent": 194,
+      "operation": "weak_topology",
+      "predicted_gain": 0.004226704981794454,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 256,
+      "parent": 136,
+      "operation": "weak_topology",
+      "predicted_gain": 0.01041344812625608,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 257,
+      "parent": 77,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": -0.00421107366527651
+    },
+    {
+      "id": 258,
+      "parent": 78,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": -0.0017547854321831036
+    },
+    {
+      "id": 259,
+      "parent": 199,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": null
+    },
+    {
+      "id": 260,
+      "parent": 170,
+      "operation": "weak_topology",
+      "predicted_gain": 0.00014211103543239147,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": 0.1593822592244385
+    },
+    {
+      "id": 262,
+      "parent": 172,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": -0.0046774664920081754
+    },
+    {
+      "id": 263,
+      "parent": 83,
+      "operation": "weak_topology",
+      "predicted_gain": 0.002186491637306856,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": -0.04322546232223862
+    },
+    {
+      "id": 264,
+      "parent": 204,
+      "operation": "weak_topology",
+      "predicted_gain": 0.0012217881879594565,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 270,
+      "parent": 30,
+      "operation": "weak_topology",
+      "predicted_gain": 0.015365070928345709,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 272,
+      "parent": 182,
+      "operation": "weak_topology",
+      "predicted_gain": 0.02017919455763828,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": -0.20352101567880848
+    },
+    {
+      "id": 274,
+      "parent": 4,
+      "operation": "weak_topology",
+      "predicted_gain": 0.01030589560886055,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": -0.06318216498167228
+    },
+    {
+      "id": 276,
+      "parent": 246,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 277,
+      "parent": 7,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": -0.0016750929131575387
+    },
+    {
+      "id": 282,
+      "parent": 12,
+      "operation": "weak_topology",
+      "predicted_gain": 0.014068338331313228,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": -0.20991187486045698
+    },
+    {
+      "id": 284,
+      "parent": 194,
+      "operation": "weak_topology",
+      "predicted_gain": 0.01981613809166559,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": -0.1971825525672124
+    },
+    {
+      "id": 286,
+      "parent": 136,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 287,
+      "parent": 257,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 291,
+      "parent": 171,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 292,
+      "parent": 172,
+      "operation": "weak_topology",
+      "predicted_gain": 0.003716149697977868,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": null
+    },
+    {
+      "id": 293,
+      "parent": 203,
+      "operation": "weak_topology",
+      "predicted_gain": 0.00960768068584414,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": null
+    },
+    {
+      "id": 300,
+      "parent": 30,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": 0.011805750582454921
+    },
+    {
+      "id": 302,
+      "parent": 182,
+      "operation": "weak_topology",
+      "predicted_gain": 0.04488789666071571,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": null
+    },
+    {
+      "id": 303,
+      "parent": 3,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 306,
+      "parent": 6,
+      "operation": "weak_topology",
+      "predicted_gain": 0.00025009376711695335,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 309,
+      "parent": 69,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 310,
+      "parent": 10,
+      "operation": "weak_topology",
+      "predicted_gain": 0.015378458589533886,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": null
+    },
+    {
+      "id": 311,
+      "parent": 191,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 312,
+      "parent": 12,
+      "operation": "weak_topology",
+      "predicted_gain": 0.014068338331313228,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": null
+    },
+    {
+      "id": 313,
+      "parent": 283,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 316,
+      "parent": 46,
+      "operation": "weak_topology",
+      "predicted_gain": -4.811532906566927e-06,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": 0.1431455237875099
+    },
+    {
+      "id": 317,
+      "parent": 137,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": -0.0004241935962466803
+    },
+    {
+      "id": 318,
+      "parent": 198,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": null
+    },
+    {
+      "id": 321,
+      "parent": 261,
+      "operation": "weak_topology",
+      "predicted_gain": 0.003837200631523578,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 330,
+      "parent": 120,
+      "operation": "weak_topology",
+      "predicted_gain": 0.019242555605257262,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 331,
+      "parent": 301,
+      "operation": "weak_topology",
+      "predicted_gain": 0.038660094679129696,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 334,
+      "parent": 304,
+      "operation": "weak_topology",
+      "predicted_gain": 0.018614962848346298,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 336,
+      "parent": 276,
+      "operation": "weak_topology",
+      "predicted_gain": -4.446334015204409e-05,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 337,
+      "parent": 157,
+      "operation": "weak_topology",
+      "predicted_gain": 0.006638113005263277,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 340,
+      "parent": 250,
+      "operation": "weak_topology",
+      "predicted_gain": 0.011292013292870101,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 342,
+      "parent": 12,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 343,
+      "parent": 163,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 344,
+      "parent": 14,
+      "operation": "weak_topology",
+      "predicted_gain": 0.005309391514787214,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 348,
+      "parent": 78,
+      "operation": "weak_topology",
+      "predicted_gain": 0.002417343738029269,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 349,
+      "parent": 199,
+      "operation": "weak_topology",
+      "predicted_gain": 0.002841379182718257,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 350,
+      "parent": 260,
+      "operation": "weak_topology",
+      "predicted_gain": 0.017919553970469987,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 351,
+      "parent": 51,
+      "operation": "weak_topology",
+      "predicted_gain": 0.003842383808365933,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 353,
+      "parent": 23,
+      "operation": "weak_topology",
+      "predicted_gain": 0.004998930931296274,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 354,
+      "parent": 144,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 360,
+      "parent": 120,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 362,
+      "parent": 62,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 363,
+      "parent": 3,
+      "operation": "weak_topology",
+      "predicted_gain": 0.025010281586593002,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": -0.36012780230831287
+    },
+    {
+      "id": 364,
+      "parent": 4,
+      "operation": "weak_topology",
+      "predicted_gain": 0.021776870007970118,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": -0.16376808162818046
+    },
+    {
+      "id": 367,
+      "parent": 127,
+      "operation": "weak_topology",
+      "predicted_gain": 0.0023197925575799434,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 371,
+      "parent": 161,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 372,
+      "parent": 42,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 373,
+      "parent": 313,
+      "operation": "weak_topology",
+      "predicted_gain": 0.005577308038303031,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 376,
+      "parent": 316,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 377,
+      "parent": 77,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 379,
+      "parent": 79,
+      "operation": "weak_topology",
+      "predicted_gain": 0.004903507400261972,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": null
+    },
+    {
+      "id": 381,
+      "parent": 171,
+      "operation": "weak_topology",
+      "predicted_gain": 0.0025568759820548837,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 382,
+      "parent": 262,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 383,
+      "parent": 23,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": 0.006243115208743988
+    },
+    {
+      "id": 384,
+      "parent": 144,
+      "operation": "weak_topology",
+      "predicted_gain": 0.0009882274573661347,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 392,
+      "parent": 182,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 393,
+      "parent": 273,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": null
+    },
+    {
+      "id": 396,
+      "parent": 306,
+      "operation": "weak_topology",
+      "predicted_gain": 0.00683202463736336,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": -0.007632395182734064
+    },
+    {
+      "id": 398,
+      "parent": 158,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 401,
+      "parent": 161,
+      "operation": "weak_topology",
+      "predicted_gain": 0.002175583553504679,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 402,
+      "parent": 42,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": -0.001404590633733993
+    },
+    {
+      "id": 403,
+      "parent": 163,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 404,
+      "parent": 314,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": -0.0010607731974654477
+    },
+    {
+      "id": 406,
+      "parent": 316,
+      "operation": "weak_topology",
+      "predicted_gain": 0.007521458616858145,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 407,
+      "parent": 77,
+      "operation": "weak_topology",
+      "predicted_gain": 0.0011162269846061491,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": null
+    },
+    {
+      "id": 408,
+      "parent": 78,
+      "operation": "weak_topology",
+      "predicted_gain": 0.003759069796458439,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 411,
+      "parent": 171,
+      "operation": "weak_topology",
+      "predicted_gain": 0.0025568759820548837,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 413,
+      "parent": 203,
+      "operation": "weak_topology",
+      "predicted_gain": 0.00960768068584414,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": null
+    },
+    {
+      "id": 414,
+      "parent": 84,
+      "operation": "weak_topology",
+      "predicted_gain": 0.027644031207112105,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 421,
+      "parent": 361,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 422,
+      "parent": 182,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 423,
+      "parent": 153,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": -0.018503208224465384
+    },
+    {
+      "id": 424,
+      "parent": 4,
+      "operation": "weak_topology",
+      "predicted_gain": 0.01030589560886055,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 426,
+      "parent": 6,
+      "operation": "weak_topology",
+      "predicted_gain": 0.005675314411448001,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 431,
+      "parent": 371,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 433,
+      "parent": 133,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 434,
+      "parent": 194,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 436,
+      "parent": 376,
+      "operation": "weak_topology",
+      "predicted_gain": 0.007986842596950818,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 438,
+      "parent": 288,
+      "operation": "weak_topology",
+      "predicted_gain": 0.024080155369760395,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 442,
+      "parent": 22,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 443,
+      "parent": 383,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 451,
+      "parent": 391,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 452,
+      "parent": 32,
+      "operation": "weak_topology",
+      "predicted_gain": 0.03365412013561853,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 454,
+      "parent": 394,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 456,
+      "parent": 246,
+      "operation": "weak_topology",
+      "predicted_gain": 0.0010052974690834583,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 457,
+      "parent": 127,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 458,
+      "parent": 398,
+      "operation": "weak_topology",
+      "predicted_gain": 0.00416072341129304,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 460,
+      "parent": 10,
+      "operation": "weak_topology",
+      "predicted_gain": 0.0022151528473225795,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 461,
+      "parent": 401,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 463,
+      "parent": 283,
+      "operation": "weak_topology",
+      "predicted_gain": 0.011432008867196275,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 464,
+      "parent": 314,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 466,
+      "parent": 316,
+      "operation": "weak_topology",
+      "predicted_gain": 0.012101951920109195,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 467,
+      "parent": 77,
+      "operation": "weak_topology",
+      "predicted_gain": 0.0011162269846061491,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 469,
+      "parent": 49,
+      "operation": "weak_topology",
+      "predicted_gain": 0.002452169974478919,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 470,
+      "parent": 260,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 472,
+      "parent": 262,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 474,
+      "parent": 84,
+      "operation": "weak_topology",
+      "predicted_gain": 0.022405099217796078,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 480,
+      "parent": 420,
+      "operation": "weak_topology",
+      "predicted_gain": 0.022016815534031484,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": null
+    },
+    {
+      "id": 492,
+      "parent": 132,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": 0.002958260175011218
+    },
+    {
+      "id": 494,
+      "parent": 194,
+      "operation": "weak_topology",
+      "predicted_gain": 0.023421889837487397,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": null
+    },
+    {
+      "id": 496,
+      "parent": 316,
+      "operation": "weak_topology",
+      "predicted_gain": 0.012101951920109195,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": -0.14314552328156882
+    },
+    {
+      "id": 497,
+      "parent": 317,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": 0.0007347120394227691
+    },
+    {
+      "id": 499,
+      "parent": 289,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": null
+    },
+    {
+      "id": 501,
+      "parent": 171,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 503,
+      "parent": 443,
+      "operation": "weak_topology",
+      "predicted_gain": 0.0011033401364348063,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 504,
+      "parent": 414,
+      "operation": "weak_topology",
+      "predicted_gain": 0.011387970473845996,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": -0.07028149162957614
+    },
+    {
+      "id": 510,
+      "parent": 180,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 512,
+      "parent": 482,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 513,
+      "parent": 483,
+      "operation": "weak_topology",
+      "predicted_gain": 0.02333234699512194,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 514,
+      "parent": 4,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 518,
+      "parent": 158,
+      "operation": "weak_topology",
+      "predicted_gain": 0.003446809829279963,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": 1.4555023852835802e-13
+    },
+    {
+      "id": 519,
+      "parent": 69,
+      "operation": "weak_topology",
+      "predicted_gain": 0.0017777661167544157,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": -0.15638763543725387
+    },
+    {
+      "id": 521,
+      "parent": 431,
+      "operation": "weak_topology",
+      "predicted_gain": 0.0030997920803361974,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": -0.008219950037605117
+    },
+    {
+      "id": 522,
+      "parent": 42,
+      "operation": "weak_topology",
+      "predicted_gain": 0.01431840730774649,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 523,
+      "parent": 163,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": -0.004711546706073655
+    },
+    {
+      "id": 526,
+      "parent": 316,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 527,
+      "parent": 317,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 529,
+      "parent": 199,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 530,
+      "parent": 260,
+      "operation": "weak_topology",
+      "predicted_gain": 0.005017419938074981,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 533,
+      "parent": 443,
+      "operation": "weak_topology",
+      "predicted_gain": 0.007263066380577656,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": -0.05863767027983885
+    },
+    {
+      "id": 534,
+      "parent": 144,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 543,
+      "parent": 63,
+      "operation": "weak_topology",
+      "predicted_gain": 0.043228578299079445,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": null
+    },
+    {
+      "id": 544,
+      "parent": 304,
+      "operation": "weak_topology",
+      "predicted_gain": 0.018614962848346298,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 546,
+      "parent": 426,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 547,
+      "parent": 7,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": -0.001809797312194883
+    },
+    {
+      "id": 549,
+      "parent": 69,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 553,
+      "parent": 313,
+      "operation": "weak_topology",
+      "predicted_gain": 0.0020646627481541407,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 556,
+      "parent": 316,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 557,
+      "parent": 527,
+      "operation": "weak_topology",
+      "predicted_gain": 0.001041187307828784,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 560,
+      "parent": 260,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 561,
+      "parent": 261,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 562,
+      "parent": 22,
+      "operation": "weak_topology",
+      "predicted_gain": 0.004562805879001556,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": -2.5439650386260837e-12
+    },
+    {
+      "id": 571,
+      "parent": 511,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 572,
+      "parent": 482,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 573,
+      "parent": 63,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 574,
+      "parent": 394,
+      "operation": "weak_topology",
+      "predicted_gain": 0.016899451136377378,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 576,
+      "parent": 276,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 577,
+      "parent": 37,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 578,
+      "parent": 518,
+      "operation": "weak_topology",
+      "predicted_gain": 0.004191453665737568,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 579,
+      "parent": 549,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 581,
+      "parent": 161,
+      "operation": "weak_topology",
+      "predicted_gain": 0.028243675677287923,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 582,
+      "parent": 42,
+      "operation": "weak_topology",
+      "predicted_gain": 0.013577592455887022,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 584,
+      "parent": 14,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 587,
+      "parent": 527,
+      "operation": "weak_topology",
+      "predicted_gain": 0.0010399388947510896,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 588,
+      "parent": 198,
+      "operation": "weak_topology",
+      "predicted_gain": 0.005302409681064905,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 589,
+      "parent": 79,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 591,
+      "parent": 291,
+      "operation": "weak_topology",
+      "predicted_gain": 0.004997428108711157,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 594,
+      "parent": 144,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 603,
+      "parent": 153,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": -0.01834089201814848
+    },
+    {
+      "id": 604,
+      "parent": 484,
+      "operation": "weak_topology",
+      "predicted_gain": 0.04130259395736597,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 606,
+      "parent": 546,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 607,
+      "parent": 37,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 608,
+      "parent": 518,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": -0.0031068486434171483
+    },
+    {
+      "id": 610,
+      "parent": 280,
+      "operation": "weak_topology",
+      "predicted_gain": 0.055733896485746864,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": null
+    },
+    {
+      "id": 611,
+      "parent": 431,
+      "operation": "weak_topology",
+      "predicted_gain": 0.0030997920803361974,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": -0.008219950037605117
+    },
+    {
+      "id": 613,
+      "parent": 553,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 614,
+      "parent": 194,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 616,
+      "parent": 526,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": 0.0009508345948661123
+    },
+    {
+      "id": 617,
+      "parent": 527,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": 0.0002341699756365223
+    },
+    {
+      "id": 619,
+      "parent": 79,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": 0.0026612866416476644
+    },
+    {
+      "id": 621,
+      "parent": 171,
+      "operation": "weak_topology",
+      "predicted_gain": 0.0029088031929540526,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 630,
+      "parent": 0,
+      "operation": "weak_topology",
+      "predicted_gain": 0.018314634107275865,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 633,
+      "parent": 153,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 634,
+      "parent": 484,
+      "operation": "weak_topology",
+      "predicted_gain": 0.028183295407420855,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 636,
+      "parent": 606,
+      "operation": "weak_topology",
+      "predicted_gain": 0.02623883411379184,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": null
+    },
+    {
+      "id": 637,
+      "parent": 157,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 638,
+      "parent": 488,
+      "operation": "weak_topology",
+      "predicted_gain": 0.006846548160597562,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 639,
+      "parent": 69,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 641,
+      "parent": 371,
+      "operation": "weak_topology",
+      "predicted_gain": 0.003645877918201601,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": -0.006769659517000037
+    },
+    {
+      "id": 647,
+      "parent": 497,
+      "operation": "weak_topology",
+      "predicted_gain": 0.0024824874341948327,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 649,
+      "parent": 199,
+      "operation": "weak_topology",
+      "predicted_gain": 0.0023344267716166205,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": null
+    },
+    {
+      "id": 653,
+      "parent": 173,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 660,
+      "parent": 420,
+      "operation": "weak_topology",
+      "predicted_gain": 0.007790157760238956,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 667,
+      "parent": 7,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 668,
+      "parent": 488,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": 0.0017135105476027146
+    },
+    {
+      "id": 672,
+      "parent": 372,
+      "operation": "weak_topology",
+      "predicted_gain": 0.015193910758024894,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": null
+    },
+    {
+      "id": 673,
+      "parent": 493,
+      "operation": "weak_topology",
+      "predicted_gain": 0.013821245105510412,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": -0.15121309372393565
+    },
+    {
+      "id": 674,
+      "parent": 14,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 677,
+      "parent": 137,
+      "operation": "weak_topology",
+      "predicted_gain": 0.021364692331722335,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": -0.2581949777091043
+    },
+    {
+      "id": 678,
+      "parent": 288,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 679,
+      "parent": 49,
+      "operation": "weak_topology",
+      "predicted_gain": 0.002452169974478919,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": -0.0918780188971342
+    },
+    {
+      "id": 680,
+      "parent": 560,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 681,
+      "parent": 291,
+      "operation": "weak_topology",
+      "predicted_gain": 0.006981900643983037,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 682,
+      "parent": 652,
+      "operation": "weak_topology",
+      "predicted_gain": 0.007643256938024136,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 683,
+      "parent": 653,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 684,
+      "parent": 564,
+      "operation": "weak_topology",
+      "predicted_gain": 0.003774148430859261,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": null
+    },
+    {
+      "id": 690,
+      "parent": 600,
+      "operation": "weak_topology",
+      "predicted_gain": 0.019317913988258544,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 691,
+      "parent": 511,
+      "operation": "weak_topology",
+      "predicted_gain": 0.023681068354585885,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 693,
+      "parent": 483,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 699,
+      "parent": 69,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 701,
+      "parent": 371,
+      "operation": "weak_topology",
+      "predicted_gain": 0.033164956236116476,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 702,
+      "parent": 132,
+      "operation": "weak_topology",
+      "predicted_gain": 0.01608681688095509,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 704,
+      "parent": 674,
+      "operation": "weak_topology",
+      "predicted_gain": 0.01617395702451853,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 706,
+      "parent": 616,
+      "operation": "weak_topology",
+      "predicted_gain": 0.0057485088660456955,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 707,
+      "parent": 527,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 708,
+      "parent": 288,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 710,
+      "parent": 170,
+      "operation": "weak_topology",
+      "predicted_gain": 0.021134832468827434,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 712,
+      "parent": 172,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 713,
+      "parent": 83,
+      "operation": "weak_topology",
+      "predicted_gain": 0.0008128638032535233,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 720,
+      "parent": 0,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": -0.03833819201865618
+    },
+    {
+      "id": 721,
+      "parent": 1,
+      "operation": "weak_topology",
+      "predicted_gain": 0.007705564028390369,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": -0.17006257436150263
+    },
+    {
+      "id": 722,
+      "parent": 62,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 723,
+      "parent": 63,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 724,
+      "parent": 664,
+      "operation": "weak_topology",
+      "predicted_gain": 0.009357170606023549,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": null
+    },
+    {
+      "id": 727,
+      "parent": 157,
+      "operation": "weak_topology",
+      "predicted_gain": 0.003526029081193512,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 728,
+      "parent": 668,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 730,
+      "parent": 640,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": -0.004323670527695889
+    },
+    {
+      "id": 731,
+      "parent": 431,
+      "operation": "weak_topology",
+      "predicted_gain": 0.0032447497293646606,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 732,
+      "parent": 132,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": null
+    },
+    {
+      "id": 733,
+      "parent": 283,
+      "operation": "weak_topology",
+      "predicted_gain": 0.011432008867196275,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": null
+    },
+    {
+      "id": 734,
+      "parent": 524,
+      "operation": "weak_topology",
+      "predicted_gain": 0.005116260164097404,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": null
+    },
+    {
+      "id": 736,
+      "parent": 316,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 738,
+      "parent": 678,
+      "operation": "weak_topology",
+      "predicted_gain": 0.004709528376263545,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 741,
+      "parent": 171,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 742,
+      "parent": 682,
+      "operation": "weak_topology",
+      "predicted_gain": 0.04345495382959106,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": null
+    },
+    {
+      "id": 744,
+      "parent": 414,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 753,
+      "parent": 3,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 754,
+      "parent": 4,
+      "operation": "weak_topology",
+      "predicted_gain": 0.013759336277269085,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": null
+    },
+    {
+      "id": 756,
+      "parent": 486,
+      "operation": "weak_topology",
+      "predicted_gain": 0.007699544208343735,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": -0.11631788058333992
+    },
+    {
+      "id": 757,
+      "parent": 607,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 758,
+      "parent": 668,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": -0.0008392397648350203
+    },
+    {
+      "id": 759,
+      "parent": 69,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 760,
+      "parent": 10,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 763,
+      "parent": 14,
+      "operation": "weak_topology",
+      "predicted_gain": 0.016001326098326434,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 765,
+      "parent": 616,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 766,
+      "parent": 527,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 768,
+      "parent": 529,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 771,
+      "parent": 652,
+      "operation": "weak_topology",
+      "predicted_gain": 0.007643256938024136,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 773,
+      "parent": 564,
+      "operation": "weak_topology",
+      "predicted_gain": 0.003774148430859261,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": null
+    },
+    {
+      "id": 779,
+      "parent": 0,
+      "operation": "weak_topology",
+      "predicted_gain": 0.018314634107275865,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 780,
+      "parent": 1,
+      "operation": "weak_topology",
+      "predicted_gain": 0.025765349641818674,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": null
+    },
+    {
+      "id": 781,
+      "parent": 602,
+      "operation": "weak_topology",
+      "predicted_gain": 0.0363223247904003,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": -0.40101748388704733
+    },
+    {
+      "id": 783,
+      "parent": 4,
+      "operation": "weak_topology",
+      "predicted_gain": 0.013759336277269085,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": null
+    },
+    {
+      "id": 789,
+      "parent": 640,
+      "operation": "weak_topology",
+      "predicted_gain": 0.016881410637984543,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": null
+    },
+    {
+      "id": 791,
+      "parent": 42,
+      "operation": "weak_topology",
+      "predicted_gain": 0.005397962100731622,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 792,
+      "parent": 493,
+      "operation": "weak_topology",
+      "predicted_gain": 0.005885687167682193,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 793,
+      "parent": 14,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 797,
+      "parent": 288,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 799,
+      "parent": 170,
+      "operation": "weak_topology",
+      "predicted_gain": 0.00014211103543239147,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": 0.1593822592244385
+    },
+    {
+      "id": 803,
+      "parent": 564,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 809,
+      "parent": 180,
+      "operation": "weak_topology",
+      "predicted_gain": 0.018403059603408885,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 812,
+      "parent": 3,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 813,
+      "parent": 664,
+      "operation": "weak_topology",
+      "predicted_gain": 0.010555309315529532,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 816,
+      "parent": 157,
+      "operation": "weak_topology",
+      "predicted_gain": 0.006638113005263277,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 817,
+      "parent": 758,
+      "operation": "weak_topology",
+      "predicted_gain": 0.013028060529535774,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 818,
+      "parent": 129,
+      "operation": "weak_topology",
+      "predicted_gain": 0.007289469811673547,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 819,
+      "parent": 280,
+      "operation": "weak_topology",
+      "predicted_gain": 0.003766176448756114,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 821,
+      "parent": 492,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 826,
+      "parent": 766,
+      "operation": "weak_topology",
+      "predicted_gain": 0.0016893829946112672,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 827,
+      "parent": 678,
+      "operation": "weak_topology",
+      "predicted_gain": 0.004709528376263545,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 829,
+      "parent": 680,
+      "operation": "weak_topology",
+      "predicted_gain": 0.007118941922530518,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 830,
+      "parent": 770,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 831,
+      "parent": 682,
+      "operation": "weak_topology",
+      "predicted_gain": 0.004241169200813451,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 832,
+      "parent": 563,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 833,
+      "parent": 624,
+      "operation": "weak_topology",
+      "predicted_gain": 0.002257570590220306,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 839,
+      "parent": 180,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 840,
+      "parent": 391,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": -0.00494975571500067
+    },
+    {
+      "id": 841,
+      "parent": 662,
+      "operation": "weak_topology",
+      "predicted_gain": 0.018425551970187755,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": -0.18542312300060415
+    },
+    {
+      "id": 842,
+      "parent": 483,
+      "operation": "weak_topology",
+      "predicted_gain": 0.057065771567686926,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 843,
+      "parent": 394,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": -0.019424953249974175
+    },
+    {
+      "id": 845,
+      "parent": 546,
+      "operation": "weak_topology",
+      "predicted_gain": 0.0001681754905090211,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 850,
+      "parent": 401,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": -0.0033256931408459645
+    },
+    {
+      "id": 851,
+      "parent": 492,
+      "operation": "weak_topology",
+      "predicted_gain": 0.005244030106241896,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": -1.6653345369377348e-15
+    },
+    {
+      "id": 852,
+      "parent": 643,
+      "operation": "weak_topology",
+      "predicted_gain": 0.003599556725871746,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 857,
+      "parent": 78,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 858,
+      "parent": 619,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 861,
+      "parent": 652,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 862,
+      "parent": 653,
+      "operation": "weak_topology",
+      "predicted_gain": 0.0038744710065931787,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 863,
+      "parent": 84,
+      "operation": "weak_topology",
+      "predicted_gain": 0.022405099217796078,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 869,
+      "parent": 0,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 870,
+      "parent": 1,
+      "operation": "weak_topology",
+      "predicted_gain": 0.019270112690720865,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 873,
+      "parent": 304,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 876,
+      "parent": 607,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": -6.469226232302949e-05
+    },
+    {
+      "id": 877,
+      "parent": 488,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 881,
+      "parent": 372,
+      "operation": "weak_topology",
+      "predicted_gain": 0.005095935074538035,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 886,
+      "parent": 527,
+      "operation": "weak_topology",
+      "predicted_gain": 0.0010399388947510896,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": null
+    },
+    {
+      "id": 889,
+      "parent": 680,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 890,
+      "parent": 770,
+      "operation": "weak_topology",
+      "predicted_gain": 0.0018302704433932916,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 891,
+      "parent": 861,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 892,
+      "parent": 563,
+      "operation": "weak_topology",
+      "predicted_gain": 0.002273833462188074,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": null
+    },
+    {
+      "id": 893,
+      "parent": 564,
+      "operation": "weak_topology",
+      "predicted_gain": 0.002198586756371026,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 900,
+      "parent": 602,
+      "operation": "weak_topology",
+      "predicted_gain": 0.0268280254320688,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 902,
+      "parent": 394,
+      "operation": "weak_topology",
+      "predicted_gain": 0.016899451136377378,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": null
+    },
+    {
+      "id": 904,
+      "parent": 486,
+      "operation": "weak_topology",
+      "predicted_gain": 0.007699544208343735,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 905,
+      "parent": 157,
+      "operation": "weak_topology",
+      "predicted_gain": 0.0008788090972786631,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 907,
+      "parent": 129,
+      "operation": "weak_topology",
+      "predicted_gain": 0.006730713204159628,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": null
+    },
+    {
+      "id": 909,
+      "parent": 431,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 910,
+      "parent": 372,
+      "operation": "weak_topology",
+      "predicted_gain": 0.015193910758024894,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": null
+    },
+    {
+      "id": 911,
+      "parent": 493,
+      "operation": "weak_topology",
+      "predicted_gain": 0.005885687167682193,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 914,
+      "parent": 616,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 915,
+      "parent": 766,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 917,
+      "parent": 768,
+      "operation": "weak_topology",
+      "predicted_gain": 0.0038493585331534027,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": null
+    },
+    {
+      "id": 918,
+      "parent": 799,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 919,
+      "parent": 770,
+      "operation": "weak_topology",
+      "predicted_gain": 0.0029375648819351613,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 920,
+      "parent": 861,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 922,
+      "parent": 624,
+      "operation": "weak_topology",
+      "predicted_gain": 0.0014415036018548925,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": null
+    },
+    {
+      "id": 928,
+      "parent": 180,
+      "operation": "weak_topology",
+      "predicted_gain": 0.018403059603408885,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 929,
+      "parent": 391,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 931,
+      "parent": 153,
+      "operation": "weak_topology",
+      "predicted_gain": 0.02035229805870504,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 934,
+      "parent": 546,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 935,
+      "parent": 607,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 936,
+      "parent": 728,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 938,
+      "parent": 280,
+      "operation": "weak_topology",
+      "predicted_gain": 0.0064163041162521445,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 939,
+      "parent": 431,
+      "operation": "weak_topology",
+      "predicted_gain": 0.009009615743311827,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 940,
+      "parent": 492,
+      "operation": "weak_topology",
+      "predicted_gain": 0.005244030106241896,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 942,
+      "parent": 912,
+      "operation": "weak_topology",
+      "predicted_gain": 0.03348040473347705,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 945,
+      "parent": 527,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 946,
+      "parent": 78,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 947,
+      "parent": 768,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 948,
+      "parent": 560,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 950,
+      "parent": 920,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 952,
+      "parent": 564,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 958,
+      "parent": 0,
+      "operation": "weak_topology",
+      "predicted_gain": 0.014246719357355135,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 960,
+      "parent": 752,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 964,
+      "parent": 486,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 965,
+      "parent": 607,
+      "operation": "weak_topology",
+      "predicted_gain": 0.0010008085815921158,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": 2.2926105458509483e-14
+    },
+    {
+      "id": 966,
+      "parent": 758,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 969,
+      "parent": 909,
+      "operation": "weak_topology",
+      "predicted_gain": 0.012581162814338756,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 971,
+      "parent": 493,
+      "operation": "weak_topology",
+      "predicted_gain": 0.007476325349622091,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 973,
+      "parent": 735,
+      "operation": "weak_topology",
+      "predicted_gain": 0.0014417245414635755,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 975,
+      "parent": 915,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 976,
+      "parent": 198,
+      "operation": "weak_topology",
+      "predicted_gain": 0.004103023305355702,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 977,
+      "parent": 768,
+      "operation": "weak_topology",
+      "predicted_gain": 0.0038493585331534027,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 979,
+      "parent": 261,
+      "operation": "weak_topology",
+      "predicted_gain": 0.0036807729244957427,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": -7.23199278240827e-13
+    },
+    {
+      "id": 980,
+      "parent": 920,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 981,
+      "parent": 173,
+      "operation": "weak_topology",
+      "predicted_gain": 0.004998933859517352,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": -0.02852924907407145
+    },
+    {
+      "id": 982,
+      "parent": 803,
+      "operation": "weak_topology",
+      "predicted_gain": 0.003268934035480308,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 988,
+      "parent": 180,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": -0.01447343693422154
+    },
+    {
+      "id": 989,
+      "parent": 391,
+      "operation": "weak_topology",
+      "predicted_gain": 0.01601801877959997,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": null
+    },
+    {
+      "id": 990,
+      "parent": 752,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 992,
+      "parent": 304,
+      "operation": "weak_topology",
+      "predicted_gain": 0.00960138108696964,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 994,
+      "parent": 486,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 997,
+      "parent": 129,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": null
+    },
+    {
+      "id": 998,
+      "parent": 280,
+      "operation": "weak_topology",
+      "predicted_gain": 0.003766176448756114,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": -0.06376481813540313
+    },
+    {
+      "id": 999,
+      "parent": 909,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": -0.001680827451604805
+    },
+    {
+      "id": 1001,
+      "parent": 643,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": -0.0015200726360952155
+    },
+    {
+      "id": 1002,
+      "parent": 912,
+      "operation": "weak_topology",
+      "predicted_gain": 0.00985491086340462,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": -0.07415892594417972
+    },
+    {
+      "id": 1006,
+      "parent": 78,
+      "operation": "weak_topology",
+      "predicted_gain": 0.004103931913449213,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": null
+    },
+    {
+      "id": 1008,
+      "parent": 799,
+      "operation": "weak_topology",
+      "predicted_gain": 0.01587239387689698,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 1009,
+      "parent": 261,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 1010,
+      "parent": 920,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": 0.00404719878910198
+    },
+    {
+      "id": 1011,
+      "parent": 921,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": -0.0011204206239309178
+    },
+    {
+      "id": 1021,
+      "parent": 991,
+      "operation": "weak_topology",
+      "predicted_gain": 0.02516733761687831,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 1022,
+      "parent": 304,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": -0.00898106445182556
+    },
+    {
+      "id": 1025,
+      "parent": 965,
+      "operation": "weak_topology",
+      "predicted_gain": 0.0007776066722300486,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 1026,
+      "parent": 728,
+      "operation": "weak_topology",
+      "predicted_gain": 0.004324108223777414,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 1027,
+      "parent": 429,
+      "operation": "weak_topology",
+      "predicted_gain": 0.008757490761960795,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": null
+    },
+    {
+      "id": 1030,
+      "parent": 881,
+      "operation": "weak_topology",
+      "predicted_gain": 0.009194633750597188,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 1031,
+      "parent": 852,
+      "operation": "weak_topology",
+      "predicted_gain": 0.0034757815384843745,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": -0.05598571766386129
+    },
+    {
+      "id": 1032,
+      "parent": 674,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": 0.0004071347320062646
+    },
+    {
+      "id": 1033,
+      "parent": 735,
+      "operation": "weak_topology",
+      "predicted_gain": 0.0014417245414635755,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "conditional_infeasible",
+      "delta_mu": null
+    },
+    {
+      "id": 1034,
+      "parent": 376,
+      "operation": "weak_topology",
+      "predicted_gain": 0.014530681953607882,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 1035,
+      "parent": 617,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 1036,
+      "parent": 198,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": null
+    },
+    {
+      "id": 1037,
+      "parent": 768,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": true,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "uncertain",
+      "delta_mu": -0.0003910745432863516
+    },
+    {
+      "id": 1039,
+      "parent": 890,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 1040,
+      "parent": 1010,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    },
+    {
+      "id": 1042,
+      "parent": 624,
+      "operation": "mass_logits_offsets",
+      "predicted_gain": null,
+      "comparable": false,
+      "parent_status": "joint_asymptotic_strict",
+      "child_status": "joint_asymptotic_strict",
+      "delta_mu": null
+    }
+  ],
+  "summary": {
+    "weak_topology": {
+      "paid": 248,
+      "same_guard_density": 54,
+      "strict_pairs": 38,
+      "improvements": 3,
+      "losses": 29,
+      "ties": 6,
+      "positive_predictions": 246
+    },
+    "mass_logits_offsets": {
+      "paid": 217,
+      "same_guard_density": 39,
+      "strict_pairs": 33,
+      "improvements": 10,
+      "losses": 23,
+      "ties": 0,
+      "positive_predictions": 0
+    }
+  },
+  "proposal_operations": {
+    "restart": 584,
+    "mass_logits_offsets": 217,
+    "weak_topology": 249
+  }
+}

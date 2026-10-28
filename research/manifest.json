@@ -1,0 +1,168 @@
+{
+  "schema_version": 1,
+  "cleanup_base_commit": "0c432ca1db8eb32b624d4ac1d96ddc820d87644c",
+  "historical_source_hash": "ed53a17af33b100a06e42fd4b381d0cf3008c112738760e2aeb2dbfad30476e6",
+  "versions": {
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "cvxpy": "1.9.3",
+    "clarabel": "0.11.1"
+  },
+  "best_limiting_witness": "research/s7-analysis/evidencia/fine-offset-1e-07--0.0001.json",
+  "best_finite_witness": "research/joint-research-final/finalist-refinement.json",
+  "files": {
+    "research/cleanup-verification.json": {
+      "bytes": 8629,
+      "sha256": "4688f93ce2fbca7b6b0e6b0e562e1907e8702d6a331140e3ddb81dabf6697643"
+    },
+    "research/joint-research-final/benchmark-config.json": {
+      "bytes": 383,
+      "sha256": "4194136dcd0a63b2a834ec0faabd172c9a0a792d2d0c975116f76b24663d5b6f"
+    },
+    "research/joint-research-final/finalist-refinement-attempt-1.json": {
+      "bytes": 450,
+      "sha256": "b250e48697d57d63dfe95e9737c4f61a01b8cb491726a5c3f293c42f0f1876d5"
+    },
+    "research/joint-research-final/finalist-refinement.json": {
+      "bytes": 24834,
+      "sha256": "2fbb27435a597380776a4130e6262b49ea122786c7178d090e0ae3d32075df94"
+    },
+    "research/joint-research-final/findings.md": {
+      "bytes": 1768,
+      "sha256": "0f496ad82a7f81a88f3a3baefd1682d51baa0a1a1c1851c0191ae8cd4c5e1e41"
+    },
+    "research/joint-research-final/paired-summary.csv": {
+      "bytes": 9594,
+      "sha256": "bebb41052a436823bdf98c56690deee14c7d5f555e8554fa6b84f16ec873758f"
+    },
+    "research/joint-research-final/paired-summary.jsonl": {
+      "bytes": 27099,
+      "sha256": "d482fa71afff458afbe5a71cbb5619cd6f5c32f42dc7aab065dfef4d2b7f8529"
+    },
+    "research/joint-research-final/summary.json": {
+      "bytes": 36467,
+      "sha256": "f610e6a88f7ce0d7f379b8db12de9b9c106cb4459976d9cad6a690e70d6719c4"
+    },
+    "research/joint-research-final/sweep/top-limit.json": {
+      "bytes": 9253,
+      "sha256": "d9d09a1795e2287cb72fd34eef140d96a248e47a6d9c9c88646971bc788bc7e1"
+    },
+    "research/joint-research-final/sweep/trace.jsonl": {
+      "bytes": 392183,
+      "sha256": "5b46f1a8c33b0a11eeec9ef6f92897f80ed5ac9568813a9d5c232becf5dbc7d0"
+    },
+    "research/joint-research-final/sweep-config.json": {
+      "bytes": 1393,
+      "sha256": "1d01637a7572bb7fabb3fbf0e0218863d34b7cbcac40658347171613b01cf001"
+    },
+    "research/README.md": {
+      "bytes": 2802,
+      "sha256": "8b2e2b4f4fa8ac4147c650a3312e6db0312dfb8e0727b77612023123007072bf"
+    },
+    "research/s7-analysis/analisis-datos.json": {
+      "bytes": 1024834,
+      "sha256": "3d2ce242c004c9c602261dd7f9e5d8a2501d8d47966730b29ed2bebd680486e0"
+    },
+    "research/s7-analysis/distancias-muestra.csv": {
+      "bytes": 34531,
+      "sha256": "a53ea59a22c68ace06acab75d9940af5b4904e0097feb2b85e40e8616bd6237c"
+    },
+    "research/s7-analysis/evidencia/fine-offset-1e-07--0.0001.json": {
+      "bytes": 10581,
+      "sha256": "5cb7941de09986ca490625956454559c27305a461f84c41d5402649c0fc08d88"
+    },
+    "research/s7-analysis/experimentos.csv": {
+      "bytes": 11570,
+      "sha256": "12bea6a18e66a9664b225881850d1d6fc3100a74619738a92382251d9ac4f244"
+    },
+    "research/s7-analysis/experimentos.json": {
+      "bytes": 749710,
+      "sha256": "10fb474d5a51ed23dcffd9ca32629616831a82e8628116e66b51ab06c6fe4a7c"
+    },
+    "research/s7-analysis/figuras/01-densidad-estructura.png": {
+      "bytes": 143477,
+      "sha256": "8b6c4d0f37d98244fd593b3e66581210f31baff37e0b72f804311e8e63d07cd7"
+    },
+    "research/s7-analysis/figuras/01-densidad-estructura.svg": {
+      "bytes": 178655,
+      "sha256": "4fdbe9832dd69bb0c47797a58f1a03712aacbec662189829d077171ae8901866"
+    },
+    "research/s7-analysis/figuras/02-huellas.png": {
+      "bytes": 207378,
+      "sha256": "aa1c2b86571335556b3ab1605f75480d5c54f2972c0febf8bf0e308d19439aff"
+    },
+    "research/s7-analysis/figuras/02-huellas.svg": {
+      "bytes": 181279,
+      "sha256": "03b5342b4d3434fb8fb3e2670f600c63fde55853bc9f0b827c29a3c81e1efa48"
+    },
+    "research/s7-analysis/figuras/03-fusion-y-piso.png": {
+      "bytes": 142084,
+      "sha256": "fdf39a1c72dc28eae42b7654f3dbdffe84d66765f702a596feec6393dd8fe021"
+    },
+    "research/s7-analysis/figuras/03-fusion-y-piso.svg": {
+      "bytes": 95346,
+      "sha256": "dfff5d1b08ca8c917c3c30621bafd953ada3c5373552c63b6e06b1ebe46f7192"
+    },
+    "research/s7-analysis/figuras/04-sensibilidad-local.png": {
+      "bytes": 213638,
+      "sha256": "46873a2f90bfc9b5c0c103790db3e2ead3d97dccee04dc77cefd0f3f4862ebe3"
+    },
+    "research/s7-analysis/figuras/04-sensibilidad-local.svg": {
+      "bytes": 89361,
+      "sha256": "3ff70d9f062990f3f26d27b6246f6d3e8f5d002d76ba2a9e012bb3ae1346ce6d"
+    },
+    "research/s7-analysis/figuras/05-clustering-y-espectros.png": {
+      "bytes": 177449,
+      "sha256": "838b91573b6cc2370042d452dcc64d116998ae730a00966d3f2123a37ac61bd3"
+    },
+    "research/s7-analysis/figuras/05-clustering-y-espectros.svg": {
+      "bytes": 130555,
+      "sha256": "786ca870aa75dacf77056942b2cd4e3a9978b2d0747083cd05ffad1702586e5b"
+    },
+    "research/s7-analysis/informe-s7.html": {
+      "bytes": 1220768,
+      "sha256": "5478bd8ab89eb6f1b712f4ab600d9f1e260ad27a1ae0079c644ca9b51cb134d1"
+    },
+    "research/s7-analysis/informe-s7.md": {
+      "bytes": 32401,
+      "sha256": "ecd77b70deb8dd0da0f791a8979aa4b5ab784d4d95d185ab90321902b33ab50e"
+    },
+    "research/s7-analysis/invariantes-y-linaje.json": {
+      "bytes": 142962,
+      "sha256": "97c7b95aa8051886c72b6d84ddbfec34456e2eaeb1d55d02fa9b32d5166468cd"
+    },
+    "research/s7-analysis/manifiesto.json": {
+      "bytes": 1415,
+      "sha256": "99d2a50a9196705ea27f5495ba3615c06ec784156b7b68090f1e0f9a3beee543"
+    },
+    "research/s7-analysis/muestra-diversa.csv": {
+      "bytes": 14830,
+      "sha256": "e9e1d7eeb135a7e5ff6f173534fab066918503ff951666121a7b5003f564c987"
+    },
+    "research/s7-analysis/todos-los-resultados.csv": {
+      "bytes": 371803,
+      "sha256": "ea5efba6d9cf44d4d57471cd5305143efd394f8dfce675d5d1e925eea334b4cb"
+    },
+    "research/s7-analysis/top20.csv": {
+      "bytes": 12808,
+      "sha256": "73e5a43a3d22ed6981d519b3389001fecd2b66ff094e1c26362123cb5ed97a64"
+    }
+  },
+  "retained_witnesses": [
+    {
+      "kind": "original_best_limit",
+      "mu": 0.6929033189148635,
+      "path": "research/joint-research-final/sweep/top-limit.json"
+    },
+    {
+      "kind": "best_limit",
+      "mu": 0.6929072637491324,
+      "path": "research/s7-analysis/evidencia/fine-offset-1e-07--0.0001.json"
+    },
+    {
+      "kind": "best_finite",
+      "mu": 0.6926591963503084,
+      "path": "research/joint-research-final/finalist-refinement.json"
+    }
+  ]
+}

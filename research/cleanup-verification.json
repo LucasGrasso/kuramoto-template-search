@@ -1,0 +1,195 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-28",
+  "branch": "asymptotic_search",
+  "cleanup_base_commit": "0c432ca1db8eb32b624d4ac1d96ddc820d87644c",
+  "source_hash": "c13d0d5bd6495e375d5c4bc3372f56f45c317b3abeba2144314cd17735e4defc",
+  "removed_tracked_files": [
+    "docs/aggregate-flow-findings.md",
+    "docs/aggregate-flow-search.md",
+    "docs/asymptotic-search-findings.md",
+    "docs/asymptotic-search-integration.md",
+    "examples/asymptotic-small.json",
+    "examples/flow-bounded.json",
+    "src/kuramoto_template/asymptotic_search/aggregate_flow.py",
+    "src/kuramoto_template/asymptotic_search/benchmark.py",
+    "src/kuramoto_template/asymptotic_search/compensated.py",
+    "src/kuramoto_template/asymptotic_search/flow_families.py",
+    "src/kuramoto_template/asymptotic_search/flow_report.py",
+    "src/kuramoto_template/asymptotic_search/flow_search.py",
+    "src/kuramoto_template/asymptotic_search/search.py",
+    "src/kuramoto_template/asymptotic_search/tests/test_aggregate_flow.py",
+    "src/kuramoto_template/asymptotic_search/tests/test_compensated_moves.py",
+    "src/kuramoto_template/asymptotic_search/tests/test_flow_search.py",
+    "src/kuramoto_template/asymptotic_search/tests/test_higher_winding.py",
+    "src/kuramoto_template/asymptotic_search/tests/test_two_stage_end_to_end.py",
+    "src/kuramoto_template/environment/README.md",
+    "src/kuramoto_template/environment/__init__.py",
+    "src/kuramoto_template/environment/__main__.py",
+    "src/kuramoto_template/environment/actions.py",
+    "src/kuramoto_template/environment/config.py",
+    "src/kuramoto_template/environment/env.py",
+    "src/kuramoto_template/experiments/__init__.py",
+    "src/kuramoto_template/experiments/benchmark.py",
+    "src/kuramoto_template/experiments/cache.py",
+    "src/kuramoto_template/experiments/evaluate_policy.py",
+    "src/kuramoto_template/experiments/metrics.py",
+    "src/kuramoto_template/experiments/refinement.py",
+    "src/kuramoto_template/experiments/reporting.py",
+    "src/kuramoto_template/experiments/seeds.py",
+    "src/kuramoto_template/experiments/tests/__init__.py",
+    "src/kuramoto_template/experiments/tests/support.py",
+    "src/kuramoto_template/experiments/tests/test_benchmark.py",
+    "src/kuramoto_template/experiments/tests/test_cache.py",
+    "src/kuramoto_template/experiments/tests/test_metrics.py",
+    "src/kuramoto_template/experiments/tests/test_refinement.py",
+    "src/kuramoto_template/experiments/tests/test_reporting.py",
+    "src/kuramoto_template/experiments/tests/test_seeds.py",
+    "src/kuramoto_template/mutations.py",
+    "src/kuramoto_template/policy/CONTRACT.md",
+    "src/kuramoto_template/policy/README.md",
+    "src/kuramoto_template/policy/__init__.py",
+    "src/kuramoto_template/policy/actions.py",
+    "src/kuramoto_template/policy/archive.py",
+    "src/kuramoto_template/policy/config.py",
+    "src/kuramoto_template/policy/dataset.py",
+    "src/kuramoto_template/policy/encoding.py",
+    "src/kuramoto_template/policy/learner.py",
+    "src/kuramoto_template/policy/network.py",
+    "src/kuramoto_template/policy/replay.py",
+    "src/kuramoto_template/policy/train.py",
+    "src/kuramoto_template/sdp_optimizer/sdp.py",
+    "src/kuramoto_template/sdp_optimizer/sdp_result.py",
+    "src/kuramoto_template/sdp_optimizer/stability_sdp.py",
+    "src/kuramoto_template/sdp_optimizer/stability_sdp_result.py",
+    "src/kuramoto_template/sdp_optimizer/tests/__init__.py",
+    "src/kuramoto_template/sdp_optimizer/tests/test_sdp.py",
+    "src/kuramoto_template/sdp_optimizer/tests/test_stability_sdp.py",
+    "src/kuramoto_template/search/__init__.py",
+    "src/kuramoto_template/search/adaptive.py",
+    "src/kuramoto_template/search/amcs.py",
+    "src/kuramoto_template/search/evaluator.py",
+    "src/kuramoto_template/search/infrastructure.py",
+    "src/kuramoto_template/search/policy_search.py",
+    "src/kuramoto_template/search/random_search.py",
+    "src/kuramoto_template/search/tests/__init__.py",
+    "src/kuramoto_template/search/tests/test_adaptive.py",
+    "src/kuramoto_template/search/tests/test_amcs.py",
+    "src/kuramoto_template/search/tests/test_evaluator.py",
+    "src/kuramoto_template/search/tests/test_infrastructure.py",
+    "src/kuramoto_template/search/tests/test_random_search.py",
+    "src/kuramoto_template/tests/test_audit_regressions.py",
+    "src/kuramoto_template/tests/test_environment.py",
+    "src/kuramoto_template/tests/test_mutations.py",
+    "src/kuramoto_template/tests/test_policy.py"
+  ],
+  "tests": {
+    "passed": 77,
+    "warnings": 2,
+    "command": "uv run --locked pytest -q"
+  },
+  "joint_benchmark": {
+    "proposals": 1050,
+    "paid_joint_results": 1048,
+    "counts": {
+      "joint_sdp": 1048,
+      "finite_tree_linear": 30,
+      "full_density_sdp": 0,
+      "full_margin_sdp": 0,
+      "high_precision_audit": 10
+    },
+    "cache_hits": 2,
+    "status_counts": {
+      "joint_asymptotic_strict": 416,
+      "uncertain": 158,
+      "conditional_infeasible": 473,
+      "joint_unstable": 1
+    },
+    "trace_matches_historical": true,
+    "status_changes": 0,
+    "max_absolute_mu_difference": 0.0,
+    "best_limit_id": 600,
+    "best_limit_mu": 0.6929033189148635,
+    "best_finite_mu": 0.6922885138802887
+  },
+  "s7_analysis": {
+    "counts": {
+      "joint_sdp": 120,
+      "high_precision_audit": 4
+    },
+    "status_counts": {
+      "joint_asymptotic_strict": 116,
+      "failed": 1,
+      "uncertain": 3
+    },
+    "status_changes": 0,
+    "max_absolute_mu_difference": 0.0,
+    "html_and_figures_regenerated": true
+  },
+  "witness_replay": {
+    "saved_limit_mu": 0.6929072637491324,
+    "saved_finite_mu": 0.6926591963503084,
+    "fresh_limit_mu": 0.6929072637491324,
+    "fresh_finite_mu": 0.6926591963503084,
+    "counts": {
+      "high_precision_audit": 4,
+      "joint_sdp": 3,
+      "finite_tree_linear": 3
+    },
+    "proof_available": false
+  },
+  "script_sha256": {
+    "scripts/reproduce_best.py": "f237df4d03f735ad53a8732fc6b594030c6909ca4f1ba17f00f53398f3587fc1",
+    "scripts/reproduce_s7_analysis.py": "ee835f83c714be3fed5cf40a608faedf89ccc9ca629f4ce18167f0e69f493746",
+    "scripts/s7_analysis/analyze_sweep.py": "3fa81b29cf743f2110ec7c1c0794e7d60c7d332826f9788bda3a5c80b5640041",
+    "scripts/s7_analysis/build_report.py": "b41ea528d5b675fe45c4383a965eb35f96a284fe408aa59144f798186606f56b",
+    "scripts/s7_analysis/extra_probe.py": "2bb06d176b8a944e56f72f993810a05335167ac45c04f74129e77023633ae620",
+    "scripts/s7_analysis/final_fusion.py": "fa03a96bef6673a7b2dcc8ede5ca0af4c66d9ec90751fc9e4e1dafa4ce73cd81",
+    "scripts/s7_analysis/final_stats.py": "b3357cdb1b53b11634521dfe33b8d7ac4c4d7bf709f172963247ee82a6f40adb",
+    "scripts/s7_analysis/inspect_artifacts.py": "698839d3590ad8847411817115e97da3381b865f3c4c7e74859fbe704d6cd0b5",
+    "scripts/s7_analysis/invariants_and_lineage.py": "4f8584267d77281e8a21c2f3f630dea2a1473b55e2c3dc93e62492e64dced3c6",
+    "scripts/s7_analysis/probe_sensitivity.py": "e3cebb13720964a1223319e94bbd9fe62af99b19c947043456d3c5d30104dc55"
+  },
+  "proof_available": false,
+  "witness_retention": {
+    "policy": "Keep only the best original limit, improved limit and finite witness; reports and aggregate statistics remain tracked.",
+    "removed_non_best_snapshot_copies": 1367,
+    "retained_witnesses": [
+      {
+        "kind": "original_best_limit",
+        "mu": 0.6929033189148635,
+        "path": "research/joint-research-final/sweep/top-limit.json"
+      },
+      {
+        "kind": "best_limit",
+        "mu": 0.6929072637491324,
+        "path": "research/s7-analysis/evidencia/fine-offset-1e-07--0.0001.json"
+      },
+      {
+        "kind": "best_finite",
+        "mu": 0.6926591963503084,
+        "path": "research/joint-research-final/finalist-refinement.json"
+      }
+    ],
+    "non_winning_embedded_states_removed": true,
+    "verification": {
+      "tests_passed": 77,
+      "test_warnings": 2,
+      "best_replay_counts": {
+        "high_precision_audit": 4,
+        "joint_sdp": 3,
+        "finite_tree_linear": 3
+      },
+      "fresh_limit_mu": 0.6929072637491324,
+      "fresh_finite_mu": 0.6926591963503084,
+      "full_analysis_counts": {
+        "joint_sdp": 120,
+        "high_precision_audit": 4
+      },
+      "analysis_status_changes": 0,
+      "analysis_max_absolute_mu_difference": 0.0,
+      "html_and_figures_regenerated": true,
+      "incomplete_source_run_rejected_before_solver_calls": true
+    }
+  }
+}

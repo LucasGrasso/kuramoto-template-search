@@ -474,8 +474,8 @@ def main():
     import argparse
     import json
     from pathlib import Path
-    from kuramoto_template.experiments.reporting import json_safe
-    from .search import _code_hash,_write
+    from .persistence import json_safe
+    from .persistence import _code_hash,_write
 
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input",required=True,help="JSON geometry or saved joint result")

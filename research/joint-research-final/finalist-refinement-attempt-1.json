@@ -1,0 +1,11 @@
+{
+  "parent": "sweep/top-limit.json",
+  "status": "uncertain",
+  "solver_status": "optimal_inaccurate",
+  "message": "Solver status cannot support strict classification",
+  "counts": {"joint_sdp": 1},
+  "gamma0": 0.000001,
+  "fixed_p0": true,
+  "proof_available": false,
+  "note": "The initial refinement assertion stopped before a full snapshot was written. This is the observed rejected attempt and its paid call, not a reconstructed candidate."
+}

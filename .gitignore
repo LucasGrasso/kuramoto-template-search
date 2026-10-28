@@ -8,8 +8,11 @@ wheels/
 
 # Virtual environments
 .venv
+.pytest_cache/
 
 # Local numerical search output
 /runs/
+
+# Curated experiment evidence in research/ is intentionally tracked.
 
 .t4_env

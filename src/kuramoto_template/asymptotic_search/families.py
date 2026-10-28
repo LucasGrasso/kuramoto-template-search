@@ -70,37 +70,6 @@ def split_candidate(c, index, ratio, separation, *, min_mass=1e-5):
                              c.backbone_cycle, c.family_id + f"/split:{index}")
 
 
-def outer_proposals(seed, count, sizes=(7, 8, 9, 10, 12)):
-    """Deterministic outer proposals; every candidate carries its actual lineage.
-
-    The first three are exact calibration seeds. Subsequent points relax masses,
-    offsets and neighbor masks; they must be reoptimized and screened.
-    """
-    rng = np.random.default_rng(seed)
-    for i in range(count):
-        c = s7((.03, .01, .003)[i % 3])
-        if i < 3:
-            yield c
-            continue
-        target = sizes[(i - 3) % len(sizes)]
-        while c.m < target:
-            c = split_candidate(c, int(rng.integers(c.m)), rng.uniform(.25, .75), rng.uniform(.1, .8))
-        x = c.x * np.exp(rng.normal(0, .025, c.m))
-        x /= x.sum()  # Outer parameterization, never PhaseTemplate normalization.
-        s = normalize_offsets(x, c.s + rng.normal(0, .04, c.m))
-        mask = c.allowed_mask.copy()
-        protected = {tuple(sorted((a, b))) for a, b in zip(c.backbone_cycle,
-                                                          c.backbone_cycle[1:] + c.backbone_cycle[:1])}
-        if i % 3:
-            for a in range(c.m):
-                for b in range(a+1, c.m):
-                    if c.groups[a] != c.groups[b] and (a, b) not in protected and rng.random() < .12:
-                        mask[a, b] = mask[b, a] = False
-        p = c.p0.copy()
-        p[~mask] = 0
-        yield replace(c, x=x, s=s, p0=p, allowed_mask=mask, family_id=f"outer:{i}/" + c.family_id)
-
-
 def winding(c, P, h, *, min_density=1e-4, tolerance=1e-10):
     """Check this backbone only, on the actual matrix and finite phase path."""
     phi = c.groups * (np.pi/2) + h*c.s

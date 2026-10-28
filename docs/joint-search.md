@@ -1,9 +1,10 @@
 # Joint limiting SDP and weak-mode search
 
-The implementation is additive on `asymptotic_search`. The original LP,
-necessary-screen SDP, correction SDP, two-stage benchmark, evaluator, finite
-validator, checkpoint schemas and RL action space are unchanged. No changes
-were merged from `repair_sdp`.
+This branch retains the joint experiment and the original LP, necessary-screen
+SDP and correction SDP used by its paired controls. The older outer drivers,
+RL/Gym, full-template fallback and aggregate/compensated workflows were removed.
+The [root README](../README.md) lists current reproduction commands; historical
+reports and witnesses are tracked under [research](../research/README.md).
 
 ## Run it
 
@@ -141,7 +142,7 @@ Within-parent label sorting precedes gauge reduction so reduction order is
 deterministic. Ambiguous tied labels may miss a symmetry hit, but do not merge
 unequal data.
 
-Checkpoints use the existing atomic JSON writer, with a new-driver-only short
+Checkpoints use the shared atomic JSON writer, with a new-driver-only short
 retry for transient Windows reader sharing violations. A retry repeats file
 I/O, never a solver. Enduring errors still propagate. Outer-proposal, joint-solve
 and finite-lift boundaries persist RNG, pending geometry, exact cache, archives,
@@ -149,10 +150,9 @@ source hash, dependency versions, counters and references to complete immutable
 per-solve result files. Resume rejects changed source/settings/versions and
 does not repay completed boundaries. Completed-run resume is also zero-cost.
 
-The optional full-template fallback uses the existing SearchSession/evaluator
-adapter. Its API has no local tube; it is explicitly support-only, records
-`family_lift=False`, and cannot replace a validated local lift as a family
-witness. Full-SDP, all-conic and wall-time budgets are distinct comparisons.
+The historical experiment used zero full-template SDP calls. That unused
+fallback has been removed. Its legacy `full_sdp_calls` setting must be zero;
+checkpoint/ledger fields remain readable and their full-SDP counters remain zero.
 
 Finalists receive independent 60-digit Decimal polynomial assembly/LDL audits
 of the limiting Hessian and the existing Decimal finite audit when available.

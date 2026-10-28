@@ -1,0 +1,72 @@
+{
+  "proposals": 1050,
+  "seed": 0,
+  "sizes": [
+    7,
+    8,
+    9,
+    10,
+    12
+  ],
+  "families": [
+    "complete",
+    "anchor_zero",
+    "cut_zero",
+    "mixed_zero",
+    "internal_sparse",
+    "nonuniform_anchor"
+  ],
+  "guard_scales": [
+    0.01,
+    0.003,
+    0.001
+  ],
+  "targets": [
+    0.693,
+    0.6935,
+    0.695
+  ],
+  "joint_sdp_calls": 1050,
+  "finite_tree_calls": 60,
+  "full_sdp_calls": 0,
+  "audit_calls": 10,
+  "shortlist_size": 10,
+  "archive_per_stratum": 4,
+  "mass_floor": 1e-05,
+  "mass_radius": 0.008,
+  "offset_radius": 0.015,
+  "guided_probability": 0.6,
+  "h_fractions": [
+    0.3,
+    0.1,
+    0.03
+  ],
+  "max_wall_seconds": null,
+  "inner": {
+    "mode": "density",
+    "mu_target": 0.693,
+    "gamma0": 1e-06,
+    "hard_floor": 1e-06,
+    "restoring_floor": 0.0001,
+    "energy_floor": 1e-07,
+    "h_guard": 0.003,
+    "r_max": 30.0,
+    "backbone_density": 0.0001,
+    "inward_slack": 0.001,
+    "repair_density": 0.001,
+    "box_buffer": 1e-08,
+    "residual_tolerance": 1e-09,
+    "strict_tolerance": 1e-08,
+    "rank_tolerance": 1e-12,
+    "neutral": false,
+    "secondary": false,
+    "density_allowance": 1e-07,
+    "solver": "CLARABEL",
+    "solver_options": {
+      "tol_gap_abs": 1e-11,
+      "tol_gap_rel": 1e-11,
+      "tol_feas": 1e-11,
+      "max_iter": 500
+    }
+  }
+}

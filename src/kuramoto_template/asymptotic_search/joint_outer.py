@@ -1,7 +1,7 @@
 """Balanced outer search with weak-mode proposals and atomic replay boundaries.
 
-The earlier two-stage driver is unchanged. Full evaluations use its existing
-SearchSession adapter. New conic and audit costs have disjoint ledger kinds.
+The original proposal schedule and numerical gates are preserved.
+Conic and audit costs have disjoint ledger kinds.
 """
 
 import argparse
@@ -14,13 +14,13 @@ from time import perf_counter,sleep
 
 import numpy as np
 
-from kuramoto_template.experiments.reporting import json_safe
+from .persistence import json_safe
 from .audit import high_precision_audit
 from .families import normalize_offsets,s7,split_candidate
 from .finite_lift import lift_candidate
 from .joint_limit import JointLimitConfig,result_from_data,solve_joint_limit
 from .models import LimitingCandidate,candidate_data
-from .search import _code_hash,_full_evaluation,_write
+from .persistence import _code_hash,_write
 from .solvers import CallLimit,SolverLedger
 from .stage2 import validate_correction
 from .weak_modes import (apply_topology_move,continuous_move,high_precision_limit_audit,
@@ -74,6 +74,8 @@ class JointOuterConfig:
             v = getattr(self,name)
             if isinstance(v,bool) or not isinstance(v,int) or v<0:
                 raise ValueError(f"{name} must be a nonnegative integer")
+        if self.full_sdp_calls != 0:
+            raise ValueError("Full-template fallback was not used by this experiment; full_sdp_calls must be zero")
         if self.archive_per_stratum<1:
             raise ValueError("archive_per_stratum must be positive")
         if not self.sizes or any(m not in (7,8,9,10,12) for m in self.sizes):
@@ -360,7 +362,7 @@ def run_joint_outer(config=None,*,output=None,resume=False,cancelled=None,candid
             state["phase"]="select"
         if state["phase"]=="select":
             # Reuse the existing cluster-first/mask-second shortlist policy.
-            from .search import _shortlist
+            from .persistence import _shortlist
             proxies=[]
             strict_ids=state["archives"]["strict"]
             for index in strict_ids:
@@ -401,11 +403,6 @@ def run_joint_outer(config=None,*,output=None,resume=False,cancelled=None,candid
             if finite.status=="finite_h_numeric_strict":
                 if state["best_finite"] is None or finite.mu>state["best_finite"]["mu"]:
                     state["best_finite"]=data
-            elif ledger.remaining("full_density_sdp")>0:
-                evaluation,session,settings=_full_evaluation(result.candidate,h,ledger.remaining("full_density_sdp"),
-                                                              numerics,cfg.seed,ledger)
-                data["support_only_fallback"]=dict(family_lift=False,sdp_calls=session.sdp_calls,
-                    status=evaluation.status,mu=evaluation.stable_mu,P=evaluation.P,evaluation_config=asdict(settings))
             state["finite"].append(data)
             state["pending"]["h_cursor"]+=1
             persist()  # FINITE-LIFT boundary.

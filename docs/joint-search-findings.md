@@ -2,6 +2,14 @@
 
 Date: 2026-10-26. Branch: `asymptotic_search`.
 
+Historical report: the measurements and test counts below describe the original
+run. Its best witnesses and summaries are tracked in
+[`research/joint-research-final/`](../research/joint-research-final/);
+unselected snapshots are regenerated under ignored `runs/`.
+The [S7 follow-up informe](../research/s7-analysis/informe-s7.md) contains the
+subsequent limiting value 0.6929072637491324. See the [root README](../README.md)
+for current commands and the cleaned implementation's verification.
+
 The joint convex model, target-margin mode, weak-mode structural proposals,
 resource ledger and resumable outer driver are implemented. **445 tests pass**,
 including all 416 previous tests and 29 additive tests. The calibration and
@@ -13,7 +21,7 @@ was produced.
 
 ```powershell
 uv run python -m kuramoto_template.asymptotic_search.joint_benchmark --output runs/joint-research-final --sweep-proposals 1050 --seed 0
-uv run --extra rl pytest -q
+uv run --locked pytest -q
 ```
 
 Use a fresh output directory for another run. The sandbox required

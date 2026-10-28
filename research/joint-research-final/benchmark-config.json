@@ -1,0 +1,23 @@
+{
+  "seed": 0,
+  "sweep_proposals": 1050,
+  "paired": true,
+  "sizes": [
+    7,
+    8,
+    9,
+    10,
+    12
+  ],
+  "families": [
+    "complete",
+    "anchor_zero",
+    "cut_zero",
+    "mixed_zero",
+    "internal_sparse",
+    "nonuniform_anchor"
+  ],
+  "all_conic_cell_cap": 2,
+  "fixed_full_sdp_calls_per_cell": 0,
+  "comparison_target": 0.6929077063695864
+}

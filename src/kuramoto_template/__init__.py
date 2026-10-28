@@ -1,2 +1,1 @@
-def main() -> None:
-    print("Hello from kuramoto-template!")
+"""Reproducible Kuramoto joint limiting SDP research."""

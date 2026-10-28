@@ -1,7 +1,7 @@
 [project]
 name = "kuramoto-template"
 version = "0.1.0"
-description = "Trying to push the lower bound of the Kuramoto model via template search"
+description = "Reproducible joint limiting SDP experiments for Kuramoto S7 templates"
 readme = "README.md"
 authors = [
     { name = "Lucas", email = "lucasgrassoramos@gmail.com" }
@@ -15,11 +15,10 @@ dependencies = [
 ]
 
 [project.scripts]
-kuramoto-template = "kuramoto_template:main"
+kuramoto-template = "kuramoto_template.asymptotic_search.joint_outer:main"
 
 [project.optional-dependencies]
-environment = ["gymnasium>=1.2,<2"]
-rl = ["gymnasium>=1.2,<2", "torch>=2.9,<3"]
+reports = ["matplotlib>=3.11.2,<4"]
 
 [build-system]
 requires = ["uv_build>=0.12.20,<0.13.0"]
@@ -31,4 +30,5 @@ dev = [
 ]
 
 [tool.pytest.ini_options]
+testpaths = ["src/kuramoto_template"]
 markers = ["integration: exercises real conic solvers"]

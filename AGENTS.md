@@ -1,146 +1,62 @@
-# Kuramoto Template Search
+# Kuramoto S7 joint SDP reproduction
 
-## Project
+## Scope and setup
 
-Python research package for searching phase-cluster templates in the homogeneous
-Kuramoto model. Templates specify cluster mass fractions and phases; semidefinite
-programs optimize connection densities and assess equilibrium and stability.
-Search methods include random search, nested AMCS, adaptive AMCS, and a learned
-mutation policy using behavior cloning (BC) and advantage-weighted actor-critic
-(AWAC).
+This branch retains the original joint limiting SDP benchmark, S7 structural
+follow-up, saved numerical witnesses and finite-lift refinement. RL/Gym,
+random/AMCS, full-template optimization/fallback, the old two-stage outer driver
+and aggregate-flow/compensated pilots are outside this branch's scope.
 
-## Stack and setup
-
-- Python 3.14 or newer; dependencies and environments managed with `uv`.
-- NumPy and SciPy for numerical calculations.
-- CVXPY for SDP models; Clarabel is the default conic solver.
-- Optional Gymnasium environment and optional CPU PyTorch policy package.
-- Pytest for unit, property, regression, and solver integration tests.
-
-From the repository root:
-
-```bash
-uv sync
-uv sync --extra environment
-uv sync --extra rl
-```
-
-The optional extras are selected according to the component being developed.
-Dependency declarations live in `pyproject.toml`; `uv.lock` records resolution.
-The package uses the `uv_build` backend and a `src/` layout.
+Python >=3.14; use `uv sync --locked` and `uv run --locked pytest -q`.
+The optional `reports` extra adds Matplotlib for regenerating the informe.
+Source uses a `src/` layout and the `uv_build` backend.
 
 ## Source map
 
-All package paths below are relative to `src/kuramoto_template/`.
+- `src/kuramoto_template/asymptotic_search/`: immutable limiting candidates,
+  S7/split families, expansions, joint SDP, guided outer search, finite lifts,
+  numerical audits, paired limiting/correction controls and persistence.
+- `template.py`: immutable masses and wrapped phases.
+- `sdp_optimizer/template_metrics.py`, `validate_input.py`: independent finite
+  metrics and circular geometry.
+- `scripts/reproduce_best.py`: integrity checks, saved-witness validation and
+  fresh limiting/fixed-P0/finite replay.
+- `scripts/reproduce_s7_analysis.py`, `scripts/s7_analysis/`: the original
+  120-solve structural analysis with portable paths and scratch output.
+- `research/`: intentionally versioned reports, figures, configurations,
+  aggregate statistics, ledgers and only the three best-result witness files.
+  Non-winning snapshots and embedded candidate matrices must stay outside Git.
 
-| Path | Responsibility |
-| --- | --- |
-| `template.py` | Immutable `PhaseTemplate` masses and wrapped phases |
-| `mutations.py` | Template splitting, merging, phase perturbation, resizing, and pruning helpers |
-| `sdp_optimizer/sdp.py` | Maximum minimum-degree density SDP |
-| `sdp_optimizer/stability_sdp.py` | Maximum common stability-margin SDP at a fixed degree target |
-| `sdp_optimizer/template_metrics.py` | Recomputed degree, equilibrium, and stability diagnostics |
-| `sdp_optimizer/validate_input.py` | Input validation and circular phase geometry |
-| `search/evaluator.py` | Numerical screening, evaluation statuses, and SDP-call costs |
-| `search/infrastructure.py` | Search sessions, records, shared budgets, and trace persistence |
-| `search/random_search.py` | Random-search baseline and twisted seed construction |
-| `search/amcs.py`, `search/adaptive.py` | Fixed nested and adaptive AMCS |
-| `search/policy_search.py` | Frozen learned-policy search adapter |
-| `environment/` | Gymnasium API, observation construction, action decoding, and configuration |
-| `policy/` | Equivariant model, action distributions, replay, BC/AWAC learner, dataset import, archive, and training |
-| `experiments/` | Seed families, canonicalization/cache, benchmarks, metrics, reporting, refinement, and frozen policy evaluation |
+## Mathematical and reproducibility contracts
 
-Tests are distributed across `tests/`, `search/tests/`,
-`sdp_optimizer/tests/`, and `experiments/tests/` inside the package.
+- Masses are positive float64, sum to one within 1e-10, and are not silently
+  normalized by construction. Arrays are copied and read-only.
+- Symmetric connection densities obey box, clique and structural constraints.
+  Minimum degree is `min(P @ x)`; recompute equilibrium and stability independently.
+- Retain within-cluster restoring checks and the intercluster Laplacian
+  restricted off the global rotation mode. Solver status alone is insufficient.
+- Limiting strictness, finite numerical strictness and rigorous certification
+  are separate. Decimal audits evaluate saved float inputs; no root enclosure
+  or graph-realization proof is available.
+- Count every actual conic invocation, including failed and secondary attempts.
+  Tree solves and high-precision audits have separate counters. Preserve failed
+  and uncertain outputs, actual proposal parentage, seeds, settings and versions.
+- Preserve the original schedule, numerical gates, exact cache semantics and
+  checkpoint schemas. The unused full-template fallback is disabled; its legacy
+  configuration field must be zero and its ledger counters remain zero.
+- Preserve historical reports and winning witness values. Curated analysis
+  files contain summaries rather than non-winning matrices. New complete runs
+  belong in ignored `runs/`. Update `research/manifest.json` deliberately when
+  curating evidence.
+  Historical source hashes remain historical; resume rejects source changes.
+- `.t4_env` contains private material and must remain untracked. Never copy it
+  or environment/cache directories into research artifacts.
 
-## Mathematical contracts
+## Verification
 
-- `PhaseTemplate.x` contains positive float64 masses summing to one within
-  absolute tolerance `1e-10`. Construction does not normalize invalid masses.
-  `phi` contains finite phases wrapped into `[0, 2*pi)`. Arrays are copied and
-  read-only.
-- For fixed masses and phases, both SDPs optimize a symmetric connection matrix
-  `P` with entries in `[0, 1]`. Optional structural masks constrain connections;
-  clique wiring fixes diagonal entries to one when enabled.
-- Cluster degrees are `P @ x`; density `mu` is the minimum cluster degree.
-  Equilibrium requires each mass-weighted sine force to vanish.
-- Stability checks cover both within-cluster restoring coefficients and the
-  mass-weighted intercluster Laplacian restricted to the subspace orthogonal
-  to the global phase-rotation mode.
-- The density SDP maximizes `mu` under positive stability margins. The margin
-  SDP maximizes a common `gamma` at a specified degree target; negative margins
-  can provide exploration signals. Gamma comparisons are grouped by cluster
-  count rather than ranked across sizes.
-- Numerical feasibility and strict stability require residual and eigenvalue
-  checks. Solver status alone is insufficient. Float64 refinement and the
-  refinement API's `certified` level do not constitute rigorous proofs.
-
-## Environment and policy contracts
-
-- `KuramotoEnv.reset()` returns `(observation, info)`; `step()` returns
-  `(observation, reward, terminated, truncated, info)`.
-- Observations pad variable-size templates and provide node, operation, pair,
-  and diagnostic masks. Relative phase features support rotation invariance
-  and permutation equivariance. Policies do not receive the optimized `P`.
-- Actions select split, merge, perturb, or resize, with cluster indices and two
-  normalized continuous parameters. Action decoding and validity masks live in
-  `environment/actions.py`.
-- An evaluated child becomes the current state even when it is worse or
-  unstable. Structurally rejected actions retain the current state. The best
-  stable incumbent is tracked separately.
-- Reward is the scaled increase in best stable density. Seed evaluation sets
-  the initial incumbent and consumes budget without earning action reward.
-- SDP-budget exhaustion terminates an episode; external collection limits
-  truncate it. The policy learner treats both as boundaries with no bootstrap
-  continuation. Its default discount is one.
-- The model uses shared message passing, masked pooling, hierarchical discrete
-  choices, and truncated Normal continuous actions in Gym coordinates.
-- Historical branching traces are imitation data unless complete serial
-  transitions and context can be reconciled. TD replay requires explicit
-  transition, reward, budget, end-flag, and provenance validation.
-- Training checkpoints contain model and target weights, optimizers, replay,
-  archive, random states, and training progress. Training resume requires a
-  completed episode boundary and compatible settings.
-
-## Accounting, data, and reproducibility
-
-Count actual density and margin solver invocations, including initialization
-and failed solver attempts. Proposal counts and optimizer updates are distinct
-from SDP calls. The serial environment disables caching and exact deduplication;
-repeated states receive fresh evaluations. Other search methods can use
-canonicalized screening caches, whose hits cost zero calls.
-
-Canonicalization handles cluster permutations and global phase rotation with
-explicit numerical quantization. Cached matrices must match the requested
-cluster ordering. Independent candidate refinement bypasses the cache.
-
-Keep stable-density rankings separate from margin-based exploration. Preserve
-actual mutation parentage in traces, use explicit random seeds, and record
-configuration, solver options, and numerical tolerances. Frozen comparisons
-use matched starting templates and SDP budgets; report training, evaluation,
-and fresh audit costs separately. Keep training and held-out provenance distinct.
-
-Generated experiment artifacts belong outside source code. `.venv`, caches,
-and generated outputs are ignored by Git. `.t4_env` contains private access
-material and must remain untracked; do not copy credentials into artifacts.
-
-## Development and verification
-
-Inspect the implementation before relying on tests as evidence of correctness.
-Preserve the mathematical formulation, public API contracts, budget accounting,
-and artifact schemas when making changes. Review the relevant tests and add
-targeted coverage when behavior changes warrant it.
-
-```bash
-uv run --extra rl pytest -q
-uv run --extra rl pytest -q src/kuramoto_template/tests/test_policy.py
-uv run --extra environment pytest -q src/kuramoto_template/tests/test_environment.py
-uv run pytest -q src/kuramoto_template/sdp_optimizer/tests
-```
-
-The full suite must discover all package test directories, not only the
-top-level `tests/` directory. Optional environment and policy tests need their
-corresponding extras. Solver integration tests are marked `integration`.
-
-For detailed interfaces, consult `environment/README.md`, `policy/README.md`,
-and `policy/CONTRACT.md`. Module CLIs expose configuration through `--help`.
+Inspect implementation before trusting tests. Run the complete retained suite,
+including tests within `asymptotic_search/`. Solver tests use `integration`.
+After changing reproduction code, run the documented witness replay; changes
+that affect the sweep schedule also require a fresh full benchmark. Add focused
+coverage when behavior changes warrant it. Do not remove numerical checks to
+make a saved candidate pass.
