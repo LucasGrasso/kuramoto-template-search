@@ -1,4 +1,4 @@
-# Kuramoto S7 joint SDP experiment
+# Kuramoto Template Search by $C_4$ deformations
 
 This branch contains the joint limiting SDP experiment, its S7 structural
 follow-up, and the independently checked finite lift. Historical numerical
