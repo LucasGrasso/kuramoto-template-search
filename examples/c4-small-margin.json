@@ -1,0 +1,7 @@
+{
+  "inner": {
+    "gamma0": 0.0000000001,
+    "h_guard": 0.003,
+    "secondary": false
+  }
+}

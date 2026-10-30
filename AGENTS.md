@@ -3,7 +3,9 @@
 ## Scope and setup
 
 This branch retains the original joint limiting SDP benchmark, S7 structural
-follow-up, saved numerical witnesses and finite-lift refinement. RL/Gym,
+follow-up, saved numerical witnesses and finite-lift refinement. A separate
+`c4_discovery` experiment starts from C4 splits without S7 initialization;
+keep its schedule and outputs separate from the historical benchmark. RL/Gym,
 random/AMCS, full-template optimization/fallback, the old two-stage outer driver
 and aggregate-flow/compensated pilots are outside this branch's scope.
 
@@ -23,6 +25,10 @@ Source uses a `src/` layout and the `uv_build` backend.
   metrics and circular geometry.
 - `scripts/reproduce_best.py`: integrity checks, saved-witness validation and
   fresh limiting/fixed-P0/finite replay.
+- `asymptotic_search/c4_discovery.py`, `scripts/refine_c4_result.py`: independent
+  C4 splitting, optional C4 symmetry reduction and bounded geometry refinement.
+  `scripts/certify_limiting_result.py` certifies explicit rational variants of
+  new limiting outputs; complete experimental outputs remain in ignored `runs/`.
 - `scripts/reproduce_s7_analysis.py`, `scripts/s7_analysis/`: the original
   120-solve structural analysis with portable paths and scratch output.
 - `research/`: intentionally versioned reports, figures, configurations,

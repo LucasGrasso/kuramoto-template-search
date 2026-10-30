@@ -5,6 +5,12 @@ follow-up, and the independently checked finite lift. Historical numerical
 witnesses for the three best results, reports, configurations and aggregate
 statistics are versioned under [`research/`](research/README.md).
 
+A new experiment initialized from C4 splits, without S7 seeds or constants,
+certifies a stronger limiting bound, **mu0 >= 0.6929076590503417**, for an
+explicit nearby rational variant. See [results and scope](docs/c4-discovery-results.md)
+and [reproduction commands](docs/c4-discovery.md). The table below records the
+historical experiments.
+
 | Result | Density | Tracked witness |
 | --- | ---: | --- |
 | Original 1,050-proposal sweep, limit | 0.6929033189148635 | [original limit](research/joint-research-final/sweep/top-limit.json) |
@@ -52,6 +58,10 @@ SDPs. See the [method and lifting proof](docs/interval-certification.md) and
 [results, scope and rational data](research/certification/README.md).
 
 ## Reproduce the experiments
+
+For the separate experiment initialized directly from C4 splits, including a
+zero-margin search, see [C4 discovery](docs/c4-discovery.md). It uses no S7 seed
+or saved witness and preserves the historical experiment below.
 
 The original benchmark includes S7 calibration, paired LP/SDP-then-R controls,
 and the balanced 1,050-proposal joint sweep. Larger sizes, alternative masks,

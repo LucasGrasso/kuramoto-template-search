@@ -1,0 +1,18 @@
+{
+  "seed": 20261029,
+  "reflection_repeats": 2,
+  "generic_starts": 40,
+  "generic_sizes": [6, 7, 8, 9, 10, 12],
+  "local_calls": 650,
+  "generic_local_starts": 1,
+  "polish_calls": 1000,
+  "max_iterations": 80,
+  "derivative_steps": [0.0001, 0.000001, 0.0000001],
+  "parameter_bound": 3.0,
+  "mass_floor": 0.00001,
+  "inner": {
+    "gamma0": 0.0000001,
+    "h_guard": 0.003,
+    "secondary": false
+  }
+}
