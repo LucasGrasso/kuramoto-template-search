@@ -6,7 +6,7 @@ This branch retains the original joint limiting SDP benchmark, S7 structural
 follow-up, saved numerical witnesses and finite-lift refinement. A separate
 `c4_discovery` experiment starts from C4 splits without S7 initialization;
 keep its schedule and outputs separate from the historical benchmark. RL/Gym,
-random/AMCS, full-template optimization/fallback, the old two-stage outer driver
+random/AMCS, the old full-template optimization/fallback, the old two-stage outer driver
 and aggregate-flow/compensated pilots are outside this branch's scope.
 
 Python >=3.14; use `uv sync --locked` and `uv run --locked pytest -q`.
@@ -29,6 +29,11 @@ Source uses a `src/` layout and the `uv_build` backend.
   C4 splitting, optional C4 symmetry reduction and bounded geometry refinement.
   `scripts/certify_limiting_result.py` certifies explicit rational variants of
   new limiting outputs; complete experimental outputs remain in ignored `runs/`.
+- The optional `c4_parametric`, `c4_multisplit`, `c4_recovered` and `c4_session`
+  modules support the separately logged C4-only timed research. Standalone
+  `c4_finite_probe` controls do not enable the historical full-template fallback.
+  `scripts/exact_c4_active_family.py`, `lift_exact_c4.py` and
+  `probe_c4_mass_tangent.py` reconstruct and certify exact C4-derived winners.
 - `scripts/reproduce_s7_analysis.py`, `scripts/s7_analysis/`: the original
   120-solve structural analysis with portable paths and scratch output.
 - `research/`: intentionally versioned reports, figures, configurations,

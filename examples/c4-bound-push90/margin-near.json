@@ -1,0 +1,13 @@
+{
+  "mode": "margin",
+  "mu_target": 0.6929087063695863,
+  "secondary": false,
+  "box_buffer": 1e-09,
+  "h_guard": 0.0003,
+  "solver_options": {
+    "tol_gap_abs": 1e-11,
+    "tol_gap_rel": 1e-11,
+    "tol_feas": 1e-11,
+    "max_iter": 1000
+  }
+}

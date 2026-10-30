@@ -1,0 +1,918 @@
+{
+  "runs": [
+    {
+      "run": "c4-push90-birth1",
+      "counts": {
+        "joint_sdp": 9823
+      },
+      "elapsed_seconds": 90.04558549996,
+      "stop_reason": "completed",
+      "best_numeric_mu": 0.6929077055877655,
+      "best_numeric_status": "uncertain",
+      "best_certified_mu": null,
+      "source_hash": "a83390b95c10f8ae63e3731715f0db52c0465ee4b7d18015310728e83171371c",
+      "settings": {
+        "output": "runs\\c4-push90-birth1",
+        "mode": "birth",
+        "input": "runs\\c4-push90-polish2\\best-certified-source.json",
+        "config": "runs\\c4-push90-configs\\tight.json",
+        "seconds": 900.0,
+        "max_calls": 30000,
+        "local_calls": 1200,
+        "seed": 5531,
+        "restarts": 32,
+        "max_per_parent": 4,
+        "max_size": 16,
+        "method": "envelope",
+        "mass_by_occupancy": false,
+        "no_parent_symmetry": false,
+        "baseline": 0.692907705907258,
+        "script_sha256": "83adb325e0ad7b5fe5164bf88741816f4b4cae5dddb90fa5706a5a47cf6ea396",
+        "input_sha256": "154a75ff2a97bdbf17ed6d13646149abb1bc1eccc9ea106eec9864fa5f471ef1"
+      },
+      "best_margin_by_size": null
+    },
+    {
+      "run": "c4-push90-elastic-birth1",
+      "counts": {
+        "joint_sdp": 3827,
+        "correction_linear": 3770
+      },
+      "elapsed_seconds": 46.87430420005694,
+      "stop_reason": "completed",
+      "best_numeric_mu": 0.6928928536620598,
+      "best_numeric_status": "uncertain",
+      "best_certified_mu": null,
+      "source_hash": "0ad98d9076e7f2ede04f33abe3c05816f08d72f72e5544957a33ce0271aa2c62",
+      "settings": {
+        "output": "runs\\c4-push90-elastic-birth1",
+        "mode": "needle",
+        "engine": "recovered",
+        "input": "runs\\c4-push90-polish2\\best-certified-source.json",
+        "config": "runs\\c4-push90-configs\\margin-near.json",
+        "seconds": 780.0,
+        "max_calls": 35000,
+        "local_calls": 1400,
+        "seed": 987621,
+        "restarts": 40,
+        "max_per_parent": 4,
+        "max_size": 16,
+        "top": 20,
+        "initial_balance": 0.0,
+        "mass_floor": 1e-12,
+        "birth_depth": 1,
+        "gradient_step": 1e-07,
+        "target_penalty": 3.0,
+        "method": "envelope",
+        "mass_by_occupancy": false,
+        "no_parent_symmetry": false,
+        "baseline": 0.692907706369586,
+        "script_sha256": "dca8f79abacf7456b6f1c4d31ec9d4ad7018e4b318243324c6de2d5d189ab9ee",
+        "input_sha256": "154a75ff2a97bdbf17ed6d13646149abb1bc1eccc9ea106eec9864fa5f471ef1"
+      },
+      "best_margin_by_size": {
+        "8": -1.6277753970231084e-06
+      }
+    },
+    {
+      "run": "c4-push90-elastic-refine1",
+      "counts": {
+        "joint_sdp": 25170,
+        "correction_linear": 25047
+      },
+      "elapsed_seconds": 420.74888070009183,
+      "stop_reason": "completed",
+      "best_numeric_mu": 0.6929049751951561,
+      "best_numeric_status": "uncertain",
+      "best_certified_mu": null,
+      "source_hash": "0ad98d9076e7f2ede04f33abe3c05816f08d72f72e5544957a33ce0271aa2c62",
+      "settings": {
+        "output": "runs\\c4-push90-elastic-refine1",
+        "mode": "refine",
+        "engine": "recovered",
+        "input": "runs\\c4-push90-multisplit1",
+        "config": "runs\\c4-push90-configs\\margin-near.json",
+        "seconds": 780.0,
+        "max_calls": 40000,
+        "local_calls": 1400,
+        "seed": 741219,
+        "restarts": 2,
+        "max_per_parent": 4,
+        "max_size": 16,
+        "top": 24,
+        "initial_balance": 0.0,
+        "mass_floor": 1e-05,
+        "birth_depth": 1,
+        "gradient_step": 1e-05,
+        "target_penalty": 3.0,
+        "method": "envelope",
+        "mass_by_occupancy": false,
+        "no_parent_symmetry": true,
+        "baseline": 0.692907706369586,
+        "script_sha256": "dca8f79abacf7456b6f1c4d31ec9d4ad7018e4b318243324c6de2d5d189ab9ee"
+      },
+      "best_margin_by_size": {
+        "7": -3.9283003881403295e-07,
+        "10": -3.2835898144670947e-07,
+        "9": -7.879095405413962e-07,
+        "11": -7.489188021191337e-06,
+        "8": -1.1269133799775953e-05,
+        "12": -1.4617626103524136e-05
+      }
+    },
+    {
+      "run": "c4-push90-finite-full1",
+      "counts": {
+        "c4_finite_sdp": 9600
+      },
+      "elapsed_seconds": 33.51544670003932,
+      "stop_reason": "completed",
+      "best_numeric_mu": 0.6918739552746167,
+      "best_numeric_status": null,
+      "best_certified_mu": "0.69020265470152981331",
+      "source_hash": "efef289b2327d8f59d6866b0155114d3350894715f3e12d676dbd706b43b33b9",
+      "settings": {
+        "input": "runs\\c4-push90-polish2\\best-certified-source.json",
+        "output": "runs\\c4-push90-finite-full1",
+        "seconds": 900.0,
+        "max_calls": 22000,
+        "local_calls": 2400,
+        "allow_opposite": true,
+        "free": true,
+        "mass_by_occupancy": false,
+        "optimize_h": true,
+        "h": [
+          0.01,
+          0.03,
+          0.1,
+          0.3
+        ],
+        "gamma": 1e-08
+      },
+      "best_margin_by_size": null
+    },
+    {
+      "run": "c4-push90-finite-mirror1",
+      "counts": {
+        "c4_finite_sdp": 4973
+      },
+      "elapsed_seconds": 17.02442879998125,
+      "stop_reason": "completed",
+      "best_numeric_mu": 0.6928417853769426,
+      "best_numeric_status": null,
+      "best_certified_mu": null,
+      "source_hash": "efef289b2327d8f59d6866b0155114d3350894715f3e12d676dbd706b43b33b9",
+      "settings": {
+        "input": "runs\\c4-push90-polish2\\best-certified-source.json",
+        "output": "runs\\c4-push90-finite-mirror1",
+        "seconds": 900.0,
+        "max_calls": 22000,
+        "local_calls": 1800,
+        "allow_opposite": false,
+        "free": false,
+        "mass_by_occupancy": true,
+        "optimize_h": true,
+        "h": [
+          0.0003,
+          0.001,
+          0.003,
+          0.01,
+          0.03,
+          0.1,
+          0.3
+        ],
+        "gamma": 1e-08
+      },
+      "best_margin_by_size": null
+    },
+    {
+      "run": "c4-push90-free1",
+      "counts": {
+        "joint_sdp": 5628
+      },
+      "elapsed_seconds": 41.66707540000789,
+      "stop_reason": "completed",
+      "best_numeric_mu": 0.6929077056445234,
+      "best_numeric_status": "failed",
+      "best_certified_mu": null,
+      "source_hash": "a83390b95c10f8ae63e3731715f0db52c0465ee4b7d18015310728e83171371c",
+      "settings": {
+        "output": "runs\\c4-push90-free1",
+        "mode": "free",
+        "input": "runs\\c4-push90-polish2\\best-certified-source.json",
+        "config": "runs\\c4-push90-configs\\tight.json",
+        "seconds": 900.0,
+        "max_calls": 30000,
+        "local_calls": 1500,
+        "seed": 8841,
+        "restarts": 24,
+        "max_per_parent": 4,
+        "max_size": 16,
+        "method": "envelope",
+        "mass_by_occupancy": false,
+        "no_parent_symmetry": false,
+        "baseline": 0.692907705907258,
+        "script_sha256": "83adb325e0ad7b5fe5164bf88741816f4b4cae5dddb90fa5706a5a47cf6ea396",
+        "input_sha256": "154a75ff2a97bdbf17ed6d13646149abb1bc1eccc9ea106eec9864fa5f471ef1"
+      },
+      "best_margin_by_size": null
+    },
+    {
+      "run": "c4-push90-grid",
+      "counts": {
+        "joint_sdp": 27
+      },
+      "elapsed_seconds": null,
+      "stop_reason": null,
+      "best_numeric_mu": null,
+      "best_numeric_status": null,
+      "best_certified_mu": 0.6929076650300154,
+      "source_hash": "28c1bc7f36d1026d6d196c559cc9b624a920b011faa0641bbd939dec0c72bf96",
+      "settings": null,
+      "best_margin_by_size": null
+    },
+    {
+      "run": "c4-push90-margin-birth3",
+      "counts": {
+        "joint_sdp": 13807,
+        "correction_linear": 2895
+      },
+      "elapsed_seconds": 159.12015139998402,
+      "stop_reason": "completed",
+      "best_numeric_mu": null,
+      "best_numeric_status": null,
+      "best_certified_mu": null,
+      "source_hash": "1709d73ec1b60068856410c4e00bb08a2eab0eb94a58a7731e86b5bb0599a535",
+      "settings": {
+        "output": "runs\\c4-push90-margin-birth3",
+        "mode": "birth",
+        "engine": "recovered",
+        "input": "runs\\c4-push90-polish2\\best-certified-source.json",
+        "config": "runs\\c4-push90-configs\\margin-near.json",
+        "seconds": 900.0,
+        "max_calls": 40000,
+        "local_calls": 1800,
+        "seed": 881724,
+        "restarts": 32,
+        "max_per_parent": 4,
+        "max_size": 16,
+        "top": 20,
+        "initial_balance": 0.05,
+        "mass_floor": 1e-05,
+        "birth_depth": 3,
+        "gradient_step": 1e-05,
+        "method": "envelope",
+        "mass_by_occupancy": false,
+        "no_parent_symmetry": false,
+        "baseline": 0.692907706369586,
+        "script_sha256": "d941c1edacd3e0b15691f0d66db02945f0405e0d805b2f996c90c828a0ddd21a",
+        "input_sha256": "154a75ff2a97bdbf17ed6d13646149abb1bc1eccc9ea106eec9864fa5f471ef1"
+      },
+      "best_margin_by_size": {
+        "10": -3.1492194903982957e-06
+      }
+    },
+    {
+      "run": "c4-push90-margin-random1",
+      "counts": {
+        "joint_sdp": 28508,
+        "correction_linear": 7106
+      },
+      "elapsed_seconds": 900.1259644000093,
+      "stop_reason": "wall_time",
+      "best_numeric_mu": null,
+      "best_numeric_status": null,
+      "best_certified_mu": null,
+      "source_hash": "c5c2642ed7c72036f9c637f3531c0a81285f6030080d7175fc048c0e2ff8d644",
+      "settings": {
+        "output": "runs\\c4-push90-margin-random1",
+        "mode": "random",
+        "engine": "recovered",
+        "input": null,
+        "config": "runs\\c4-push90-configs\\margin-near.json",
+        "seconds": 900.0,
+        "max_calls": 60000,
+        "local_calls": 1000,
+        "seed": 885167,
+        "restarts": 120,
+        "max_per_parent": 4,
+        "max_size": 16,
+        "top": 20,
+        "method": "envelope",
+        "mass_by_occupancy": false,
+        "no_parent_symmetry": false,
+        "baseline": 0.692907706369586,
+        "script_sha256": "ded2bae57694f9b79a7e175735badb91f04b79d234a707247e283e34725466da"
+      },
+      "best_margin_by_size": {
+        "8": -0.0026888097031002997,
+        "9": -0.003804756502480919,
+        "10": -0.003573991708870595,
+        "12": -0.0016908715743146417,
+        "14": -0.0007420668440898176,
+        "16": -0.00018645834005844087,
+        "7": -0.0050527495361432605
+      }
+    },
+    {
+      "run": "c4-push90-margin-refine1",
+      "counts": {
+        "joint_sdp": 7405,
+        "correction_linear": 3491
+      },
+      "elapsed_seconds": 120.93529090005904,
+      "stop_reason": "completed",
+      "best_numeric_mu": null,
+      "best_numeric_status": null,
+      "best_certified_mu": null,
+      "source_hash": "c5c2642ed7c72036f9c637f3531c0a81285f6030080d7175fc048c0e2ff8d644",
+      "settings": {
+        "output": "runs\\c4-push90-margin-refine1",
+        "mode": "refine",
+        "engine": "recovered",
+        "input": "runs\\c4-push90-multisplit1",
+        "config": "runs\\c4-push90-configs\\margin-far.json",
+        "seconds": 900.0,
+        "max_calls": 50000,
+        "local_calls": 1800,
+        "seed": 913741,
+        "restarts": 3,
+        "max_per_parent": 4,
+        "max_size": 16,
+        "top": 30,
+        "method": "envelope",
+        "mass_by_occupancy": false,
+        "no_parent_symmetry": true,
+        "baseline": 0.692907706369586,
+        "script_sha256": "ded2bae57694f9b79a7e175735badb91f04b79d234a707247e283e34725466da"
+      },
+      "best_margin_by_size": {
+        "9": -0.00013611807860072842,
+        "11": -0.0012858385656114265,
+        "8": -0.004662453548125185,
+        "10": -0.00019945782187066874,
+        "12": -2.7719497136826998e-05
+      }
+    },
+    {
+      "run": "c4-push90-margin-refine2",
+      "counts": {
+        "joint_sdp": 7931,
+        "correction_linear": 2141
+      },
+      "elapsed_seconds": 110.7229561000131,
+      "stop_reason": "completed",
+      "best_numeric_mu": null,
+      "best_numeric_status": null,
+      "best_certified_mu": null,
+      "source_hash": "c5c2642ed7c72036f9c637f3531c0a81285f6030080d7175fc048c0e2ff8d644",
+      "settings": {
+        "output": "runs\\c4-push90-margin-refine2",
+        "mode": "refine",
+        "engine": "recovered",
+        "input": "runs\\c4-push90-multisplit1",
+        "config": "runs\\c4-push90-configs\\margin-near.json",
+        "seconds": 900.0,
+        "max_calls": 45000,
+        "local_calls": 1600,
+        "seed": 99117,
+        "restarts": 3,
+        "max_per_parent": 4,
+        "max_size": 16,
+        "top": 24,
+        "initial_balance": 0.05,
+        "method": "envelope",
+        "mass_by_occupancy": false,
+        "no_parent_symmetry": true,
+        "baseline": 0.692907706369586,
+        "script_sha256": "2d34c51f756ea2ecf3aa2f620624f5969791b2d9d4e755fe99ef40557751fa06"
+      },
+      "best_margin_by_size": {
+        "7": -0.00013184158597171971,
+        "10": -5.153879216932093e-05,
+        "9": -0.00012005041969324648,
+        "11": -0.00018920107573096014,
+        "8": -0.0003548803311403654,
+        "12": -0.0003685620549320211
+      }
+    },
+    {
+      "run": "c4-push90-multisplit1",
+      "counts": {
+        "joint_sdp": 9832
+      },
+      "elapsed_seconds": 194.94331190001685,
+      "stop_reason": "completed",
+      "best_numeric_mu": 0.692904969429271,
+      "best_numeric_status": "uncertain",
+      "best_certified_mu": null,
+      "source_hash": "d03db55f9730386324e4a644378f0bba5a0a695db77ca9162ee6ea1013ee4e0d",
+      "settings": {
+        "output": "runs\\c4-push90-multisplit1",
+        "mode": "scan",
+        "input": null,
+        "config": "runs\\c4-push90-configs\\coarse.json",
+        "seconds": 660.0,
+        "max_calls": 22000,
+        "local_calls": 180,
+        "seed": 9029,
+        "restarts": 2,
+        "max_per_parent": 4,
+        "max_size": 16,
+        "method": "envelope",
+        "mass_by_occupancy": false,
+        "no_parent_symmetry": false,
+        "baseline": 0.6929076590503417,
+        "script_sha256": "83adb325e0ad7b5fe5164bf88741816f4b4cae5dddb90fa5706a5a47cf6ea396"
+      },
+      "best_margin_by_size": null
+    },
+    {
+      "run": "c4-push90-needle-mass1",
+      "counts": {
+        "joint_sdp": 17183,
+        "correction_linear": 16873
+      },
+      "elapsed_seconds": 196.67603859992232,
+      "stop_reason": "completed",
+      "best_numeric_mu": 0.6929070783308631,
+      "best_numeric_status": "failed",
+      "best_certified_mu": null,
+      "source_hash": "a5719446039630dbefe75fb988d2a8ddad5d6a04551731ddfd5b0fdf8a0b8248",
+      "settings": {
+        "output": "runs\\c4-push90-needle-mass1",
+        "mode": "needle",
+        "engine": "recovered",
+        "input": "runs\\c4-push90-polish2\\best-certified-source.json",
+        "config": "runs\\c4-push90-configs\\needle-mass.json",
+        "seconds": 900.0,
+        "max_calls": 35000,
+        "local_calls": 1600,
+        "seed": 218833,
+        "restarts": 32,
+        "max_per_parent": 4,
+        "max_size": 16,
+        "top": 20,
+        "initial_balance": 0.05,
+        "mass_floor": 1e-12,
+        "birth_depth": 1,
+        "gradient_step": 1e-07,
+        "method": "envelope",
+        "mass_by_occupancy": false,
+        "no_parent_symmetry": false,
+        "baseline": 0.692907706369586,
+        "script_sha256": "d941c1edacd3e0b15691f0d66db02945f0405e0d805b2f996c90c828a0ddd21a",
+        "input_sha256": "154a75ff2a97bdbf17ed6d13646149abb1bc1eccc9ea106eec9864fa5f471ef1"
+      },
+      "best_margin_by_size": null
+    },
+    {
+      "run": "c4-push90-needle1",
+      "counts": {
+        "joint_sdp": 13248,
+        "correction_linear": 12902
+      },
+      "elapsed_seconds": 153.1985350000905,
+      "stop_reason": "completed",
+      "best_numeric_mu": 0.7399719917683099,
+      "best_numeric_status": "uncertain",
+      "best_certified_mu": null,
+      "source_hash": "1709d73ec1b60068856410c4e00bb08a2eab0eb94a58a7731e86b5bb0599a535",
+      "settings": {
+        "output": "runs\\c4-push90-needle1",
+        "mode": "needle",
+        "engine": "recovered",
+        "input": "runs\\c4-push90-polish2\\best-certified-source.json",
+        "config": "runs\\c4-push90-configs\\needle.json",
+        "seconds": 900.0,
+        "max_calls": 35000,
+        "local_calls": 1400,
+        "seed": 917744,
+        "restarts": 32,
+        "max_per_parent": 4,
+        "max_size": 16,
+        "top": 20,
+        "initial_balance": 0.05,
+        "mass_floor": 1e-12,
+        "birth_depth": 1,
+        "gradient_step": 1e-07,
+        "method": "envelope",
+        "mass_by_occupancy": false,
+        "no_parent_symmetry": false,
+        "baseline": 0.692907706369586,
+        "script_sha256": "d941c1edacd3e0b15691f0d66db02945f0405e0d805b2f996c90c828a0ddd21a",
+        "input_sha256": "154a75ff2a97bdbf17ed6d13646149abb1bc1eccc9ea106eec9864fa5f471ef1"
+      },
+      "best_margin_by_size": null
+    },
+    {
+      "run": "c4-push90-polish2",
+      "counts": {
+        "joint_sdp": 8976
+      },
+      "elapsed_seconds": 49.01461640000343,
+      "stop_reason": "completed",
+      "best_numeric_mu": 0.6929077154688839,
+      "best_numeric_status": "uncertain",
+      "best_certified_mu": "0.69290770590725843248",
+      "source_hash": "d03db55f9730386324e4a644378f0bba5a0a695db77ca9162ee6ea1013ee4e0d",
+      "settings": {
+        "output": "runs\\c4-push90-polish2",
+        "mode": "polish",
+        "input": "runs\\c4-final-replay-positive-20261029.json",
+        "config": "runs\\c4-push90-configs\\frontier.json",
+        "seconds": 600.0,
+        "max_calls": 18000,
+        "local_calls": 1000,
+        "seed": 401,
+        "restarts": 40,
+        "max_per_parent": 4,
+        "max_size": 16,
+        "method": "Nelder-Mead",
+        "mass_by_occupancy": true,
+        "no_parent_symmetry": false,
+        "baseline": 0.6929076590503417,
+        "script_sha256": "83adb325e0ad7b5fe5164bf88741816f4b4cae5dddb90fa5706a5a47cf6ea396",
+        "input_sha256": "23f3269a73f065847d0bb6c868baf43462d03b004f83bc818a3e384e6f1a66bf"
+      },
+      "best_margin_by_size": null
+    },
+    {
+      "run": "c4-push90-random-recovered1",
+      "counts": {
+        "joint_sdp": 32655,
+        "correction_linear": 32172
+      },
+      "elapsed_seconds": 900.1469855000032,
+      "stop_reason": "wall_time",
+      "best_numeric_mu": 0.692868440218351,
+      "best_numeric_status": "uncertain",
+      "best_certified_mu": null,
+      "source_hash": "4767f6b4784ab62bfde50c214024a4f44e4491ec060c943bf335e948f8a7e9dd",
+      "settings": {
+        "output": "runs\\c4-push90-random-recovered1",
+        "mode": "random",
+        "engine": "recovered",
+        "input": null,
+        "config": "runs\\c4-push90-configs\\medium.json",
+        "seconds": 900.0,
+        "max_calls": 50000,
+        "local_calls": 600,
+        "seed": 761923,
+        "restarts": 100,
+        "max_per_parent": 4,
+        "max_size": 16,
+        "top": 20,
+        "method": "envelope",
+        "mass_by_occupancy": false,
+        "no_parent_symmetry": false,
+        "baseline": 0.692907705907258,
+        "script_sha256": "bd2dcddd535c74186b1dd27995ca55a252bd3575f687636c0867bcdff47ae59d"
+      },
+      "best_margin_by_size": null
+    },
+    {
+      "run": "c4-push90-recovered-smoke",
+      "counts": {
+        "joint_sdp": 40,
+        "correction_linear": 40
+      },
+      "elapsed_seconds": 0.3666702000191435,
+      "stop_reason": "completed",
+      "best_numeric_mu": 0.6929076680377848,
+      "best_numeric_status": "uncertain",
+      "best_certified_mu": "0.69290766828255850331",
+      "source_hash": "f22c45f577a7b8e6f0dd79dc5aec684ba961090c629f5d0213f97bcea4093716",
+      "settings": {
+        "output": "runs\\c4-push90-recovered-smoke",
+        "mode": "polish",
+        "engine": "recovered",
+        "input": "runs\\c4-final-replay-positive-20261029.json",
+        "config": "runs\\c4-push90-configs\\medium.json",
+        "seconds": 10.0,
+        "max_calls": 50,
+        "local_calls": 40,
+        "seed": 401,
+        "restarts": 1,
+        "max_per_parent": 4,
+        "max_size": 16,
+        "top": 20,
+        "method": "envelope",
+        "mass_by_occupancy": true,
+        "no_parent_symmetry": false,
+        "baseline": 0.6929076590503417,
+        "script_sha256": "bd2dcddd535c74186b1dd27995ca55a252bd3575f687636c0867bcdff47ae59d",
+        "input_sha256": "23f3269a73f065847d0bb6c868baf43462d03b004f83bc818a3e384e6f1a66bf"
+      },
+      "best_margin_by_size": null
+    },
+    {
+      "run": "c4-push90-refine-recovered1",
+      "counts": {
+        "joint_sdp": 22339,
+        "correction_linear": 22313
+      },
+      "elapsed_seconds": 290.76390379993245,
+      "stop_reason": "completed",
+      "best_numeric_mu": 0.692907656051007,
+      "best_numeric_status": "failed",
+      "best_certified_mu": null,
+      "source_hash": "4767f6b4784ab62bfde50c214024a4f44e4491ec060c943bf335e948f8a7e9dd",
+      "settings": {
+        "output": "runs\\c4-push90-refine-recovered1",
+        "mode": "refine",
+        "engine": "recovered",
+        "input": "runs\\c4-push90-multisplit1",
+        "config": "runs\\c4-push90-configs\\medium.json",
+        "seconds": 900.0,
+        "max_calls": 45000,
+        "local_calls": 1400,
+        "seed": 44219,
+        "restarts": 2,
+        "max_per_parent": 4,
+        "max_size": 16,
+        "top": 24,
+        "method": "envelope",
+        "mass_by_occupancy": false,
+        "no_parent_symmetry": true,
+        "baseline": 0.692907705907258,
+        "script_sha256": "bd2dcddd535c74186b1dd27995ca55a252bd3575f687636c0867bcdff47ae59d"
+      },
+      "best_margin_by_size": null
+    },
+    {
+      "run": "c4-push90-refine1",
+      "counts": {
+        "joint_sdp": 6004
+      },
+      "elapsed_seconds": 83.9118522000499,
+      "stop_reason": "completed",
+      "best_numeric_mu": 0.6929076734418564,
+      "best_numeric_status": "uncertain",
+      "best_certified_mu": null,
+      "source_hash": "a83390b95c10f8ae63e3731715f0db52c0465ee4b7d18015310728e83171371c",
+      "settings": {
+        "output": "runs\\c4-push90-refine1",
+        "mode": "refine",
+        "input": "runs\\c4-push90-multisplit1",
+        "config": "runs\\c4-push90-configs\\medium.json",
+        "seconds": 720.0,
+        "max_calls": 30000,
+        "local_calls": 1000,
+        "seed": 21811,
+        "restarts": 1,
+        "max_per_parent": 4,
+        "max_size": 16,
+        "top": 24,
+        "method": "envelope",
+        "mass_by_occupancy": false,
+        "no_parent_symmetry": true,
+        "baseline": 0.692907705907258,
+        "script_sha256": "5beef5bc53f67c37c449ee86e724c8a358e6a59cb532ab9644b18ff3904425e4"
+      },
+      "best_margin_by_size": null
+    },
+    {
+      "run": "c4-push90-smoke",
+      "counts": {
+        "joint_sdp": 40
+      },
+      "elapsed_seconds": 0.303023700020276,
+      "stop_reason": "joint_sdp",
+      "best_numeric_mu": 0.6929076231672435,
+      "best_numeric_status": "uncertain",
+      "best_certified_mu": null,
+      "source_hash": "d03db55f9730386324e4a644378f0bba5a0a695db77ca9162ee6ea1013ee4e0d",
+      "settings": {
+        "output": "runs\\c4-push90-smoke",
+        "mode": "polish",
+        "input": "runs\\c4-final-replay-positive-20261029.json",
+        "config": "runs\\c4-push90-configs\\tight.json",
+        "seconds": 8.0,
+        "max_calls": 40,
+        "local_calls": 40,
+        "seed": 401,
+        "restarts": 1,
+        "max_per_parent": 4,
+        "max_size": 16,
+        "method": "Nelder-Mead",
+        "mass_by_occupancy": true,
+        "no_parent_symmetry": false,
+        "baseline": 0.6929076590503417,
+        "script_sha256": "83adb325e0ad7b5fe5164bf88741816f4b4cae5dddb90fa5706a5a47cf6ea396",
+        "input_sha256": "23f3269a73f065847d0bb6c868baf43462d03b004f83bc818a3e384e6f1a66bf"
+      },
+      "best_margin_by_size": null
+    },
+    {
+      "run": "c4-push90-tiny-free10",
+      "counts": {
+        "joint_sdp": 20668,
+        "correction_linear": 19866
+      },
+      "elapsed_seconds": 344.7477590999333,
+      "stop_reason": "completed",
+      "best_numeric_mu": 0.6929074750519277,
+      "best_numeric_status": "uncertain",
+      "best_certified_mu": null,
+      "source_hash": "0ad98d9076e7f2ede04f33abe3c05816f08d72f72e5544957a33ce0271aa2c62",
+      "settings": {
+        "output": "runs\\c4-push90-tiny-free10",
+        "mode": "free",
+        "engine": "recovered",
+        "input": "runs\\c4-push90-cross-sources\\elastic-m10.json",
+        "config": "runs\\c4-push90-configs\\margin-mass-tiny.json",
+        "seconds": 720.0,
+        "max_calls": 30000,
+        "local_calls": 1600,
+        "seed": 992312,
+        "restarts": 30,
+        "max_per_parent": 4,
+        "max_size": 16,
+        "top": 20,
+        "initial_balance": 0.0,
+        "mass_floor": 1e-05,
+        "birth_depth": 1,
+        "gradient_step": 1e-05,
+        "target_penalty": 10.0,
+        "method": "envelope",
+        "mass_by_occupancy": false,
+        "no_parent_symmetry": false,
+        "baseline": 0.692907706369586,
+        "script_sha256": "dca8f79abacf7456b6f1c4d31ec9d4ad7018e4b318243324c6de2d5d189ab9ee",
+        "input_sha256": "3ea92cbac725af5dcbd44fb3fdc53d7ceae3ded0fdce14159683b4522a00358c"
+      },
+      "best_margin_by_size": {
+        "10": -4.057275082505765e-07
+      }
+    },
+    {
+      "run": "c4-push90-tiny-needle1",
+      "counts": {
+        "joint_sdp": 19461,
+        "correction_linear": 18748
+      },
+      "elapsed_seconds": 236.1241665999405,
+      "stop_reason": "completed",
+      "best_numeric_mu": 0.6929062068732447,
+      "best_numeric_status": "uncertain",
+      "best_certified_mu": null,
+      "source_hash": "0ad98d9076e7f2ede04f33abe3c05816f08d72f72e5544957a33ce0271aa2c62",
+      "settings": {
+        "output": "runs\\c4-push90-tiny-needle1",
+        "mode": "needle",
+        "engine": "recovered",
+        "input": "runs\\c4-push90-polish2\\best-certified-source.json",
+        "config": "runs\\c4-push90-configs\\margin-mass-tiny.json",
+        "seconds": 720.0,
+        "max_calls": 30000,
+        "local_calls": 1400,
+        "seed": 223719,
+        "restarts": 32,
+        "max_per_parent": 4,
+        "max_size": 16,
+        "top": 20,
+        "initial_balance": 0.0,
+        "mass_floor": 1e-12,
+        "birth_depth": 1,
+        "gradient_step": 1e-07,
+        "target_penalty": 10.0,
+        "method": "envelope",
+        "mass_by_occupancy": false,
+        "no_parent_symmetry": false,
+        "baseline": 0.692907706369586,
+        "script_sha256": "dca8f79abacf7456b6f1c4d31ec9d4ad7018e4b318243324c6de2d5d189ab9ee",
+        "input_sha256": "154a75ff2a97bdbf17ed6d13646149abb1bc1eccc9ea106eec9864fa5f471ef1"
+      },
+      "best_margin_by_size": {
+        "8": -4.6010511432580055e-07
+      }
+    },
+    {
+      "run": "c4-push90-tiny-refine1",
+      "counts": {
+        "joint_sdp": 26311,
+        "correction_linear": 26172
+      },
+      "elapsed_seconds": 442.3533461999614,
+      "stop_reason": "completed",
+      "best_numeric_mu": 0.6929076654025832,
+      "best_numeric_status": "uncertain",
+      "best_certified_mu": null,
+      "source_hash": "0ad98d9076e7f2ede04f33abe3c05816f08d72f72e5544957a33ce0271aa2c62",
+      "settings": {
+        "output": "runs\\c4-push90-tiny-refine1",
+        "mode": "refine",
+        "engine": "recovered",
+        "input": "runs\\c4-push90-multisplit1",
+        "config": "runs\\c4-push90-configs\\margin-tiny.json",
+        "seconds": 720.0,
+        "max_calls": 35000,
+        "local_calls": 1400,
+        "seed": 66317,
+        "restarts": 2,
+        "max_per_parent": 4,
+        "max_size": 16,
+        "top": 24,
+        "initial_balance": 0.0,
+        "mass_floor": 1e-05,
+        "birth_depth": 1,
+        "gradient_step": 1e-05,
+        "target_penalty": 3.0,
+        "method": "envelope",
+        "mass_by_occupancy": false,
+        "no_parent_symmetry": true,
+        "baseline": 0.692907706369586,
+        "script_sha256": "dca8f79abacf7456b6f1c4d31ec9d4ad7018e4b318243324c6de2d5d189ab9ee"
+      },
+      "best_margin_by_size": {
+        "7": -5.233113540228435e-09,
+        "10": -1.015609046811771e-07,
+        "9": -1.4308329525580639e-06,
+        "11": -5.20260719595162e-06,
+        "8": -7.655168038825366e-06,
+        "12": -4.418444175733608e-05
+      }
+    }
+  ],
+  "counts": {
+    "joint_sdp": 278883,
+    "correction_linear": 193536,
+    "c4_finite_sdp": 14573
+  },
+  "scope": "23 primary research runs, including their failed and uncertain solver calls; regression tests and final replay are separate.",
+  "budget_minutes": 90,
+  "start_utc": "2026-10-30 00:27:37 UTC",
+  "deadline_utc": "2026-10-30 01:57:37 UTC",
+  "baseline_c4_lower": "0.69290765905034172312",
+  "asymptotic_lower": "0.6929077063695863636513326879482697637475572909436449039689200651582407",
+  "finite_lower": "0.6929077063695863636513326879482697637478524379383457658060486680630534",
+  "finite_h": "2^-139",
+  "asymptotic_certificate": "runs/c4-push90-exact-active1/certificate.json",
+  "finite_certificate": "runs/c4-push90-mass-tangent3/certificate-139.json",
+  "published_bound_exceeded": false,
+  "s7_data_used_for_search": false,
+  "versioned_configs": {
+    "coarse.json": {
+      "path": "examples/c4-bound-push90/coarse.json",
+      "sha256": "b2b87787ea7e50c0802ebe8fca186533c927730d3f69c8716b260c527156cbaf"
+    },
+    "frontier.json": {
+      "path": "examples/c4-bound-push90/frontier.json",
+      "sha256": "7b11d3ca531ceac2ae13c517ea1b20da1e7e96fc707e75154579a8ac17cfc89e"
+    },
+    "margin-far.json": {
+      "path": "examples/c4-bound-push90/margin-far.json",
+      "sha256": "f76a5ee0681f918e386394d67828410f32f8b8f5039117b7b4b6311c00e6ac7b"
+    },
+    "margin-mass-tiny.json": {
+      "path": "examples/c4-bound-push90/margin-mass-tiny.json",
+      "sha256": "85ac043441fdb8b7ec0035c1046aae35ff7186eecd8637793bdf8af5e53dd76c"
+    },
+    "margin-near.json": {
+      "path": "examples/c4-bound-push90/margin-near.json",
+      "sha256": "451ff2433cce96afe1e7620bf8f0e4ed973d32a98e742de2a51a861b60523460"
+    },
+    "margin-tiny.json": {
+      "path": "examples/c4-bound-push90/margin-tiny.json",
+      "sha256": "a3385bdd2d03db8d2251cf016074f7aae013db6c18245a562096180891d6f8d8"
+    },
+    "medium.json": {
+      "path": "examples/c4-bound-push90/medium.json",
+      "sha256": "ccdc27905c96f06a9aa64feb9303149c1dadce6354eb5f7f92af3ea7cfdc9112"
+    },
+    "needle-mass.json": {
+      "path": "examples/c4-bound-push90/needle-mass.json",
+      "sha256": "0b30e016998902252d2ed681eef1aa1f5b05f08b79cfd4b124e3b5a38ed01df0"
+    },
+    "needle.json": {
+      "path": "examples/c4-bound-push90/needle.json",
+      "sha256": "0805fe2bf94cacd1449c8b6b6e7721987100c510d0c238f29d20bac6606959cd"
+    },
+    "tight.json": {
+      "path": "examples/c4-bound-push90/tight.json",
+      "sha256": "7591312202c3265e7e8a6a465208a4efcb1b408df3cfc57b0cffefd3fa2ec3d3"
+    }
+  },
+  "environment_versions": {
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "cvxpy": "1.9.3",
+    "clarabel": "0.11.1",
+    "python-flint": "0.9.0"
+  },
+  "uv_lock_sha256": "51ad03dfd8572e5630a28da4ddb19d1fa08504d25fd515e3fc5a801e80487504",
+  "final_replay_root": "runs/c4-push90-final-replay",
+  "final_replay_conic_calls": 1859,
+  "final_limiting_certificate": "runs/c4-push90-final-replay/exact-limit/certificate.json",
+  "final_finite_certificate": "runs/c4-push90-final-replay/finite-variable-mass/certificate-139.json",
+  "exact_limiting_and_finite_data_reproduced_identically": true,
+  "final_source_hash": "92c1e46ead57d3c12159f654d8b588ccd57ec0edf6a1d64883ea00965530d540",
+  "tests_passed": 108,
+  "historical_replay_counts": {
+    "joint_sdp": 3,
+    "finite_tree_linear": 3,
+    "high_precision_audit": 4
+  },
+  "final_validation": "Exact limiting and variable-mass finite data reproduced identically from fresh C4; all source hashes and certificates independently verified."
+}

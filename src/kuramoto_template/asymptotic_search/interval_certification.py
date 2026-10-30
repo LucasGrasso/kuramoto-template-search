@@ -43,7 +43,10 @@ def enclosure(value):
 def decimal_bounds(value, digits=20):
     # All decisions and this decimal floor/ceiling are exact rational operations.
     from fractions import Fraction
-    fraction = Fraction(str(value))
+    # FLINT rationals can legitimately exceed Python's decimal-string digit
+    # limit. Transfer their native integers directly, without a string parse.
+    fraction = (Fraction(int(value.numerator), int(value.denominator))
+                if isinstance(value, fmpq) else Fraction(str(value)))
     scale = 10 ** digits
     low = fraction.numerator * scale // fraction.denominator
     high = -((-fraction.numerator * scale) // fraction.denominator)

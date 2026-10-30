@@ -8,7 +8,7 @@ import pytest
 flint = pytest.importorskip("flint", reason="requires the certification extra")
 
 from kuramoto_template.asymptotic_search.interval_certification import (
-    CertificationFailure, interval_cholesky, limiting_hessian, rational,
+    CertificationFailure, decimal_bounds, interval_cholesky, limiting_hessian, rational,
     rational_finite_repair, rational_limiting_repair, verify_finite, verify_limiting,
 )
 
@@ -25,6 +25,19 @@ def test_interval_cholesky_rejects_indefinite_and_unresolved_pivots():
         for matrix in ([[1, 2], [2, 1]], [[flint.arb(0, 1)]], [[0]]):
             with pytest.raises(CertificationFailure, match="pivot"):
                 interval_cholesky(matrix)
+
+
+@pytest.mark.parametrize('sign',[1,-1])
+def test_decimal_bounds_handle_native_rationals_beyond_python_string_limit(sign):
+    value=flint.fmpq(sign*(10**5000+1),3*10**5000)
+    bounds=decimal_bounds(value)
+    if sign>0:
+        assert bounds['lower']=='0.33333333333333333333'
+        assert bounds['upper']=='0.33333333333333333334'
+    else:
+        assert bounds['lower']=='-0.33333333333333333334'
+        assert bounds['upper']=='-0.33333333333333333333'
+    assert rational(bounds['exact'])==value
 
 
 def test_finite_exact_repair_krawczyk_and_interval_stability():

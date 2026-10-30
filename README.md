@@ -6,8 +6,9 @@ witnesses for the three best results, reports, configurations and aggregate
 statistics are versioned under [`research/`](research/README.md).
 
 A new experiment initialized from C4 splits, without S7 seeds or constants,
-certifies a stronger limiting bound, **mu0 >= 0.6929076590503417**, for an
-explicit nearby rational variant. See [results and scope](docs/c4-discovery-results.md)
+certifies **mu0 >= 0.69290770636958636365** and an explicit finite rational
+template at the same decimal bound. See the [90-minute C4-only search](docs/c4-bound-push-90m.md),
+[original C4 results and scope](docs/c4-discovery-results.md)
 and [reproduction commands](docs/c4-discovery.md). The table below records the
 historical experiments.
 

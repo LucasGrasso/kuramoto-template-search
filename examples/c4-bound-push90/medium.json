@@ -1,0 +1,6 @@
+{
+  "gamma0": 1e-08,
+  "secondary": false,
+  "box_buffer": 1e-09,
+  "h_guard": 0.0003
+}
