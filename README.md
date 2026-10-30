@@ -85,8 +85,8 @@ uv sync --locked --extra reports
 uv run --locked --extra reports python scripts/reproduce_s7_analysis.py --source-run runs/joint-replay --output runs/s7-report-replay --reports
 ```
 
-The existing [Spanish report](research/s7-analysis/informe-s7.md) and
-[HTML informe](research/s7-analysis/informe-s7.html) are already versioned.
+The existing [Spanish report](research/s7-analysis/informe-s7.md) is versioned.
+The self-contained HTML is generated under the chosen output directory.
 Original reports preserve their historical source hashes and measurements.
 Fresh runs record the cleaned source hash; old checkpoints cannot be resumed
 under changed source. Numerical differences across platforms or solvers must

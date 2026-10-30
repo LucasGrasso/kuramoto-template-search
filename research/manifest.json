@@ -76,8 +76,8 @@
       "sha256": "1d01637a7572bb7fabb3fbf0e0218863d34b7cbcac40658347171613b01cf001"
     },
     "research/README.md": {
-      "bytes": 3242,
-      "sha256": "691434b37ec96a3dbea552bde494c1da4e21c832059226abeee87485fe93ebd5"
+      "bytes": 3237,
+      "sha256": "01ad4749dbd97ea67425dcaaf68c3d27045a88936a9b447b98a022d82909a75d"
     },
     "research/s7-analysis/analisis-datos.json": {
       "bytes": 1024834,
@@ -138,10 +138,6 @@
     "research/s7-analysis/figuras/05-clustering-y-espectros.svg": {
       "bytes": 130555,
       "sha256": "786ca870aa75dacf77056942b2cd4e3a9978b2d0747083cd05ffad1702586e5b"
-    },
-    "research/s7-analysis/informe-s7.html": {
-      "bytes": 1220768,
-      "sha256": "5478bd8ab89eb6f1b712f4ab600d9f1e260ad27a1ae0079c644ca9b51cb134d1"
     },
     "research/s7-analysis/informe-s7.md": {
       "bytes": 32401,

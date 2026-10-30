@@ -13,7 +13,7 @@ The finite witness includes its required limiting correction and the retained
 finite matrix. Other h trials have scalar summaries only. The improved S7
 limit has no recorded finite lift of its own.
 
-Reports, the Spanish Markdown/HTML informe, figures, scalar tables, proposal
+Reports, the Spanish Markdown informe, figures, scalar tables, proposal
 trace, configurations, ledgers and original provenance summaries are retained.
 Analysis JSON files contain aggregates and diagnostics; non-winning candidate
 geometries, connection matrices and full dual matrices have been omitted.
