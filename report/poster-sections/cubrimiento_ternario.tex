@@ -1,0 +1,22 @@
+\begin{center}
+\begin{tikzpicture}[scale=1.2]
+    % 1. Dibujar el círculo
+    \draw[thick, gray!70] (0,0) circle (2);
+
+    % 2. Centro
+    \filldraw[black] (0,0) circle (1.5pt);
+
+    % 3. Coordenadas de los puntos
+    \coordinate (P1) at (0:2);
+    \coordinate (P2) at (100:2);
+    \coordinate (P3) at (220:2);
+
+    % 4. Triángulo
+    \draw[thick, PosterHeading] (P1) -- (P2) -- (P3) -- cycle;
+
+    % 5. Puntos coloreados y etiquetas
+    \filldraw[blue!70!black]   (P1) circle (2.5pt) node[right=3pt] {$\phi_1$};
+    \filldraw[orange!85!black] (P2) circle (2.5pt) node[above=3pt] {$\phi_2$};
+    \filldraw[green!60!black]  (P3) circle (2.5pt) node[below left=3pt] {$\phi_3$};
+\end{tikzpicture}
+\end{center}

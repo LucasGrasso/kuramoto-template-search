@@ -1,0 +1,28 @@
+Partamos de un ejemplo simple. No es complicado demostrar que todo grafo camino sincroniza, y sin embargo, al agregar una sola arista y hacerlo un grafo ciclo, ya no lo hace. Esto sugiere que la presencia de ciclos es la cualidad topológica determinante en la sincronización global. Con el fin de cuantificar este fenómeno, recurrimos a las nociones de \textit{winding number} \(q\) y los \(q\)\textit{-twisted states}.
+
+\paragraph{Diferencia de fase envuelta.} Una arista $\{a,b\}$ es \emph{antípoda} si
+$\theta_b-\theta_a\equiv\pi \pmod{2\pi}$. Si no lo es, podemos definir
+$wrap(\theta)\in[-\pi,\pi)$ con \(wrap(\theta) = (\theta + \pi) \text{ mod } 2\pi - \pi\).
+
+\paragraph{\textit{Winding} de un ciclo.} Para un ciclo $\mathcal{C}=(v_0\to v_1\to\dots\to v_k=v_0)$ en $G$ sin aristas antípodas, definimos:
+\begin{eqbox}\[
+q(\mathcal{C})=\frac1{2\pi}\sum_{i=0}^{k-1}wrap(\theta{v_{i+1}} - \theta{v_i})\in \mathbb{Z} .
+\]\end{eqbox}
+Dada una base de ciclos \(\mathcal{B} =\{ \mathcal{C}_1, \mathcal{C}_2, \cdots, \mathcal{C}_n\}\),
+\begin{equation}
+    \vec{q_\mathcal{B}} = (q(\mathcal{C}_1), q(\mathcal{C}_2), \cdots, q(\mathcal{C}_n))
+\end{equation}
+
+La sincronización del grafo es independiente a la base \(\mathcal{B}\) elegida. Con este enfoque planteamos el primer lema:
+
+\begin{lema}[]
+Sea $\theta$ un equilibrio de un grafo conexo, sin aristas antípodas. Entonces
+\[
+\vec{q}\equiv0\iff\theta\text{ es sincronizado}.
+\]
+\end{lema}
+
+
+
+Intuitivamente, en un equilibrio sincronizado la diferencia de fases $\Delta\theta_e$ es nula en toda arista, lo que impide que el \(\vec{q}\) alcance valores enteros no nulos. Como línea de investigación futura, resulta de interés analizar la sensibilidad de $\Vert{}\vec{q}\Vert{}$ frente al cambio de la base de ciclos $Y$ y bajo la elección de distintas normas. La demonstracion de este y todos los lemas se encuentra en el repositorio adjunto, ver Sección~\ref{da}.
+

@@ -1,0 +1,311 @@
+% !TeX program = xelatex
+% Póster A0 vertical: 841 x 1189 mm.
+% Compile con XeLaTeX (también admite LuaLaTeX).
+\documentclass[12pt]{article}
+\usepackage[spanish]{babel}
+\bibliographystyle{abbrvnat} % Activar al añadir una bibliografía.
+\usepackage[numbers, square]{natbib}
+\usepackage[
+  paperwidth=841mm,paperheight=1189mm,
+  left=25mm,right=25mm,top=190mm,bottom=25mm,
+  headheight=0pt,headsep=0pt,footskip=0pt
+]{geometry}
+\usepackage{investigathon}
+\usepackage{amsmath}
+\usepackage{unicode-math}
+\setmathfont{latinmodern-math.otf}
+\usepackage{caption}
+\DeclareCaptionFont{poster}{\fontsize{24}{30}\selectfont}
+\captionsetup{font=poster,labelfont=bf}
+
+% Ajustar esta definición si el conjunto usa otra notación.
+\newcommand{\Rs}{\mathcal{R}_{s}}
+
+% Las imágenes se cargan automáticamente cuando están disponibles.
+\newcommand{\PosterImage}[2][0.7\linewidth]{%
+  \IfFileExists{#2}{%
+    \includegraphics[width=#1,keepaspectratio]{#2}%
+  }{%
+    \begin{tcolorbox}[
+      width=#1,height=65mm,
+      colback=PosterFill,colframe=PosterHeading!35,
+      boxrule=0.6pt,arc=0pt,
+      halign=center,valign=center,
+      fontupper=\fontsize{22}{28}\selectfont,
+      colupper=PosterText
+    ]
+      Imagen pendiente\\[3mm]
+      \texttt{\detokenize{#2}}
+    \end{tcolorbox}%
+  }%
+}
+\usepackage{multicol}
+\usepackage{tcolorbox}
+\usepackage{tikz}
+\usetikzlibrary{positioning,babel}
+\tcbuselibrary{skins}
+
+% Two equal body columns with a 20 mm gap.
+\setlength{\columnsep}{20mm}
+\setlength{\columnseprule}{0pt}
+\setlength{\multicolsep}{0pt}
+\setlength{\emergencystretch}{2em}
+\setlength{\parskip}{0.35\baselineskip}
+
+% ==========================================================
+% BODY STYLES — local to this document
+% Colours follow the dark green / sage tones of the header.
+% ==========================================================
+\definecolor{PosterHeading}{HTML}{1B3430} % Deep teal
+\definecolor{PosterFill}{HTML}{EAF0E9}    % Pale sage
+\definecolor{PosterText}{HTML}{1A2827}    % Dark charcoal
+
+\newcommand{\sectionfont}{%
+  \normalfont\fontsize{44}{54}\selectfont\bfseries
+}
+\newcommand{\bodyfont}{%
+  \normalfont\fontsize{30}{40}\selectfont
+}
+
+% Section headings (visual, unnumbered).
+\renewcommand{\section}[1]{%
+  \begin{tcolorbox}[
+    enhanced,
+    colback=PosterHeading,
+    colframe=PosterHeading,
+    colupper=white,
+    fontupper=\sectionfont,
+    boxrule=0pt,
+    arc=0pt,
+    outer arc=0pt,
+    left=25pt, right=25pt,
+    top=20pt, bottom=20pt,
+    drop shadow=black!15,
+    before skip=1cm,
+    after skip=1cm
+  ]
+    #1
+  \end{tcolorbox}%
+}
+
+% Filled poster box: deep teal title and pale sage body.
+\newtcolorbox{filledbox}[2][]{
+  enhanced,
+  before skip=1cm,
+  after skip=1cm,
+  colback=PosterFill,
+  colframe=PosterHeading,
+  colbacktitle=PosterHeading,
+  coltitle=white,
+  colupper=PosterText,
+  fonttitle=\sectionfont,
+  fontupper=\bodyfont,
+  title=#2,
+  boxrule=0pt,
+  leftrule=0pt, rightrule=0pt, bottomrule=0pt,
+  arc=0pt,
+  outer arc=0pt,
+  left=25pt, right=25pt, top=25pt, bottom=25pt,
+  toptitle=20pt, bottomtitle=20pt,
+  titlerule=0pt,
+  drop shadow=black!15,
+  #1
+}
+
+% White poster box; retains the border-free geometry supplied.
+\newtcolorbox{borderbox}[2][]{
+  enhanced,
+  before skip=1cm,
+  after skip=1cm,
+  colback=white,
+  colframe=PosterHeading,
+  colbacktitle=PosterHeading,
+  coltitle=white,
+  colupper=PosterText,
+  fonttitle=\sectionfont,
+  fontupper=\bodyfont,
+  title=#2,
+  boxrule=0pt,
+  leftrule=0pt, rightrule=0pt, bottomrule=0pt,
+  arc=0pt,
+  outer arc=0pt,
+  left=25pt, right=25pt, top=25pt, bottom=25pt,
+  toptitle=20pt, bottomtitle=20pt,
+  titlerule=0pt,
+  drop shadow=black!15,
+  #1
+}
+
+% Unfilled poster box: white body and deep teal title.
+\newtcolorbox{unfilledbox}[2][]{
+  enhanced,
+  before skip=1cm,
+  after skip=1cm,
+  colback=white,
+  colframe=white,
+  colbacktitle=PosterHeading,
+  coltitle=white,
+  colupper=PosterText,
+  fonttitle=\sectionfont,
+  fontupper=\bodyfont,
+  title=#2,
+  boxrule=0pt,
+  leftrule=0pt, rightrule=0pt, bottomrule=0pt,
+  arc=0pt,
+  outer arc=0pt,
+  left=25pt, right=25pt, top=25pt, bottom=25pt,
+  toptitle=20pt, bottomtitle=20pt,
+  titlerule=0pt,
+  drop shadow=black!15,
+  #1
+}
+
+% ==========================================================
+% CAMBIE SOLAMENTE ESTOS CUATRO CAMPOS
+% track: ia | optimizacion | biologia | fisica-social
+% ==========================================================
+\PosterSetup{
+  titulo={Kuramoto desde la topología},
+  integrantes={Tomas Brucellaria, Manuel Ferro, Lucas Grasso Ramos, Tadeo Solari},
+  equipo={T08},
+  track={optimizacion}
+}
+
+\begin{document}
+\EncabezadoPoster
+\color{PosterText}
+
+% Todo el contenido posterior al encabezado ocupa dos columnas.
+\begin{multicols*}{2}
+\raggedcolumns
+\bodyfont
+\setlength{\parskip}{0.35\baselineskip}
+
+% ========================================================
+% 1. COLUMNA IZQUIERDA
+% ========================================================
+\section{¿Por qué topología?}
+
+
+El problema de energía de Kuramoto \cite{10.1007/BFb0013365} se puede entender viendo los ciclos del grafo.
+
+El camino es un grafo que sincroniza globalmente, mientras que si le agregamos la arista para formar el ciclo, este no sincroniza
+
+\input{poster-sections/grafo_camino}
+
+% ========================================================
+% 2. CONTENIDO EN COLUMNAS
+% ========================================================
+
+\begin{filledbox}{Conceptos}
+    \begin{center}
+        ¿Cuanto se enrolla un ciclo \(\mathcal{C}\)?
+        \PosterImage[0.65\linewidth]{assets/reloje.png}
+    \end{center}
+    \[
+        wrap(\theta) = (\theta + \pi) \text{ mod } 2\pi - \pi \in [\pi,\pi)
+    \]
+    \[
+    q(\mathcal{C})=\frac1{2\pi}\sum_{v_i \in \mathcal{C}}wrap(\varphi_{v_{i+1}} - \varphi_{v_i})\in \mathbb{Z} .
+    \]
+    
+    \input{poster-sections/aristas_relajadas_y_tensas}
+    
+    \(\mathcal{R}\): aristas relajadas, a menos de un cuarto de vuelta; forman clusters.
+    \(\mathcal{T}\): aristas tensas, a cuarto de vuelta o mas; separan clusters.
+    
+\end{filledbox}
+
+\begin{borderbox}{Lo que probamos}
+    \begin{itemize}
+        \item \(q = 0 \quad \forall \mathcal{C} \text{ ciclo } \in G \iff \theta^*\) es un equilibrio sincronizante.
+        
+        \item Sea $\theta$ un equilibrio no sincronizado de un grafo conexo sin antípodas, con $n\ge3$ y $\mu=\mu(G)$. Luego, si todas las aristas incidentes a $S=\{\phi_1, \phi_2, \phi_3\}$ están en \(\mathcal{R}\), $\mu\le2/3$.
+        
+        \input{poster-sections/cubrimiento_ternario}
+        
+        \item Sea $\mathcal{C}$ un ciclo de $k$ aristas sin antípodas, luego:
+        \[\#(E(\mathcal{C}) \cap\mathcal{T})>4|q(\mathcal{{C)}}|-k\].
+    \end{itemize}
+    
+\end{borderbox}
+
+% ========================================================
+% 3. CONTINUACIÓN DE LA COLUMNA DERECHA
+% ========================================================
+
+\begin{borderbox}{Búsqueda SDP}
+
+Utilizamos el número de winding para guiar la búsqueda externa hacia perturbaciones del estado \(C_4\).
+
+\begin{equation*}
+    \varphi_a(h) = \frac{\pi}{2}j(a) + hs_a
+\end{equation*}
+
+Donde \(j(a)\in\{0,1,2,3\}, h > 0\).
+
+\begin{center}
+  \begin{minipage}[t]{0.31\linewidth}
+    \centering
+    \PosterImage[0.9\linewidth]{assets/C4.png}
+    \captionof{figure}{Estado \(C_4\).}
+    \label{fig:c4}
+  \end{minipage}%
+  \hfill
+  \begin{minipage}[t]{0.31\linewidth}
+    \centering
+    \PosterImage[0.9\linewidth]{assets/s7.png}
+    \captionof{figure}{Estado \(S_7\).}
+    \label{fig:s7}
+  \end{minipage}%
+  \hfill
+  \begin{minipage}[t]{0.31\linewidth}
+    \centering
+    \PosterImage[0.9\linewidth]{assets/c4-certified-template-transparent.png}
+    \captionof{figure}{\(T\) mejor obtenida}
+    \label{fig:c8}
+  \end{minipage}
+\end{center}
+
+Una búsqueda externa propone \((x,\varphi)\) y conexiones permitidas. Para cada geometría, resolvemos un problema semidefinido que maximiza la conectividad límite, sujeto a:
+
+\begin{itemize}
+    \item Equilibrio a orden cero y uno.
+    \item Cancelación de la rigidez de primer orden.
+    \item Estabilidad semidefinida(positiva) a segundo orden a margen \(\gamma\).
+\end{itemize}
+
+Finalmente, trasladamos los mejores candidatos a perturbaciones finitas y verificamos numéricamente su equilibrio y estabilidad.
+
+\begin{center}
+    Resultado: \(\boxed{\mu_0 \geq 0.69290770636958636365}\)
+\end{center}
+
+Nuestro trabajo generaliza el análisis perturbativo de \cite{okeeffe20261116densekuramotonetworks} a una búsqueda automatizada sobre distintas geometrías de clústeres.
+
+\end{borderbox}
+
+\begin{filledbox}{Conclusiones}
+    \begin{itemize}
+        \item Aumentar \(\mu\) por arriba de \(0,66\) se vuelve un problema de distribuir óptimamente las aristas en tensión por todo el grafo.
+        \item Los ciclos que aumentan la cantidad de aristas en tensión en un régimen de \(q\) bajo son los de 4 aristas; conjeturamos que estos son los mejores para acercarse a \(\mu_c\).
+        \item Se pudo obtener via busqueda SDP un resultado muy similar al mejor valor actual.
+    \end{itemize}
+\end{filledbox}
+
+\begin{unfilledbox}{Referencias}
+    % 1. Remove the automatic "References" title that breaks the box
+    \renewcommand{\bibsection}{}
+    
+    % 2. Make the font significantly smaller for the poster's footer
+    \bodyfont
+    
+    % 3. Reduce the vertical spacing between each citation
+    \setlength{\bibsep}{10pt}
+    
+    % Generate the bibliography
+    \bibliography{bibliography}
+\end{unfilledbox}
+
+\end{multicols*}
+\end{document}

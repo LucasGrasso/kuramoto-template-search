@@ -1,0 +1,16 @@
+La energía elástica total y el modelo de Kuramoto \citep{10.1007/BFb0013365} son:
+\begin{eqbox}\[
+E(\theta)=\sum_{\{a,b\}\in E}\bigl(1-\cos(\theta_a-\theta_b)\bigr),\qquad
+\dot\theta_u=-\frac{\partial E}{\partial\theta_u}=\sum_{v\sim u}\sin(\theta_v-\theta_u),
+\]\end{eqbox}
+Llamamos a un equilibrio  $desincronizado$ si es un mínimo local que no coincide con el global. El sistema será $desincronizado$ cuando haya mínimos desincronizados estables. En caso contrario, ambos son $sincronizados$. 
+
+Del mismo modo, con $\delta=\min_v\deg v$, se define la conectividad como: 
+\begin{eqbox}\[
+\mu(G):=\frac{\delta+1}{n}.
+\]\end{eqbox}
+
+Y la conectividad critica como:
+\begin{eqbox}\[
+\mu_c:=\inf\bigl\{\mu\in[0,1]:\ \text{todo }G\in\mathcal G\text{ con }\mu(G)\ge\mu\text{ es sincronizante}\bigr\}.
+\]\end{eqbox}

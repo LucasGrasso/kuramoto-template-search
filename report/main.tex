@@ -1,0 +1,82 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath,amssymb,amsthm,mathtools,enumitem,microtype}
+\renewcommand{\refname}{Referencias}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[most]{tcolorbox}
+\bibliographystyle{abbrvnat}
+\usepackage[]{natbib}
+\usepackage{tikz}
+\usepackage[colorlinks=true,linkcolor=NavyBlue,urlcolor=NavyBlue,citecolor=NavyBlue]{hyperref}
+
+\setlength{\parskip}{4pt}\setlength{\parindent}{0pt}
+\setlist{itemsep=1pt,topsep=3pt}
+
+% ---- ecuaciones destacadas
+\newtcolorbox{eqbox}{colback=blue!4,colframe=blue!45!black,boxrule=0.5pt,arc=2pt,
+  left=6pt,right=6pt,top=2pt,bottom=2pt,before skip=6pt,after skip=6pt}
+\newtcolorbox{nota}{colback=yellow!12,colframe=orange!60!black,boxrule=0.5pt,arc=2pt,
+  left=6pt,right=6pt,top=4pt,bottom=4pt,before skip=8pt,after skip=8pt}
+
+% ---- teoremas
+\theoremstyle{plain}
+\newtheorem{lema}{Lema}[section]
+\newtheorem{proposicion}[lema]{Proposición}
+\newtheorem{corolario}[lema]{Corolario}
+\theoremstyle{definition}
+\newtheorem{definicion}[lema]{Definición}
+\theoremstyle{remark}
+\newtheorem{observacion}[lema]{Observación}
+
+% ---- notación
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\one}{\mathbf{1}}
+\newcommand{\Hs}{\mathcal{H}}          % Hessiano
+\newcommand{\Tn}{\mathcal{T}}          % aristas en tensión
+\newcommand{\Rs}{\mathcal{R}}          % aristas relajadas
+\newcommand{\Nn}{\mathcal{N}}          % matriz C^{1/2} M C^{1/2}
+\newcommand{\Kn}{\mathcal{K}}          % vecinos comunes de un triple
+\newcommand{\etq}[1]{\textsf{\small[#1]}}
+\newcommand{\propio}{\etq{propio$^*$}}
+\newcommand{\lit}{\etq{literatura}}
+\newcommand{\aqui}{\etq{demostrado aquí}}
+
+\title{\textbf{Kuramoto desde la topología}}
+\author{Manuel Ferro, Lucas Grasso Ramos,Tomás Brucellaria, Tadeo Solari}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{Modelo de Kuramoto}
+\input{sections/kuramoto-intro}
+
+\section{¿Por qué topología?}
+\input{sections/ciclos}
+
+\section{Estabilidad desde las fases}
+\input{sections/estabilidad}
+
+%\section{Templates}
+%\input{sections/templates}
+
+\section{Búsqueda SDP mediante perturbaciones de $C_4$}
+\input{sections/sdp}
+
+\section{Disponibilidad de datos}\label{da}
+
+El código para reproducir estos experimentos y las demostraciones en Lean se encuentran en \url{https://github.com/LucasGrasso/kuramoto-template-search}.
+
+\section{Reconocimientos}
+Los autores agradecen a Y-hat por proporcionar un entorno computacional para el desarrollo de los experimentos computacionales.
+La Inteligencia Artificial se usó extensivamente en el desarrollo de los experimentos, de la teoría y sus respectivas demostraciones, utilizándose los modelos Sol 6.1 vía ChatGPT y Argon 4 via Gemini. 
+
+
+\bibliography{bibliography}
+
+
+\end{document}

@@ -1,0 +1,138 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{investigathon}[2026/10/28 Encabezado parametrizable A0]
+\RequirePackage{iftex}
+\ifPDFTeX
+  \PackageError{investigathon}{Compile con XeLaTeX o LuaLaTeX}
+    {Seleccione XeLaTeX en las opciones de su editor.}
+\fi
+\RequirePackage{fontspec}
+\RequirePackage{graphicx}
+\RequirePackage{xcolor}
+\RequirePackage{pgfkeys}
+\RequirePackage{eso-pic}
+\RequirePackage{adjustbox}
+
+\setmainfont{Montserrat-Regular.ttf}[
+  Path=fonts/,
+  BoldFont=Montserrat-Bold.ttf,
+  ItalicFont=Montserrat-Italic.ttf,
+  BoldItalicFont=Montserrat-BoldItalic.ttf
+]
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\definecolor{PosterWhite}{HTML}{FFFFFF}
+
+\makeatletter
+\def\poster@title{Título del póster}
+\def\poster@authors{Nombre Apellido, Nombre Apellido}
+\def\poster@team{000000000}
+\def\poster@icon{ia}
+\def\poster@titlefontsize{79.294}
+\def\poster@titleleading{110.664}
+\pgfkeys{
+  /poster/.is family,/poster,
+  titulo/.store in=\poster@title,
+  integrantes/.store in=\poster@authors,
+  equipo/.store in=\poster@team,
+  tamano-titulo/.store in=\poster@titlefontsize,
+  interlineado-titulo/.store in=\poster@titleleading,
+  track/.is choice,
+  track/ia/.code={\def\poster@icon{ia}},
+  track/optimizacion/.code={\def\poster@icon{optimizacion}},
+  track/biologia/.code={\def\poster@icon{biologia}},
+  track/fisica-social/.code={\def\poster@icon{fisica-social}},
+  track/IA/.style={/poster/track=ia},
+  track/Optimización/.style={/poster/track=optimizacion},
+  track/Biología/.style={/poster/track=biologia},
+  track/Física Social/.style={/poster/track=fisica-social}
+}
+\newcommand{\PosterSetup}[1]{\pgfkeys{/poster,#1}}
+
+% Coordenadas en mm desde la esquina superior izquierda.
+\newcommand{\poster@at}[3]{%
+  \put(#1,-#2){\makebox(0,0)[lt]{#3}}%
+}
+\newsavebox{\poster@titlebox}
+\newsavebox{\poster@authorsbox}
+
+% Dibuja solo el encabezado en la página actual.
+% Se puede invocar de nuevo después de \clearpage para otro póster.
+\newcommand{\EncabezadoPoster}{%
+  \begingroup
+  \sbox{\poster@titlebox}{%
+    \vbox{%
+      \hsize=600.448mm
+      \centering\color{PosterWhite}%
+      \fontsize{\poster@titlefontsize}{\poster@titleleading}\selectfont
+      \bfseries
+      \hyphenpenalty=10000
+      \exhyphenpenalty=10000
+      \emergencystretch=1em
+      \poster@title\par
+    }%
+  }%
+  \sbox{\poster@authorsbox}{%
+    \vbox{%
+      \hsize=600.448mm
+      \centering\color{PosterWhite}%
+      \fontsize{38.143}{43}\selectfont
+      \hyphenpenalty=10000
+      \poster@authors\par
+    }%
+  }%
+  % Los parámetros se mantienen hasta la salida de esta página.
+  % Use \clearpage antes de configurar el siguiente póster.
+  \AddToShipoutPictureBG*{%
+    \AtPageUpperLeft{%
+      \setlength{\unitlength}{1mm}%
+      \poster@at{0}{0}{%
+        \includegraphics[width=841mm,height=166.045mm]{images/fondo.png}}%
+    }%
+  }%
+  \AddToShipoutPictureFG*{%
+    \AtPageUpperLeft{%
+      \setlength{\unitlength}{1mm}%
+      \poster@at{25.410}{28.023}{%
+        \includegraphics[width=73.679mm,height=102.688mm]{images/logo.png}}%
+      \poster@at{120.276}{27}{%
+        \vbox to 75mm{%
+          \vfil
+          \hbox to 600.448mm{\hfil
+            \adjustbox{max totalsize={600.448mm}{75mm}}{%
+              \usebox{\poster@titlebox}}%
+            \hfil}%
+          \vfil
+        }}%
+      \poster@at{120.276}{111.2}{%
+        \hbox to 600.448mm{\hfil
+          \adjustbox{max totalsize={600.448mm}{18mm}}{%
+            \usebox{\poster@authorsbox}}%
+          \hfil}}%
+      \poster@at{120.276}{132.4}{%
+        \makebox[600.448mm][c]{%
+          \color{PosterWhite}\fontsize{38.143}{43}\selectfont
+          \adjustbox{max width=600.448mm}{ID: \poster@team}}}%
+      \csname poster@draw@\poster@icon\endcsname
+    }%
+  }%
+  % Conserva las cajas de texto hasta que se componga la página.
+  \global\setbox\poster@titlebox=\copy\poster@titlebox
+  \global\setbox\poster@authorsbox=\copy\poster@authorsbox
+  \endgroup
+}
+
+% Cada ícono conserva tamaño y ubicación de su página de Canva.
+\newcommand{\poster@draw@ia}{%
+  \poster@at{739.646}{37.611}{%
+    \includegraphics[width=84.782mm,height=84.782mm]{images/ia.png}}}
+\newcommand{\poster@draw@optimizacion}{%
+  \poster@at{740.833}{40.273}{%
+    \includegraphics[width=84.318mm,height=84.318mm]{images/optimizacion.png}}}
+\newcommand{\poster@draw@biologia}{%
+  \poster@at{743.295}{44.788}{%
+    \includegraphics[width=77.444mm,height=77.444mm]{images/biologia.png}}}
+\expandafter\newcommand\csname poster@draw@fisica-social\endcsname{%
+  \poster@at{743.147}{44.788}{%
+    \includegraphics[width=77.592mm,height=77.592mm]{images/fisica-social.png}}}
+\makeatother
+\endinput

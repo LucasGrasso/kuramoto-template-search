@@ -1,0 +1,59 @@
+\begin{center}
+        \begin{tikzpicture}[scale=1.7,
+            % Definición de estilos para mantener el código limpio
+            dot/.style={circle, fill=PosterHeading, inner sep=0pt, minimum size=6pt},
+            axis/.style={dashed, thin},
+            basecirc/.style={thick, color=PosterHeading},
+            redarc/.style={line width=2.5pt, color=red!80!black}
+        ]
+        
+        % ================= Primer círculo (Izquierda) =================
+        \begin{scope}[xshift=0cm]
+            % Ejes
+            \draw[axis] (-1.8,0) -- (1.8,0);
+            \draw[axis] (0,-1.8) -- (0,1.8);
+            % Círculo base
+            \draw[basecirc] (0,0) circle (1.5);
+            % Arco rojo
+            \draw[redarc] (1.5,0) arc (0:45:1.5);
+            % Puntos en los extremos
+            \node[dot] at (0:1.5) {};
+            \node[dot] at (45:1.5) {};
+            % Texto inferior
+            \node at (0,-2.5) {\fontsize{24}{30}\selectfont $|\cos(\theta_w - \theta_v)| > 0$};
+        \end{scope}
+        
+        % ================= Segundo círculo (Centro) =================
+        \begin{scope}[xshift=4.5cm]
+            % Ejes
+            \draw[axis] (-1.8,0) -- (1.8,0);
+            \draw[axis] (0,-1.8) -- (0,1.8);
+            % Círculo base
+            \draw[basecirc] (0,0) circle (1.5);
+            % Arco rojo
+            \draw[redarc] (1.5,0) arc (0:140:1.5);
+            % Puntos en los extremos
+            \node[dot] at (0:1.5) {};
+            \node[dot] at (140:1.5) {};
+            % Texto inferior
+            \node at (0,-2.5) {\fontsize{24}{30}\selectfont $|\cos(\theta_w - \theta_v)| \le 0$};
+        \end{scope}
+        
+        % ================= Tercer círculo (Derecha) =================
+        \begin{scope}[xshift=9cm]
+            % Ejes
+            \draw[axis] (-1.8,0) -- (1.8,0);
+            \draw[axis] (0,-1.8) -- (0,1.8);
+            % Círculo base
+            \draw[basecirc] (0,0) circle (1.5);
+            % Arco rojo
+            \draw[redarc] (1.5,0) arc (0:170:1.5);
+            % Puntos en los extremos
+            \node[dot] at (0:1.5) {};
+            \node[dot] at (170:1.5) {};
+            % Texto inferior (usando align=center para saltos de línea)
+            \node[align=center] at (0,-2.8) {\fontsize{24}{30}\selectfont se acerca a \\ \fontsize{24}{30}\selectfont la discontinuidad \\ \fontsize{24}{30}\selectfont de $wrap$};
+        \end{scope}
+        
+        \end{tikzpicture}
+    \end{center}

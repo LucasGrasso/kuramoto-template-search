@@ -1,0 +1,102 @@
+Sea $B$ la matriz de incidencia del grafo, su Hessiano resulta:
+
+
+\begin{equation}
+    \Hs(\theta^*) = B D B^T \quad \text{donde} \quad D = diag(\gamma_e) \qquad \gamma_e = cos(\Delta{\theta_e)}
+\end{equation}
+
+\cite{bronski2015graphhomologystabilitycoupled}.
+
+Este hecho nos empujó a pensar la estabilidad desde los cosenos: si alguno fuera 0, es decir, si alguna arista estuviese uniendo vértices un cuarto de vuelta desfasados, el criterio fallaría y la estabilidad pasaría a depender de factores no lineales. Esto es debido a que el problema deja de ser definido positivo.
+
+En la literatura se han referido a estas aristas como \emph{cortas} y \emph{largas}; nosotros preferimos usar otra nomenclatura:
+\paragraph{Aristas relajadas y en tensión.} Dado un equilibrio, sean
+\begin{eqbox}\[
+\Rs=\{e:\gamma_e>0\},\qquad \Tn=\{e:\gamma_e\le 0\}.
+\]\end{eqbox}
+Entonces las aristas en $\Rs$ son aquellas que comunican vértices en clústeres de fase, estando \emph{relajadas}. Las de $\Tn$ son las interclústeres, siempre en \emph{tensión} si es que estos se mantienen separados en el equilibrio.
+
+Notar que $\Hs=L_\Rs-L_\Tn$, donde $L_\Rs$ y $L_\Tn$ son los Laplacianos de $\Rs$ y $\Tn$ con pesos $|\gamma_e|$. Para vincular el conjunto $\Tn$ con el vector $\vec{q}$, definimos:
+
+\paragraph{Cubrimientos ternarios.} 
+
+Se seleccionan tres vértices en el círculo de fases tales que el triángulo determinado por sus posiciones contenga el centro de la circunferencia; denominamos a este conjunto cubrimiento ternario $S$. 
+
+\begin{figure}[htbp]
+    \centering
+
+    \begin{center}
+    \begin{tikzpicture}[scale=0.7]
+    % 1. Dibujar el círculo
+    \draw[thick, gray!70] (0,0) circle (2);
+
+    % 2. Centro
+    \filldraw[black] (0,0) circle (1.5pt);
+
+    % 3. Coordenadas de los puntos
+    \coordinate (P1) at (0:2);
+    \coordinate (P2) at (100:2);
+    \coordinate (P3) at (220:2);
+
+    % 4. Triángulo
+    \draw[thick, PosterHeading] (P1) -- (P2) -- (P3) -- cycle;
+
+    % 5. Puntos coloreados y etiquetas
+    \filldraw[blue!70!black]   (P1) circle (2.5pt) node[right=3pt] {$\phi_1$};
+    \filldraw[orange!85!black] (P2) circle (2.5pt) node[above=3pt] {$\phi_2$};
+    \filldraw[green!60!black]  (P3) circle (2.5pt) node[below left=3pt] {$\phi_3$};
+\end{tikzpicture}
+\end{center}
+
+    \caption{Cubrimiento ternario $S=\{\phi_1, \phi_2, \phi_3\}$.}
+    \label{fig:c4}
+\end{figure}
+
+
+Notar que, dado que el triángulo contiene al origen, la dispersión angular garantiza que cada vértice en $\mathcal{N}$ incida en al menos una arista perteneciente a $\mathcal{T}$. Esto, formalmente, es el segundo lema:
+
+\begin{lema}[] \label{lema:B}
+Sea $\theta$ un equilibrio no sincronizado de un grafo conexo sin antípodas, con $n\ge3$ y $\mu=\mu(G)$. Entonces:
+\begin{enumerate}[label=(\arabic*)]
+\item Existe un cubrimiento ternario $S=\{u_1,u_2,u_3\}$.
+\item Sea $\Nn:=N[u_1]\cap N[u_2]\cap N[u_3]$. Entonces
+$\;|\Nn|\ge(3\mu-2)\,n$.
+\item Todo $w\in\Nn$ tiene una arista de $\Tn$ hacia algún $u_i$. En total, $\Tn$ contiene al menos
+$(3\mu-2)n-3$ aristas incidentes a $S$.
+\item Si todas las aristas incidentes a $S$ están en $\Rs$, entonces $\mu\le2/3$.
+\end{enumerate}
+\end{lema}
+
+
+La última parte es la que formaliza nuestra intuición: si se quiere $\mu > 2/3$, todo posible cubrimiento ternario es incidido por aristas en $\Tn$. En un grafo denso estos cubrimientos se volverán más y más comunes, y el que se mantenga desincronizado será uno que logre distribuir inteligentementente la tensión por todo el grafo. 
+
+ De este modo, al considerar la intersección de los 3 vecindarios $\mathcal{N}$, se obtiene una cota inferior vinculada directamente con el grado mínimo del grafo y, por consiguiente, con $\mu$. 
+
+
+
+Los vértices de una arista en $\Rs$ están a menos de un cuarto de vuelta, y los de $\Tn$, a menos de media vuelta. Luego, dar $|q|$ vueltas en un ciclo corto requeriría aristas en tensión. Formalmente:
+
+\begin{lema}[]\label{lema:long}
+Sea \(\mathcal{C}\) un ciclo de $k$ aristas sin antípodas, con $q(\mathcal{C})=q$, y sea $\tau$ el número de aristas de \(\mathcal{C}\) en $\Tn$. Entonces 
+$\tau\;>\;4|q|-k$.
+\end{lema}
+
+Aplicando el lema a ciclos cortos se ve que:
+\begin{itemize}
+    \item \( \tau > 1\) para \( k = 3, |q| = 1\)
+    \item \( \tau > 0\) para \( k = 4, |q| = 1\)
+    \item \( \tau > 3\) para \( k = 5, |q| = 2\)
+\end{itemize}
+Notar que el \(q\) es el máximo para ciclos de esa longitud, y que los casos de  \(k =3, k=5\) agregan más aristas tensas que relajadas. Como las cotas inferiores y superiores actuales de \(\mu_c\) usan ciclos de 4 para lograrse, conjeturamos que la abundancia de aristas en tensión otorga inestabilidad a las configuraciones. Queda abierto el problema de determinar si es posible descartar los ciclos de \(k =3, k=5\):
+
+\vspace{1em}
+
+\begin{eqbox}
+\textbf{Conjetura 1}: Si un grafo $G$ contiene un triángulo cuyos vértices forman un cubrimiento ternario $S$ en el espacio de fases, entonces existe un grafo modificado $\tilde{G}$, obtenido al sustituir dicho triángulo por un ciclo de cuatro vértices $\tilde{S}$, tal que $\mu(G) \le \mu(\tilde{G})$.
+
+\textbf{Conjetura 2}: Dado \( \epsilon > 0\) suficientemente chico, no existe un grafo $G$ con un ciclo fundamental de longitud 5 tal que $|\mu(G) - \mu_c| < \epsilon$.
+\end{eqbox}
+
+\vspace{1em}
+
+Concluimos que los ciclos de 4 aristas son óptimos para el aumento de \(\mu\). A continuación, respaldamos dicha hipótesis a través de experimentos computacionales.  
